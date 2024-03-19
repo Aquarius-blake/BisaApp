@@ -103,7 +103,7 @@ static Future showScheduledNotification(
     id, 
     title, 
     body,
-    tz.TZDateTime.now(tz.local).add( Duration(minutes: interval)),
+    tz.TZDateTime.now(localtime).add( Duration(minutes: interval)),
       NotificationDetails(
         android: AndroidNotificationDetails(
             'channel 3', 'Water Reminder',
