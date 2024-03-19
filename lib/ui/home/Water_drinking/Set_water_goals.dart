@@ -243,7 +243,7 @@ Future <void> _initPrefs() async{
                 body: reminders[random.nextInt(reminders.length)], 
                 payload: "Water Reminder", 
                 id: i, 
-                interval: duration).then((value) {
+                interval: duration.round()).then((value) {
                   ScaffoldMessenger.of(context).showSnackBar(
                      const   SnackBar(
                           content: Text("Hydration goal set successfully"),
@@ -269,7 +269,7 @@ Future <void> _initPrefs() async{
                   body: reminders[random.nextInt(reminders.length)], 
                   payload: "Water Reminder", 
                   id: i, 
-                  interval: duration).then((value) {
+                  interval: duration.round()).then((value) {
                     ScaffoldMessenger.of(context).showSnackBar(
                         const  SnackBar(
                             content: Text("Hydration goal set successfully"),
