@@ -1,11 +1,10 @@
 
-import 'dart:ffi';
+import 'dart:math';
 
 import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
 import 'package:bisa_app/utils/validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
@@ -22,6 +21,17 @@ final _formkey = GlobalKey<FormState>();
 TextEditingController _goalController = TextEditingController();
 final goalfocusNode = FocusNode();
  int Selectedindex = 6;
+ Random random = Random();
+ List<String> ids = [];
+ List<String> reminders = [
+  "Drink water now",
+  "Time to drink water",
+  "Hydrate yourself",
+  "Drink water",
+  "Water time",
+  "Stay hydrated"
+
+ ];
  late SharedPreferences prefs;
 List images = [
   'assets/imgs/cup.png',
@@ -46,19 +56,19 @@ Future <void> _initPrefs() async{
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       body: Container(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 10
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 10
                 ),
                 width: MediaQuery.of(context).size.width,
                 height: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.lightBlueAccent,
                   // borderRadius: BorderRadius.only(
                   //   bottomLeft: Radius.circular(30),
@@ -94,7 +104,7 @@ Future <void> _initPrefs() async{
                 ),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height - 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
@@ -104,7 +114,7 @@ Future <void> _initPrefs() async{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
+                   const Center(
                       child: Text(
                         "Set Water Goals",
                         style: TextStyle(
@@ -114,7 +124,7 @@ Future <void> _initPrefs() async{
                           )
                         ),
                     ),
-                    SizedBox(
+                  const  SizedBox(
                       height: 20,
                     ),
                     Center(
@@ -147,10 +157,10 @@ Future <void> _initPrefs() async{
                           ),
                       ),
                     ),
-                    SizedBox(
+                   const SizedBox(
                       height: 40,
                     ),
-                    Text(
+                  const  Text(
                       "Choose your water container size:",
                       style: TextStyle(
                         color: Colors.lightBlueAccent,
@@ -159,7 +169,7 @@ Future <void> _initPrefs() async{
                         ),
                         textAlign: TextAlign.start,
                       ),
-                     SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     WaterfallFlow.builder(
@@ -225,7 +235,25 @@ Future <void> _initPrefs() async{
                 //Schedule the notifications here
                 var interval1 = (16*60)/iterations;
                var duration = interval1*i;
+               ids.add(i.toString());
                 print(duration);
+
+              LocalNotifications.showScheduledNotification(
+                title: "Bisa Hydration Reminder", 
+                body: reminders[random.nextInt(reminders.length)], 
+                payload: "Water Reminder", 
+                id: i, 
+                interval: duration).then((value) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                     const   SnackBar(
+                          content: Text("Hydration goal set successfully"),
+                          duration: Duration(seconds: 3),
+                          backgroundColor: Colors.lightBlueAccent,
+                        )
+                      );
+                
+                });
+
                }
 
               }else if(Noiterations.runtimeType == int){
@@ -233,7 +261,24 @@ Future <void> _initPrefs() async{
                 //Schedule the notifications here
                  var interval1 = (16*60)/Noiterations;
                var duration = interval1*i;
+               ids.add(i.toString());
                 print(duration);
+
+                LocalNotifications.showScheduledNotification(
+                  title: "Bisa Hydration Reminder", 
+                  body: reminders[random.nextInt(reminders.length)], 
+                  payload: "Water Reminder", 
+                  id: i, 
+                  interval: duration).then((value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const  SnackBar(
+                            content: Text("Hydration goal set successfully"),
+                            duration: Duration(seconds: 3),
+                            backgroundColor: Colors.lightBlueAccent,
+                          )
+                        );
+                  });
+
                }
               }else{
                 //Error message
@@ -241,13 +286,14 @@ Future <void> _initPrefs() async{
               }
             }else{
                ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Please choose your water container size"),
-            duration: Duration(seconds: 3),
-            backgroundColor: Colors.redAccent,
-          )
-        );
+                   const SnackBar(
+                      content: Text("Please choose your water container size"),
+                      duration: Duration(seconds: 3),
+                      backgroundColor: Colors.redAccent,
+                    )
+                  );
             }
+            prefs.setStringList("Water", ids);
           }
 
          // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
@@ -263,7 +309,7 @@ Future <void> _initPrefs() async{
         child: Container(
           height: 170,
           width: 170,
-          decoration: BoxDecoration(
+          decoration:const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/imgs/waterdrop.png'),
               fit: BoxFit.cover
