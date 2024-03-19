@@ -11,7 +11,10 @@ class LocalNotifications{
   static final onClickNotification = BehaviorSubject<String>();
 
 // on tap Notification
-static void onNotificationTap(){}
+static void onNotificationTap(NotificationResponse notificationResponse){
+  onClickNotification.add(notificationResponse.payload!);
+  
+}
 
 
 // initialize the local notifications
@@ -30,7 +33,8 @@ final LinuxInitializationSettings initializationSettingsLinux =
     iOS: initializationSettingsDarwin,
     linux: initializationSettingsLinux);
 _flutterLocalNotificationsPlugin.initialize(initializationSettings,
-    onDidReceiveNotificationResponse: (details)=>null);
+    onDidReceiveNotificationResponse: onNotificationTap,
+    onDidReceiveBackgroundNotificationResponse: onNotificationTap);
 _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
     AndroidFlutterLocalNotificationsPlugin>()?.requestNotificationsPermission();
   }
@@ -88,11 +92,25 @@ static Future showScheduledNotification(
     required String body,
     required String payload,
     required int id,
-    required RepeatInterval interval
+    required interval
     }
 )async{
  tz.initializeTimeZones();
  var localtime = tz.local;
+ 
+
+  await _flutterLocalNotificationsPlugin.zonedSchedule(
+    id, 
+    title, 
+    body,
+    tz.TZDateTime.now(tz.local).add( Duration(minutes: interval)),
+      NotificationDetails(
+        android: AndroidNotificationDetails(
+            'channel 3', 'Water Reminder',
+            channelDescription: 'your channel description')),
+    androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+       uiLocalNotificationDateInterpretation:  UILocalNotificationDateInterpretation.absoluteTime);
+
 }
 
 // cancel specific notification

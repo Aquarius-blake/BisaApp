@@ -223,13 +223,17 @@ Future <void> _initPrefs() async{
 
                for( int i = 1 ; i <= iterations ; i++ ){
                 //Schedule the notifications here
-                print(i);
+                var interval1 = (16*60)/iterations;
+               var duration = interval1*i;
+                print(duration);
                }
 
               }else if(Noiterations.runtimeType == int){
                  for( int i = 1 ; i <= Noiterations ; i++ ){
                 //Schedule the notifications here
-                print(i);
+                 var interval1 = (16*60)/Noiterations;
+               var duration = interval1*i;
+                print(duration);
                }
               }else{
                 //Error message
