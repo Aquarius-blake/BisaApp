@@ -1,6 +1,7 @@
 
 
 import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Set_water_goals.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -117,7 +118,33 @@ class _WaterDashState extends State<WaterDash> {
                                   )
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          LocalNotifications.cancelNotification(1).then(
+                            (value){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text("Reminders disabled successfully!"),
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Colors.lightBlueAccent,
+                                      )
+                                    );
+                            }
+                            );
+                        },
+                        child: const Text(
+                          "Disable reminders",
+                          style: TextStyle(
+                            color: Colors.lightBlueAccent,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                            ),
+                          ),
+                      ),
                     ],
                   ),
                 ),

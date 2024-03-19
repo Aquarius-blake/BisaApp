@@ -1,6 +1,8 @@
 
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterGoals extends StatefulWidget {
@@ -24,6 +26,11 @@ List images = [
   'assets/imgs/bottle2.png',
   'assets/imgs/jar.png'
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -185,7 +192,17 @@ List images = [
         ),
       ),
       floatingActionButton: InkWell(
-        onTap: (){},
+        onTap: (){
+         // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
+        LocalNotifications.showPeriodicNotifications(title: "Hydration test", body: "Test Message", payload: "DATA", id: 1, interval: RepeatInterval.everyMinute);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Water goal set successfully"),
+            duration: Duration(seconds: 3),
+            backgroundColor: Colors.lightBlueAccent,
+          )
+        );
+        },
         child: Container(
           height: 170,
           width: 170,
