@@ -1,8 +1,12 @@
 
+import 'dart:ffi';
+
 import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
+import 'package:bisa_app/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterGoals extends StatefulWidget {
@@ -18,6 +22,7 @@ final _formkey = GlobalKey<FormState>();
 TextEditingController _goalController = TextEditingController();
 final goalfocusNode = FocusNode();
  int Selectedindex = 6;
+ late SharedPreferences prefs;
 List images = [
   'assets/imgs/cup.png',
   'assets/imgs/glass1.png',
@@ -31,6 +36,10 @@ List images = [
   void initState() {
     super.initState();
   }
+
+Future <void> _initPrefs() async{
+  prefs = await SharedPreferences.getInstance();
+}
 
   @override
   Widget build(BuildContext context) {
@@ -123,8 +132,16 @@ List images = [
                           //   ),
                           child: TextFormField(
                             controller: _goalController,
-                            decoration: InputDecoration(
-                              
+                              validator:(text) => Validator.textValidator(text),
+                              keyboardType: TextInputType.number,
+                                decoration:  InputDecoration(
+                                  filled: true,
+                                  fillColor: Color.fromRGBO(255, 255, 255, 1),
+                                  labelText: 'Set your daily goal',
+                                  hintText: 'Enter your goal in ml',
+                                   border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                                )
                             ),
                           )
                           ),
@@ -193,15 +210,51 @@ List images = [
       ),
       floatingActionButton: InkWell(
         onTap: (){
-         // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
-        LocalNotifications.showPeriodicNotifications(title: "Hydration test", body: "Test Message", payload: "DATA", id: 1, interval: RepeatInterval.everyMinute);
-        ScaffoldMessenger.of(context).showSnackBar(
+
+          if(_formkey.currentState!.validate()){
+            if(Selectedindex < 6){
+              var Noiterations = int.parse(_goalController.text)/((Selectedindex + 1) * 100);
+              if(Noiterations.runtimeType == double){
+               var iterations = Noiterations.round();
+
+               if(iterations == 0){
+                iterations++;
+               }
+
+               for( int i = 1 ; i <= iterations ; i++ ){
+                //Schedule the notifications here
+                print(i);
+               }
+
+              }else if(Noiterations.runtimeType == int){
+                 for( int i = 1 ; i <= Noiterations ; i++ ){
+                //Schedule the notifications here
+                print(i);
+               }
+              }else{
+                //Error message
+                print(Noiterations.runtimeType);
+              }
+            }else{
+               ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text("Water goal set successfully"),
+            content: Text("Please choose your water container size"),
             duration: Duration(seconds: 3),
-            backgroundColor: Colors.lightBlueAccent,
+            backgroundColor: Colors.redAccent,
           )
         );
+            }
+          }
+
+         // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
+        // LocalNotifications.showPeriodicNotifications(title: "Hydration test", body: "Test Message", payload: "DATA", id: 1, interval: RepeatInterval.everyMinute);
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   SnackBar(
+        //     content: Text("Water goal set successfully"),
+        //     duration: Duration(seconds: 3),
+        //     backgroundColor: Colors.lightBlueAccent,
+        //   )
+        // );
         },
         child: Container(
           height: 170,
