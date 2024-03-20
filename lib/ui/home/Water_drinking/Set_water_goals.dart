@@ -6,6 +6,7 @@ import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
 import 'package:bisa_app/utils/validator.dart';
 import 'package:cron/cron.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
@@ -23,6 +24,7 @@ TextEditingController _goalController = TextEditingController();
 final goalfocusNode = FocusNode();
 final cron = Cron();
  int Selectedindex = 6;
+ String? dailygoal;
  Random random = Random();
  List<String> ids = [];
  List<String> reminders = [
@@ -227,6 +229,7 @@ Future <void> _initPrefs() async{
           if(_formkey.currentState!.validate()){
             if(Selectedindex < 6){
               var Noiterations = int.parse(_goalController.text)/((Selectedindex + 1) * 100);
+              dailygoal = _goalController.text;
               if(Noiterations.runtimeType == double){
                var iterations = Noiterations.round();
 
@@ -243,15 +246,27 @@ Future <void> _initPrefs() async{
 
 
               // Schedule a task that will run every 1 day
-                  cron.schedule(Schedule(days: 1), () async {
+                  cron.schedule(Schedule(minutes: duration.round()), () async {
                     // Schedule a notification right now
-                      LocalNotifications.showScheduledNotification(
-                          title: "Bisa Hydration Reminder", 
-                          body: reminders[random.nextInt(reminders.length)], 
-                          payload: "Water Reminder", 
-                          id: i, 
-                          interval: duration.round()
-                          );
+                    LocalNotifications.showSimpleNotification(
+                      id: i,
+                      title: "Bisa Hydration Reminder",
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder",);
+                      //Schedules a notification 24hr later
+                    LocalNotifications.showPeriodicNotifications(
+                      title: "Bisa Hydration Reminder", 
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder", 
+                      id: i, 
+                      interval: RepeatInterval.daily);
+                      // LocalNotifications.showScheduledNotification(
+                      //     title: "Bisa Hydration Reminder", 
+                      //     body: reminders[random.nextInt(reminders.length)], 
+                      //     payload: "Water Reminder", 
+                      //     id: i, 
+                      //     interval: duration.round()
+                      //     );
                   });
 
               
@@ -267,15 +282,27 @@ Future <void> _initPrefs() async{
                 print(duration);
 
                // Schedule a task that will run every 1 day
-                  cron.schedule(Schedule(days: 1), () async {
+                  cron.schedule(Schedule(minutes: duration.round()), () async {
                     // Schedule a notification right now
-                      LocalNotifications.showScheduledNotification(
-                          title: "Bisa Hydration Reminder", 
-                          body: reminders[random.nextInt(reminders.length)], 
-                          payload: "Water Reminder", 
-                          id: i, 
-                          interval: duration.round()
-                          );
+                    LocalNotifications.showSimpleNotification(
+                      id: i,
+                      title: "Bisa Hydration Reminder",
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder",);
+                       //Schedules a notification 24hr later
+                    LocalNotifications.showPeriodicNotifications(
+                      title: "Bisa Hydration Reminder", 
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder", 
+                      id: i, 
+                      interval: RepeatInterval.daily);
+                      // LocalNotifications.showScheduledNotification(
+                      //     title: "Bisa Hydration Reminder", 
+                      //     body: reminders[random.nextInt(reminders.length)], 
+                      //     payload: "Water Reminder", 
+                      //     id: i, 
+                      //     interval: duration.round()
+                      //     );
                   });
 
                }
@@ -293,6 +320,7 @@ Future <void> _initPrefs() async{
                   );
             }
             prefs.setStringList("Water", ids);
+            prefs.setString('Watergoal', dailygoal!);
             ScaffoldMessenger.of(context).showSnackBar(
                         const  SnackBar(
                             content: Text("Hydration goal set successfully"),

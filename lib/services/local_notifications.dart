@@ -45,6 +45,7 @@ _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
     required String title,
     required String body,
     required String payload,
+    required int id,
   }) async {
     // Implement the code to show a notification
     const AndroidNotificationDetails androidNotificationDetails =
@@ -56,7 +57,7 @@ _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
 const NotificationDetails notificationDetails =
     NotificationDetails(android: androidNotificationDetails);
 await _flutterLocalNotificationsPlugin.show(
-    0, title, body, notificationDetails,
+    id, title, body, notificationDetails,
     payload: payload);
   }
 

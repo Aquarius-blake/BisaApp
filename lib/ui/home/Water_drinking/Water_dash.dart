@@ -5,6 +5,7 @@ import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Set_water_goals.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WaterDash extends StatefulWidget {
   const WaterDash({super.key});
@@ -14,6 +15,23 @@ class WaterDash extends StatefulWidget {
 }
 
 class _WaterDashState extends State<WaterDash> {
+ late  SharedPreferences prefrences;
+ String? goal;
+
+
+
+  @override
+  void initState() {
+    initPrefs();  
+    super.initState();
+   
+  }
+
+ Future initPrefs() async{
+    prefrences = await SharedPreferences.getInstance();
+    goal = prefrences.getString('Watergoal');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
