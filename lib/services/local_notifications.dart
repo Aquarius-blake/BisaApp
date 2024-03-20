@@ -99,6 +99,8 @@ static Future showScheduledNotification(
  var localtime = tz.local;
  
 
+
+
   await _flutterLocalNotificationsPlugin.zonedSchedule(
     id, 
     title, 
@@ -107,7 +109,8 @@ static Future showScheduledNotification(
       NotificationDetails(
         android: AndroidNotificationDetails(
             'channel 3', 'Water Reminder',
-            channelDescription: 'your channel description')),
+            channelDescription: 'your channel description')
+            ),
     androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
        uiLocalNotificationDateInterpretation:  UILocalNotificationDateInterpretation.absoluteTime);
 

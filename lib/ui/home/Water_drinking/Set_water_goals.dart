@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
 import 'package:bisa_app/utils/validator.dart';
+import 'package:cron/cron.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
@@ -20,6 +21,7 @@ class _WaterGoalsState extends State<WaterGoals> {
 final _formkey = GlobalKey<FormState>();
 TextEditingController _goalController = TextEditingController();
 final goalfocusNode = FocusNode();
+final cron = Cron();
  int Selectedindex = 6;
  Random random = Random();
  List<String> ids = [];
@@ -44,6 +46,7 @@ List images = [
 
   @override
   void initState() {
+    _initPrefs();
     super.initState();
   }
 
@@ -238,21 +241,20 @@ Future <void> _initPrefs() async{
                ids.add(i.toString());
                 print(duration);
 
-              LocalNotifications.showScheduledNotification(
-                title: "Bisa Hydration Reminder", 
-                body: reminders[random.nextInt(reminders.length)], 
-                payload: "Water Reminder", 
-                id: i, 
-                interval: duration.round()).then((value) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                     const   SnackBar(
-                          content: Text("Hydration goal set successfully"),
-                          duration: Duration(seconds: 3),
-                          backgroundColor: Colors.lightBlueAccent,
-                        )
-                      );
-                
-                });
+
+              // Schedule a task that will run every 1 day
+                  cron.schedule(Schedule(days: 1), () async {
+                    // Schedule a notification right now
+                      LocalNotifications.showScheduledNotification(
+                          title: "Bisa Hydration Reminder", 
+                          body: reminders[random.nextInt(reminders.length)], 
+                          payload: "Water Reminder", 
+                          id: i, 
+                          interval: duration.round()
+                          );
+                  });
+
+              
 
                }
 
@@ -264,19 +266,16 @@ Future <void> _initPrefs() async{
                ids.add(i.toString());
                 print(duration);
 
-                LocalNotifications.showScheduledNotification(
-                  title: "Bisa Hydration Reminder", 
-                  body: reminders[random.nextInt(reminders.length)], 
-                  payload: "Water Reminder", 
-                  id: i, 
-                  interval: duration.round()).then((value) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const  SnackBar(
-                            content: Text("Hydration goal set successfully"),
-                            duration: Duration(seconds: 3),
-                            backgroundColor: Colors.lightBlueAccent,
-                          )
-                        );
+               // Schedule a task that will run every 1 day
+                  cron.schedule(Schedule(days: 1), () async {
+                    // Schedule a notification right now
+                      LocalNotifications.showScheduledNotification(
+                          title: "Bisa Hydration Reminder", 
+                          body: reminders[random.nextInt(reminders.length)], 
+                          payload: "Water Reminder", 
+                          id: i, 
+                          interval: duration.round()
+                          );
                   });
 
                }
@@ -294,6 +293,13 @@ Future <void> _initPrefs() async{
                   );
             }
             prefs.setStringList("Water", ids);
+            ScaffoldMessenger.of(context).showSnackBar(
+                        const  SnackBar(
+                            content: Text("Hydration goal set successfully"),
+                            duration: Duration(seconds: 3),
+                            backgroundColor: Colors.lightBlueAccent,
+                          )
+                        );
           }
 
          // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
