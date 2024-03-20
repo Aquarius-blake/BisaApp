@@ -1,11 +1,13 @@
 
 import 'dart:math';
 
+import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
 import 'package:bisa_app/utils/validator.dart';
 import 'package:cron/cron.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
@@ -119,6 +121,9 @@ Future <void> _initPrefs() async{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                   const SizedBox(
+                      height: 20,
+                    ),
                    const Center(
                       child: Text(
                         "Set Water Goals",
@@ -328,6 +333,7 @@ Future <void> _initPrefs() async{
                             backgroundColor: Colors.lightBlueAccent,
                           )
                         );
+            Navigator.pop(context);
           }
 
          // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
@@ -340,15 +346,41 @@ Future <void> _initPrefs() async{
         //   )
         // );
         },
-        child: Container(
-          height: 170,
-          width: 170,
-          decoration:const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/imgs/waterdrop.png'),
-              fit: BoxFit.cover
-              )
-          ),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Container(
+              height: 170,
+              width: 170,
+              decoration:const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/imgs/waterdrop.png'),
+                  fit: BoxFit.cover
+                  )
+              ),
+            ),
+             Positioned(
+              top: 6,
+              left: -20,
+              child: _goalController.text.isNotEmpty && Selectedindex < 6 ? FadeAnimation(
+                      1.2,
+                        0,
+                        30,
+                 ChatBubble(
+                  backGroundColor: Colors.lightBlueAccent,
+                  clipper: ChatBubbleClipper9(type: BubbleType.sendBubble),
+                  child: Text(
+                    "Tap on me",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
+                      )
+                    ),
+                ),
+              ):Container()
+            )
+          ],
         ),
       ),
     );

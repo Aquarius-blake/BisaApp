@@ -29,7 +29,13 @@ class _WaterDashState extends State<WaterDash> {
 
  Future initPrefs() async{
     prefrences = await SharedPreferences.getInstance();
-    goal = prefrences.getString('Watergoal');
+    goal = prefrences.getString('Watergoal') ?? "Nil";
+    goal = goal! + "ml/day";
+    if(mounted){
+      setState(() {
+        
+      });
+    }
   }
 
   @override
@@ -129,7 +135,7 @@ class _WaterDashState extends State<WaterDash> {
                                 height: 10,
                                 ),
                                 Text(
-                                  "1500ml/day",
+                            goal ??  "1500ml/day",
                                   style: TextStyle(
                                     fontSize: 38
                                   ),

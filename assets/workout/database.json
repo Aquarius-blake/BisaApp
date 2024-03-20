@@ -1,0 +1,23 @@
+{
+    "male":[
+        {
+            "name":"",
+            "duration":"",
+            "image":"",
+            "level":"Beginner",
+            "noE":0,
+            "workouts":[
+                {
+                    "name":"",
+                    "gif":"",
+                    "duration":"",
+                    "level":"",
+                    "description":""
+                }
+            ]
+        }
+    ],
+    "female":[
+
+    ]
+}
