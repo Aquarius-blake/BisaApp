@@ -1,5 +1,8 @@
 
 
+import 'package:bisa_app/ui/home/Fitness/Fitness_Profile.dart';
+import 'package:bisa_app/ui/home/Fitness/Fitness_fitness.dart';
+import 'package:bisa_app/ui/home/Fitness/Fitness_training.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -56,6 +59,11 @@ void OnpageChange(int page){
       body: PageView(
         controller: pageController,
         onPageChanged: OnpageChange,
+        children: [
+          FitnessTraining(),
+          Fitness_fitness(),
+          FitnessProfile(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
