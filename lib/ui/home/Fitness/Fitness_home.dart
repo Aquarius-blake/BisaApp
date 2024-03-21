@@ -53,9 +53,13 @@ void OnpageChange(int page){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(),
+      body: PageView(
+        controller: pageController,
+        onPageChanged: OnpageChange,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
+        onTap: Navitap,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.timer_outlined),
