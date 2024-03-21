@@ -318,10 +318,9 @@ packages:
     dependency: transitive
     description:
       name: dio
-      sha256: "797e1e341c3dd2f69f2dad42564a6feff3bfb87187d05abb93b9609e6f1645c3"
+      sha256: ce75a1b40947fea0a0e16ce73337122a86762e38b982e1ccb909daa3b9bc4197
       url: "https://pub.dev"
     source: hosted
-
     version: "5.3.2"
   extended_list_library:
     dependency: transitive
@@ -331,7 +330,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-
   fake_async:
     dependency: transitive
     description:
@@ -779,7 +777,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.1.2"
-
   meta:
     dependency: transitive
     description:
@@ -1142,7 +1139,6 @@ packages:
     description:
       name: source_span
       sha256: "53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c"
-
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
@@ -1154,7 +1150,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
-
   sqflite:
     dependency: transitive
     description:
@@ -1248,7 +1243,6 @@ packages:
     description:
       name: test_api
       sha256: "5c2f730018264d276c20e4f1503fd1308dfbbae39ec8ee63c5236311ac06954b"
-
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
@@ -1268,7 +1262,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.2"
-
   transparent_image:
     dependency: "direct main"
     description:
@@ -1461,7 +1454,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-
   web:
     dependency: transitive
     description:
@@ -1551,6 +1543,5 @@ packages:
     source: hosted
     version: "2.3.0"
 sdks:
-
   dart: ">=3.2.0 <4.0.0"
   flutter: ">=3.16.0"
