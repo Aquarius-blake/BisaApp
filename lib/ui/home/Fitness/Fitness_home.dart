@@ -40,11 +40,12 @@ initialize()async{
 }
 
 void Navitap(int page){
-  pageController.animateToPage(
-    page, 
-    duration: const Duration(milliseconds: 500), 
-    curve: Curves.bounceIn
-    );
+  // pageController.animateToPage(
+  //   page, 
+  //   duration: const Duration(milliseconds: 500), 
+  //   curve: Curves.elasticInOut
+  //   );
+  pageController.jumpToPage(page);
 }
 
 void OnpageChange(int page){
@@ -53,6 +54,12 @@ void OnpageChange(int page){
   });
 }
 
+@override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,8 +67,8 @@ void OnpageChange(int page){
         controller: pageController,
         onPageChanged: OnpageChange,
         children: [
-          FitnessTraining(),
-          Fitness_fitness(),
+         FitnessTraining(),
+         Fitness_fitness(),
           FitnessProfile(),
         ],
       ),
