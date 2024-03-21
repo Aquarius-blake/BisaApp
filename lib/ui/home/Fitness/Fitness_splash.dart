@@ -20,7 +20,7 @@ class _FitnessSplashState extends State<FitnessSplash> {
 
  late SharedPreferences prefs;
   String? gender;
-  dynamic selectedindex;
+  dynamic selectedindex = 0;
 
 
 @override
