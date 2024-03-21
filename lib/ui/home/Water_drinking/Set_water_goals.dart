@@ -333,7 +333,7 @@ Future <void> _initPrefs() async{
                             backgroundColor: Colors.lightBlueAccent,
                           )
                         );
-            Navigator.pop(context);
+        //    Navigator.pop(context);
           }
 
          // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
