@@ -13,7 +13,9 @@ class _Fitness_fitnessState extends State<Fitness_fitness> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Container(
+        padding: const EdgeInsets.symmetric(),
+      ),
     );
   }
 }
