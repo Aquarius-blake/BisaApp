@@ -12,6 +12,8 @@ class Fitness_fitness extends StatefulWidget {
 class _Fitness_fitnessState extends State<Fitness_fitness> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(),
+    );
   }
 }
