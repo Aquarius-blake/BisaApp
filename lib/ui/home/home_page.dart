@@ -10,6 +10,7 @@ import 'package:bisa_app/ui/chat/Chatbot_screen.dart';
 // import 'package:bisa_app/ui/chat/chat_details.dart';
 import 'package:bisa_app/ui/chat/chat_list.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
+import 'package:bisa_app/ui/home/New_homepage.dart';
 import 'package:bisa_app/ui/home/home.dart';
 import 'package:bisa_app/ui/profile/profile_page.dart';
 import 'package:bisa_app/ui/tips/tips_page.dart';
@@ -57,7 +58,8 @@ class HomePageState extends State<HomePage> {
     currentUser = context.read<CurrentUserProvider>().currentUser!;
     super.initState();
     _widgetOptions = <Widget>[
-      const Home(),
+      //const Home(),
+      const NewHomePage(),
       const ChatListScreen(),
       const TipsPage(),
       const ProfilePage()
