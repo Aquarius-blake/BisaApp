@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NewHomePage extends StatefulWidget {
   const NewHomePage({super.key});
@@ -20,6 +21,8 @@ class NewHomePage extends StatefulWidget {
 
 class _NewHomePageState extends State<NewHomePage> {
   late CurrentUser currentUser;
+  late SharedPreferences prefs;
+  String? gender;
   List routes = [
     StartQuestion(),
     FitnessSplash(),
@@ -38,6 +41,24 @@ class _NewHomePageState extends State<NewHomePage> {
     'assets/imgs/hydration.png',
     'assets/imgs/microscope.png'
   ];
+
+
+
+  @override
+  void initState() {
+    initialize();
+    super.initState();
+  }
+
+initialize()async{
+  prefs = await SharedPreferences.getInstance();
+  gender = await prefs.getString("gender");
+  if(mounted){
+    setState(() {
+      
+    });
+  }
+}
 
   
   @override
@@ -82,7 +103,7 @@ class _NewHomePageState extends State<NewHomePage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
                             image: DecorationImage(
-                              image: AssetImage('assets/imgs/doc1.png')
+                              image: AssetImage('assets/imgs/dashpic.png')
                               )
                           ),
                           child: Text(""),
@@ -100,13 +121,21 @@ class _NewHomePageState extends State<NewHomePage> {
                                   fontSize: 20.sp
                                 ),
                                 ),
-                              Text(
-                                "Gender",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Poppins',
-                                ),
-                                ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/imgs/gen.png',
+                                    ),
+                                 const SizedBox(width: 2,),
+                                  Text(
+                                  gender ??  "Gender",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                    ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -151,12 +180,12 @@ class _NewHomePageState extends State<NewHomePage> {
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            hintText: "Search",
+                            hintText: "Search for an article, specialist of FAQs",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20)
                             ),
                             prefixIcon: IconButton(
-                              icon: Icon(Icons.search),
+                              icon: const Icon(Icons.search),
                               onPressed: (){},
                             )
                             
@@ -177,7 +206,7 @@ class _NewHomePageState extends State<NewHomePage> {
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
                 itemBuilder: (context, index) => Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   child:  InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -283,13 +312,13 @@ class _NewHomePageState extends State<NewHomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 30,),
                       const  Text(
                       "Engage in an Activity",
                       textAlign: TextAlign.start,
                       style: TextStyle(),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Container(
                         width: MediaQuery.of(context).size.width*0.95,
                         padding: EdgeInsets.all(10),
@@ -334,7 +363,7 @@ class _NewHomePageState extends State<NewHomePage> {
                                     ),
                                     SizedBox(height: 2,),
                                     Text(
-                                    "Nutrition Guidancesa aksdkasdkasdlj fasdkakd asdkad",
+                                    "Get the best of nutritional facts and recommendations from health experts",
                                     style: TextStyle(
                                       color: Colors.grey,
                                       height: 0.9
@@ -395,10 +424,10 @@ class _NewHomePageState extends State<NewHomePage> {
                                     ),
                                     SizedBox(height: 2,),
                                     Text(
-                                    "Physical activites aksdkasdkasdlj fasdkakd asdkad",
+                                    "When it comes to eating right and exercising, there is no \" I\'ll start tomorrow\"",
                                     style: TextStyle(
                                       color: Colors.grey,
-                                      height: 0.9
+                                      height: 1.0
                                     ),
                                     ),
                                 ],
@@ -456,7 +485,7 @@ class _NewHomePageState extends State<NewHomePage> {
                                     ),
                                     SizedBox(height: 2,),
                                     Text(
-                                    "General Wellness aksdkasdkasdlj fasdkakd asdkad",
+                                    "The groundwork for all happiness is good health",
                                     style: TextStyle(
                                       color: Colors.grey,
                                       height: 0.9
