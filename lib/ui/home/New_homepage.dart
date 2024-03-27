@@ -54,8 +54,8 @@ class _NewHomePageState extends State<NewHomePage> {
               width: MediaQuery.of(context).size.width,
               height: 200,
               padding: const EdgeInsets.only(
-                left:30,
-                right: 30,
+                left:20,
+                right: 20,
                 top:30,
                 bottom: 5
                 ),
@@ -94,13 +94,17 @@ class _NewHomePageState extends State<NewHomePage> {
                               Text(
                                 "Hi, ${currentUser.fname}",
                                 style: TextStyle(
-                                  color: Colors.white
+                                  color: Colors.white,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.sp
                                 ),
                                 ),
                               Text(
                                 "Gender",
                               style: TextStyle(
-                                  color: Colors.white
+                                  color: Colors.white,
+                                  fontFamily: 'Poppins',
                                 ),
                                 ),
                             ],
@@ -372,9 +376,9 @@ class _NewHomePageState extends State<NewHomePage> {
                                   Container(
                                     child: Row(
                                       children: [
-                                        Container(child: Image.asset('assets/imgs/diet2.png'),),
-                                        Container(child: Image.asset('assets/imgs/med.png'),),
-                                        Container(child: Image.asset('assets/imgs/nutplus.png'),),
+                                        Container(child: Image.asset('assets/imgs/bic.png'),),
+                                        Container(child: Image.asset('assets/imgs/walk.png'),),
+                                        Container(child: Image.asset('assets/imgs/explus.png'),),
                                     
                                       ],
                                     ),
@@ -433,9 +437,9 @@ class _NewHomePageState extends State<NewHomePage> {
                                   Container(
                                     child: Row(
                                       children: [
-                                        Container(child: Image.asset('assets/imgs/diet2.png'),),
-                                        Container(child: Image.asset('assets/imgs/med.png'),),
-                                        Container(child: Image.asset('assets/imgs/nutplus.png'),),
+                                        Container(child: Image.asset('assets/imgs/playwell.png'),),
+                                        Container(child: Image.asset('assets/imgs/markwell.png'),),
+                                        Container(child: Image.asset('assets/imgs/wellplus.png'),),
                                     
                                       ],
                                     ),
