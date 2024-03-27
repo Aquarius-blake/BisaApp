@@ -184,10 +184,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(0);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/home.png',
-                        color: isSelected(0) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:15.0,
+                        right: 20.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/home.png',
+                            color: isSelected(0) ? Colors.green : null,
+                          ),
+                          Text(
+                            'Home',
+                            style:TextStyle(
+                              fontSize: 12,
+                              color: isSelected(0) ? Colors.green : null,
+                              )
+                              ),
+                        ],
                       ),
                     )),
                 FutureBuilder(
@@ -224,20 +239,35 @@ class HomePageState extends State<HomePage> {
                             : unans.isEmpty
                                 ? false
                                 : true,
-                        position: BadgePosition.topEnd(top: 10, end: 10),
+                        position: BadgePosition.topEnd(top: 2, end: 10),
                         child: InkWell(
                             onTap: () {
                               _onItemTapped(1);
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.only(
+                                left:20.0,
+                                right: 22.0,
+                                top: 12.0
+                                ),
                               // child: Image.asset('assets/imgs/cart.png',color: isSelected(1)? Colors.green:null,),
-                              child: Icon(
-                                CupertinoIcons.chat_bubble_2_fill,
-                                color: isSelected(1)
-                                    ? Colors.green
-                                    : const Color.fromRGBO(186, 185, 208, 1),
-                                size: 34,
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.chat_bubble_2_fill,
+                                    color: isSelected(1)
+                                        ? Colors.green
+                                        : const Color.fromRGBO(186, 185, 208, 1),
+                                    size: 27,
+                                  ),
+                                  Text(
+                                    "chats",
+                                  style:TextStyle(
+                                    fontSize: 12,
+                                    color: isSelected(1) ? Colors.green : null,
+                                  )
+                                  )
+                                ],
                               ),
                             )),
                       );
@@ -247,10 +277,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(2);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/Chart1.png',
-                        color: isSelected(2) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:20.0,
+                        right: 15.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/Chart1.png',
+                            color: isSelected(2) ? Colors.green : null,
+                          ),
+                          Text(
+                            'Pharmacy',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: isSelected(2) ? Colors.green : null,
+                            ),
+                            )
+                        ],
                       ),
                     )),
                 InkWell(
@@ -258,10 +303,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(3);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/person.png',
-                        color: isSelected(3) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:8.0,
+                        right: 8.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/person.png',
+                            color: isSelected(3) ? Colors.green : null,
+                          ),
+                          Text(
+                            "My Account",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: isSelected(3) ? Colors.green : null,
+                            ),
+                            )
+                        ],
                       ),
                     )),
               ],

@@ -128,7 +128,7 @@ initialize()async{
                                     ),
                                  const SizedBox(width: 2,),
                                   Text(
-                                  gender ??  "Gender",
+                                  gender ??  "     ",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontFamily: 'Poppins',
