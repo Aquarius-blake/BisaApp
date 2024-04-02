@@ -272,22 +272,34 @@ initialize()async{
               child: ListView.builder(
                 itemCount: routename.length,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) => Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 80,
-                        width: 50,
-                        child: Image.asset(routeimage[index]!),
-                      ),
-                      Text(
-                        routename[index]!,
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                itemBuilder: (BuildContext context, int index) => InkWell(
+                  onTap: (){
+                    Navigator.push(
+                                    context,
+                                    PageAnimationTransition(
+                                      pageAnimationType:
+                                          FadeAnimationTransition(),
+                                      page: routes[index],
+                                    ),
+                                  );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      horizontal: 15
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 50,
+                          child: Image.asset(routeimage[index]!),
+                        ),
+                        Text(
+                          routename[index]!,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
