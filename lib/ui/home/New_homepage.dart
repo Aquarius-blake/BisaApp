@@ -2,6 +2,7 @@
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
+import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
@@ -25,21 +26,24 @@ class _NewHomePageState extends State<NewHomePage> {
   String? gender;
   List routes = [
     StartQuestion(),
-    FitnessSplash(),
+    CycleHome(),
     WaterHome(),
-    TestingRegion()
+    TestingRegion(),
+    FitnessSplash(),
     ];
   List<String?> routename = [
     'Ask a doctor',
-    ' Fitness',
+    ' Female \nCycle',
     ' Hydration',
-    ' Labs'
+    ' Labs',
+    ' Fitness'
   ];
   List<String?> routeimage = [
     'assets/imgs/experts1.png',
-    'assets/imgs/exercise.png',
+    'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
-    'assets/imgs/microscope.png'
+    'assets/imgs/labo.png',
+    'assets/imgs/exercise.png'
   ];
 
 
@@ -197,68 +201,96 @@ initialize()async{
                 ),
               ),
             ),
+            // Container(
+            //   margin: const EdgeInsets.symmetric(
+            //     vertical: 10
+            //   ),
+            //   height: 150,
+            //   child: ListView.builder(
+            //     scrollDirection: Axis.horizontal,
+            //     itemCount: 4,
+            //     itemBuilder: (context, index) => Container(
+            //       margin: const EdgeInsets.all(15),
+            //       child:  InkWell(
+            //                     onTap: () {
+            //                       Navigator.push(
+            //                         context,
+            //                         PageAnimationTransition(
+            //                           pageAnimationType:
+            //                               FadeAnimationTransition(),
+            //                           page: routes[index],
+            //                         ),
+            //                       );
+            //                     },
+            //                     child: Container(
+            //                       width:
+            //                           MediaQuery.of(context).size.width * 0.27,
+            //                       height: 120.h,
+            //                       decoration: BoxDecoration(
+            //                         color: Colors.white,
+            //                         borderRadius: BorderRadius.circular(15),
+            //                         boxShadow: [
+            //                           BoxShadow(
+            //                              color: Colors.grey,
+            //                               spreadRadius: 1,
+            //                               blurRadius: 2,
+            //                               offset: const Offset(2, 3), 
+            //                           )
+            //                         ]
+            //                       ),
+            //                       child: Column(
+            //                         mainAxisAlignment: MainAxisAlignment.center,
+            //                         children: [
+            //                           Image.asset(routeimage[index]!,
+            //                               height: 55.h, fit: BoxFit.cover),
+            //                           SizedBox(
+            //                             height: 10.h,
+            //                           ),
+            //                           Text(
+            //                             ' ${routename[index]}',
+            //                             style: TextStyle(
+            //                               fontFamily: 'Poppins',
+            //                               fontWeight: FontWeight.w600,
+            //                               fontSize: 14.sp,
+            //                               color: const Color.fromRGBO(
+            //                                   92, 94, 86, 1),
+            //                             ),
+            //                             textAlign: TextAlign.center,
+            //                           )
+            //                         ],
+            //                       ),
+            //                     ),
+            //                   ),
+            //     )
+            //     ),
+            // ),
             Container(
-              margin: const EdgeInsets.symmetric(
+                 margin: const EdgeInsets.symmetric(
                 vertical: 10
               ),
-              height: 150,
+              height: 120,
               child: ListView.builder(
+                itemCount: routename.length,
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) => Container(
-                  margin: const EdgeInsets.all(15),
-                  child:  InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    PageAnimationTransition(
-                                      pageAnimationType:
-                                          FadeAnimationTransition(),
-                                      page: routes[index],
-                                    ),
-                                  );
-                                },
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.27,
-                                  height: 120.h,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(15),
-                                    boxShadow: [
-                                      BoxShadow(
-                                         color: Colors.grey,
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset: const Offset(2, 3), 
-                                      )
-                                    ]
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(routeimage[index]!,
-                                          height: 55.h, fit: BoxFit.cover),
-                                      SizedBox(
-                                        height: 10.h,
-                                      ),
-                                      Text(
-                                        ' ${routename[index]}',
-                                        style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.sp,
-                                          color: const Color.fromRGBO(
-                                              92, 94, 86, 1),
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                )
+                itemBuilder: (BuildContext context, int index) => Container(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 15
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 80,
+                        width: 50,
+                        child: Image.asset(routeimage[index]!),
+                      ),
+                      Text(
+                        routename[index]!,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(

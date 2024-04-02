@@ -95,7 +95,9 @@ class SplashState extends State<Splash> with TickerProviderStateMixin {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/imgs/bisa_icon.png',
+                                  'assets/imgs/bisa.png',
+                                  width: 200,
+                                  height: 200,
                                 ),
                                const Text(
                                 "Healthcare at your\n fingertips",
