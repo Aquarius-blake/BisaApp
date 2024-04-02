@@ -141,18 +141,38 @@ initialize()async{
                          const SizedBox(height: 50,),
                          InkWell(
                           onTap: ()async{
-                           await LocalNotifications.showPeriodicNotifications(
+                            try{
+                              LocalNotifications.showPeriodicNotifications(
                                 title: "Bisa Workout Reminder", 
                                 body: reminders[random.nextInt(reminders.length)], 
-                                payload: "Water Reminder", 
+                                payload: "Workout Reminder", 
                                 id: 1000, 
                                 interval: RepeatInterval.daily
                                 );
-                            await prefs.setString("remindertype", "Daily");
+                             prefs.setString("remindertype", "Daily");
                             remtype = "Daily";
+                            
                             setState(() {
                               
                             });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text("Daily Workout Reminder Activated successfully"),
+                                  duration: const Duration(seconds: 3),
+                                  backgroundColor: gender == "Male" ?Colors.amber : Colors.pink,
+                                )
+                        );
+                             }catch(e){
+                                print(e.toString());
+                                ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("An Error Occurred, Please try again later"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Colors.red,
+                                )
+                        );
+
+                             }
                             },
                            child: Container(
                             margin: EdgeInsets.symmetric(horizontal: 20.w),
