@@ -58,12 +58,33 @@ initialize()async{
         child: Scaffold(
           backgroundColor: Colors.transparent,
           extendBody: true,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+                ),
+              onPressed: (){
+                Navigator.pop(context);
+              },
+            ),
+            title: Text(
+              "Set Fitness Goals",
+               style: TextStyle(
+                color: Colors.white,
+              fontSize: 20.sp,
+              fontWeight: FontWeight.bold
+            ),),
+            centerTitle: true,
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
                   color: Colors.transparent,
-                  height:250.h,
+                  height:150.h,
                 ),
                 Container(
                   height: MediaQuery.of(context).size.height*0.9,
