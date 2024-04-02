@@ -5,6 +5,7 @@ import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
+import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,20 +31,23 @@ class _NewHomePageState extends State<NewHomePage> {
     WaterHome(),
     TestingRegion(),
     FitnessSplash(),
+    Babyhome()
     ];
   List<String?> routename = [
     'Ask a doctor',
     ' Female \nCycle',
     ' Hydration',
     ' Labs',
-    ' Fitness'
+    ' Fitness',
+    'Babies & infants'
   ];
   List<String?> routeimage = [
     'assets/imgs/experts1.png',
     'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
     'assets/imgs/labo.png',
-    'assets/imgs/exercise.png'
+    'assets/imgs/exercise.png',
+    'assets/imgs/baby.png'
   ];
 
 
@@ -304,6 +308,9 @@ initialize()async{
                 ),
               ),
             ),
+           const SizedBox(height: 10,),
+            Container(),
+           const  SizedBox(height: 10,),
             Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10
