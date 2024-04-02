@@ -35,8 +35,27 @@ final cron = Cron();
   "Hydrate yourself",
   "Drink water",
   "Water time",
-  "Stay hydrated"
-
+  "Stay hydrated",
+    "Stay hydrated, stay unstoppable!",
+    "A sip for health, a gulp for vitality!",
+    "Don't wait till you're thirsty, drink now and feel the difference!",
+    "Hydration, your body's best friend!",
+    "Water: the elixir of life. Drink up!",
+    "Sip by sip, staying refreshed and fit!",
+    "Fuel your day with water, the ultimate energy booster!",
+    "Keep calm and hydrate on!",
+    "Water, the natural remedy for a rejuvenated you!",
+    "Every drop counts, stay hydrated for peak performance!",
+    "Hydration station: where greatness begins!",
+    "H2O - Your body's superhero!",
+    "Water: the key to unlocking your full potential!",
+    "Drink water like it's your job, because it is – for your health!",
+    "Hydrate your way to success!",
+    "Pour, sip, conquer!",
+    "Water: your body's best defense against fatigue!",
+    "Don't let dehydration sneak up on you – sip smart, stay sharp!",
+    "One glass closer to your health goals!",
+    "Hydrate today for a better tomorrow!"
  ];
  late SharedPreferences prefs;
 List images = [
@@ -285,6 +304,15 @@ Future <void> _initPrefs() async{
                var duration = interval1*i;
                ids.add(i.toString());
                 print(duration);
+
+
+                LocalNotifications.showScheduledNotification(
+                          title: "Bisa Hydration Reminder", 
+                          body: reminders[random.nextInt(reminders.length)], 
+                          payload: "Water Reminder", 
+                          id: i, 
+                          interval: duration.round()
+                          );
 
                // Schedule a task that will run every 1 day
                   cron.schedule(Schedule(minutes: duration.round()), () async {
