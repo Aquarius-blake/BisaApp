@@ -308,34 +308,82 @@ initialize()async{
                 ),
               ),
             ),
-           const SizedBox(height: 10,),
-            Container(
-              height: 150,
-              width: MediaQuery.of(context).size.width*0.99,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                  image: AssetImage('assets/imgs/diet3.png'),
-                  fit: BoxFit.cover
-                ),
-              ),
+           const SizedBox(height: 20,),
+            InkWell(
+              onTap: (){},
               child: Container(
-                padding: const EdgeInsets.only(
-                  left:20,
-                  bottom: 10
+                height: 150,
+                width: MediaQuery.of(context).size.width*0.99,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: AssetImage('assets/imgs/diet3.png'),
+                    fit: BoxFit.cover
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Text("How to Eaat?"),
-                   Text("How to Eaat?"),
-                   Expanded(child: SizedBox()),
-                    Container()
-                 ],
+                child: Container(
+                  padding: const EdgeInsets.only(
+                    left:20,
+                    bottom: 10,
+                    top: 10
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                    const Text(
+                      "How to Eat?",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        height: 1.9
+                      ),
+                      ),
+                     Text(
+                      "Eat to heal, muscle gain\nweight loss, weight gain etc...",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 12,
+                        height: 1.2
+                      ),
+                      ),
+                     Expanded(child: SizedBox()),
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          bottom: 10
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 5
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow:  [
+                             BoxShadow(
+                                           color: Colors.grey.withOpacity(0.3),
+                                            spreadRadius: 1,
+                                            blurRadius: 2,
+                                            offset: const Offset(1, 2), 
+                                        )
+                          ]
+                        ),
+                        child: const Text(
+                          "Discover",
+                          style: TextStyle(
+                            color: Color(0xFFB5E255),
+                            fontStyle: FontStyle.italic,
+                            fontFamily: 'Poppins',
+                            )
+                          ),
+                      )
+                   ],
+                  ),
                 ),
               ),
             ),
-           const  SizedBox(height: 10,),
+           const  SizedBox(height: 20,),
             Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10
@@ -344,9 +392,13 @@ initialize()async{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                          const  Text(
-                      "Appointment",
+                      "Appointments",
                       textAlign: TextAlign.start,
-                      style: TextStyle(),
+                      style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromRGBO(23, 30, 60, 1),
+                      ),
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width*0.95,
