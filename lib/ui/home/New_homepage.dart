@@ -1,9 +1,11 @@
 
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
+import 'package:bisa_app/ui/home/Search_screen.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
@@ -11,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -73,6 +76,7 @@ initialize()async{
   Widget build(BuildContext context) {
     currentUser = context.read<CurrentUserProvider>().currentUser!;
     return Scaffold(
+    //  backgroundColor: Color.fromARGB(255, 253, 253, 253),
       extendBody: true,
       body: Container(
         child: SingleChildScrollView(
@@ -181,6 +185,9 @@ initialize()async{
                     Container(
                       child: Form(
                         child: TextFormField(
+                          onTap: (){
+                            PageAnimateNoRep(context, PageTransitionType.bottomToTop, SearchScreen());
+                          },
                           style: TextStyle(
                             fontSize: 12,
                             height: 0.1
