@@ -3,6 +3,7 @@
 import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Fitness/Set_fitness_goals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -199,7 +200,28 @@ initialize()async{
                       ),
                        SizedBox(height: 40.h,),
                       InkWell(
-                        onTap: (){},
+                        onTap: (){
+                         try{
+                           LocalNotifications.cancelNotification(1000);
+                          LocalNotifications.cancelNotification(2000);
+                          prefs.remove('remindertype');
+                           ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text("Workout Reminder Deactivated successfully"),
+                                  duration: const Duration(seconds: 3),
+                                  backgroundColor: gender == "Male" ?Colors.amber : Colors.pink,
+                                )
+                        );
+                         }catch(e){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("An Error Occurred, Please try again later"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Colors.red,
+                                )
+                        );
+                         }
+                        },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 60,
