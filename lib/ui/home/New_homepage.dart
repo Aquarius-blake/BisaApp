@@ -38,7 +38,7 @@ class _NewHomePageState extends State<NewHomePage> {
     ];
   List<String?> routename = [
     'Ask a doctor',
-    ' Female \nCycle',
+    ' Cycle\nTracker',
     ' Hydration',
     ' Labs',
     ' Fitness',
