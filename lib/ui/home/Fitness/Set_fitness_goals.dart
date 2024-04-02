@@ -189,17 +189,32 @@ initialize()async{
                               LocalNotifications.showPeriodicNotifications(
                                 title: "Bisa Workout Reminder", 
                                 body: reminders[random.nextInt(reminders.length)], 
-                                payload: "Water Reminder", 
+                                payload: "Workout Reminder", 
                                 id: 2000, 
                                 interval: RepeatInterval.weekly
                                 );
-                             prefs.setString("remindertype", "Daily");
+                             prefs.setString("remindertype", "Weekly");
                             remtype = "Weekly";
+                            
                             setState(() {
                               
                             });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text("Weekly Workout Reminder Activated successfully"),
+                                  duration: const Duration(seconds: 3),
+                                  backgroundColor: gender == "Male" ?Colors.amber : Colors.pink,
+                                )
+                        );
                              }catch(e){
                                 print(e.toString());
+                                ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("An Error Occurred, Please try again later"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Colors.red,
+                                )
+                        );
 
                              }
                           },
