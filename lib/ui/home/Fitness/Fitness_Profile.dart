@@ -49,11 +49,11 @@ initialize()async{
         primarySwatch: gender == "Male" ?Colors.amber : Colors.pink,
       ),
       child: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/workout/test.png"),
+            image: gender == "Male" ? const AssetImage("assets/workout/test.png"): const AssetImage("assets/workout/test2.png"),
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken)
+            colorFilter: const ColorFilter.mode(Colors.black54, BlendMode.darken)
           )
         ),
         child: Scaffold(
