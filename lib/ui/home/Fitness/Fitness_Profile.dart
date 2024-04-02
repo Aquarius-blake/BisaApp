@@ -173,7 +173,7 @@ initialize()async{
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 60,
+                            horizontal: 45,
                             vertical: 15
                             ),
                           decoration: BoxDecoration(
@@ -189,7 +189,7 @@ initialize()async{
                             ]
                           ),
                           child: Text(
-                              "Set Workout goals",
+                              "Set Workout Reminder",
                                style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 20.sp,
