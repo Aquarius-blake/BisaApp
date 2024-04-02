@@ -193,13 +193,13 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Image.asset(
                             'assets/imgs/home.png',
-                            color: isSelected(0) ? Colors.green : null,
+                            color: isSelected(0) ? const Color(0xFFB5E255) : null,
                           ),
                           Text(
                             'Home',
                             style:TextStyle(
                               fontSize: 12,
-                              color: isSelected(0) ? Colors.green : null,
+                              color: isSelected(0) ? const Color(0xFFB5E255) : null,
                               )
                               ),
                         ],
@@ -256,7 +256,7 @@ class HomePageState extends State<HomePage> {
                                   Icon(
                                     CupertinoIcons.chat_bubble_2_fill,
                                     color: isSelected(1)
-                                        ? Colors.green
+                                        ? const Color(0xFFB5E255)
                                         : const Color.fromRGBO(186, 185, 208, 1),
                                     size: 27,
                                   ),
@@ -264,7 +264,7 @@ class HomePageState extends State<HomePage> {
                                     "chats",
                                   style:TextStyle(
                                     fontSize: 12,
-                                    color: isSelected(1) ? Colors.green : null,
+                                    color: isSelected(1) ? const Color(0xFFB5E255) : null,
                                   )
                                   )
                                 ],
@@ -286,13 +286,13 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Image.asset(
                             'assets/imgs/Chart1.png',
-                            color: isSelected(2) ? Colors.green : null,
+                            color: isSelected(2) ? const Color(0xFFB5E255) : null,
                           ),
                           Text(
                             'Pharmacy',
                             style: TextStyle(
                               fontSize: 13,
-                              color: isSelected(2) ? Colors.green : null,
+                              color: isSelected(2) ? const Color(0xFFB5E255) : null,
                             ),
                             )
                         ],
@@ -312,13 +312,13 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Image.asset(
                             'assets/imgs/person.png',
-                            color: isSelected(3) ? Colors.green : null,
+                            color: isSelected(3) ? const Color(0xFFB5E255) : null,
                           ),
                           Text(
                             "My Account",
                             style: TextStyle(
                               fontSize: 12,
-                              color: isSelected(3) ? Colors.green : null,
+                              color: isSelected(3) ? const Color(0xFFB5E255) : null,
                             ),
                             )
                         ],

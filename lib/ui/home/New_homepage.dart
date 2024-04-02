@@ -369,10 +369,11 @@ initialize()async{
                           borderRadius: BorderRadius.circular(10),
                           boxShadow:  [
                              BoxShadow(
-                                           color: Colors.grey.withOpacity(0.3),
+                                           //color: Colors.grey.withOpacity(0.3),
+                                           color: Color(0xFFB5E255).withOpacity(0.3),
                                             spreadRadius: 1,
                                             blurRadius: 2,
-                                            offset: const Offset(1, 2), 
+                                            offset: const Offset(-2, -1), 
                                         )
                           ]
                         ),
@@ -380,7 +381,8 @@ initialize()async{
                           "Discover",
                           style: TextStyle(
                             color: Color(0xFFB5E255),
-                            fontStyle: FontStyle.italic,
+                            // fontStyle: FontStyle.italic,
+                            fontSize: 14,
                             fontFamily: 'Poppins',
                             )
                           ),
