@@ -309,7 +309,32 @@ initialize()async{
               ),
             ),
            const SizedBox(height: 10,),
-            Container(),
+            Container(
+              height: 150,
+              width: MediaQuery.of(context).size.width*0.99,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                  image: AssetImage('assets/imgs/diet3.png'),
+                  fit: BoxFit.cover
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(
+                  left:20,
+                  bottom: 10
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text("How to Eaat?"),
+                   Text("How to Eaat?"),
+                   Expanded(child: SizedBox()),
+                    Container()
+                 ],
+                ),
+              ),
+            ),
            const  SizedBox(height: 10,),
             Container(
               padding: const EdgeInsets.symmetric(
