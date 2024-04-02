@@ -24,6 +24,8 @@ class ChatbotScreen extends StatefulWidget {
 class _ChatbotScreenState extends State<ChatbotScreen> {
 
  late dynamic chatBotConfig;
+ List? chatmessages; 
+ List messlist = [];
 
 @override
   void initState() {
@@ -31,6 +33,21 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
     super.initState();
   }
   
+  onchatsend(List<ChatMessage> messages){
+    setState(() {
+      chatmessages = messages;
+    });
+    chatmessages!.forEach((element) {
+      chatbotmessages mess =  chatbotmessages(
+        message: element.text, 
+        isSender: element.isUser,
+        date: element.messageTime
+        );
+        messlist.add(mess.toJson());
+    });
+    print("here");
+    print(messlist);
+  }
 
   initialize(){
      chatBotConfig = IkChatBotConfig(
@@ -97,6 +114,8 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
       ),
       body: ikchatbot(
         config: chatBotConfig,
+        onchatsend: onchatsend,
+        onchatend: (some){},
       ),
     );
   }
