@@ -3,6 +3,7 @@
 import 'dart:math';
 
 import 'package:bisa_app/animation/fade_animation.dart';
+import 'package:bisa_app/services/workout_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,6 +18,9 @@ class FitnessTraining extends StatefulWidget {
 class _FitnessTrainingState extends State<FitnessTraining> {
 
 late SharedPreferences prefs;
+final WorkoutService _workoutService = WorkoutService();
+dynamic workoutresponse;
+String? gender;
 
 List titles =[
   "Pump those muscles", 
@@ -32,6 +36,34 @@ List titles =[
   ];
 Random random =  Random();
 
+@override
+  void initState() {
+    initprefs();
+    initialize();
+    super.initState();
+  }
+
+  initprefs()async{
+    prefs = await SharedPreferences.getInstance();
+    gender = await prefs.getString('gender')?? 'Male';
+  }
+  initialize()async{
+   if(gender == 'female'){
+     workoutresponse = await _workoutService.getfemaleWorkouts();
+     if(mounted){
+      setState(() {
+        
+      });
+     }
+   }else{
+     workoutresponse = await _workoutService.getMaleWorkouts();
+     if(mounted){
+      setState(() {
+        
+      });
+     }
+   }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +125,11 @@ Random random =  Random();
                     )
                   ),
             SizedBox(height: 20.h,),
-            Container(
+         workoutresponse == null ? Container() : Container(
               height: MediaQuery.of(context).size.height*0.64,
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
+                itemCount: workoutresponse.length,
                 itemBuilder: ( context , index ) => Container(
                   width: MediaQuery.of(context).size.width*0.8,
                   height: 100,
@@ -111,7 +144,7 @@ Random random =  Random();
                     // color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                      image: AssetImage("assets/workout/mabs1.png"),
+                      image: AssetImage("${workoutresponse[index]['image']}"),
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.5), 
@@ -131,7 +164,7 @@ Random random =  Random();
                     children: [
                       const SizedBox(height: 10,),
                       Text(
-                        "Workout 1",style: 
+                        "${workoutresponse[index]['name']}",style: 
                         TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 20.sp,
@@ -143,7 +176,7 @@ Random random =  Random();
                         Row(
                           children: [
                             Text(
-                              "Level: Beginner",
+                              "Level: ${workoutresponse[index]['level']}",
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14.sp,
@@ -153,7 +186,7 @@ Random random =  Random();
                             ),
                             const Expanded(child: SizedBox()),
                             Text(
-                              "Duration: 30 mins",
+                              "Duration: ${workoutresponse[index]['duration']} mins",
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14.sp,
