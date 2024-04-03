@@ -68,7 +68,7 @@ void OnpageChange(int page){
         onPageChanged: OnpageChange,
         children: [
          FitnessTraining(),
-         Fitness_fitness(),
+        // Fitness_fitness(),
           FitnessProfile(),
         ],
       ),
@@ -80,10 +80,10 @@ void OnpageChange(int page){
             icon: Icon(Icons.timer_outlined),
             label: 'Training',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: 'Fitness',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.fitness_center),
+          //   label: 'Fitness',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
