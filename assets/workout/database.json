@@ -20,7 +20,7 @@
         {
             "name":"Chest",
             "duration":30,
-            "image":"assets/workout/mabs1.png",
+            "image":"assets/workout/mchest1.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -37,7 +37,7 @@
         {
             "name":"Arm",
             "duration":30,
-            "image":"assets/workout/mabs1.png",
+            "image":"assets/workout/marm1.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
