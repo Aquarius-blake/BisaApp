@@ -1,9 +1,43 @@
 {
     "male":[
         {
-            "name":"",
-            "duration":"",
-            "image":"",
+            "name":"Abs",
+            "duration":30,
+            "image":"assets/workout/mabs1.png",
+            "level":"Beginner",
+            "noE":0,
+            "workouts":[
+                {
+                    "name":"",
+                    "gif":"",
+                    "duration":"",
+                    "level":"",
+                    "description":"",
+                    "Kcal":0
+                }
+            ]
+        },
+        {
+            "name":"Chest",
+            "duration":30,
+            "image":"assets/workout/mabs1.png",
+            "level":"Beginner",
+            "noE":0,
+            "workouts":[
+                {
+                    "name":"",
+                    "gif":"",
+                    "duration":"",
+                    "level":"",
+                    "description":"",
+                    "Kcal":0
+                }
+            ]
+        },
+        {
+            "name":"Arm",
+            "duration":30,
+            "image":"assets/workout/mabs1.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
