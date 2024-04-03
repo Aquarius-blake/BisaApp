@@ -39,14 +39,31 @@ Random random =  Random();
 @override
   void initState() {
     initprefs();
-    initialize();
+    //initialize();
     super.initState();
   }
 
   initprefs()async{
     prefs = await SharedPreferences.getInstance();
-    gender = await prefs.getString('gender')?? 'Male';
+    gender = await prefs.getString('gender') ?? 'female';
+    if(gender == 'female'){
+     workoutresponse = await _workoutService.getfemaleWorkouts();
+     if(mounted){
+      setState(() {
+        
+      });
+     }
+   }else{
+     workoutresponse = await _workoutService.getMaleWorkouts();
+     if(mounted){
+      setState(() {
+        
+      });
+     }
+   }
   }
+
+  
   initialize()async{
    if(gender == 'female'){
      workoutresponse = await _workoutService.getfemaleWorkouts();
