@@ -88,7 +88,7 @@
     ],
     "female":[
         {
-            "name":"Abs",
+            "name":"Core",
             "duration":30,
             "image":"assets/workout/fabs1.png",
             "level":"Beginner",
@@ -142,6 +142,23 @@
             "name":"Back/Shoulder",
             "duration":30,
             "image":"assets/workout/fback1.png",
+            "level":"Beginner",
+            "noE":0,
+            "workouts":[
+                {
+                    "name":"",
+                    "gif":"",
+                    "duration":"",
+                    "level":"",
+                    "description":"",
+                    "Kcal":0
+                }
+            ]
+        },
+        {
+            "name":"Glutes",
+            "duration":30,
+            "image":"assets/workout/glutes.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
