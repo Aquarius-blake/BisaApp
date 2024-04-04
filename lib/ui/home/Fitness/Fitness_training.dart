@@ -166,7 +166,14 @@ Random random =  Random();
                   itemCount: workoutresponse.length,
                   itemBuilder: ( context , index ) => InkWell(
                     onTap: (){
-                      PageAnimateNoRep(context, PageTransitionType.fade, Fitness_fitness(workoutdata: workoutresponse[index]['workouts']));
+                      PageAnimateNoRep(
+                        context, 
+                        PageTransitionType.fade,
+                         Fitness_fitness(
+                        workoutdata: workoutresponse[index]['workouts'],
+                        workout: workoutresponse[index]['name'],
+                        )
+                        );
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width*0.8,

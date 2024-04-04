@@ -1,12 +1,15 @@
 
 
+import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Fitness_fitness extends StatefulWidget {
   final dynamic workoutdata;
-  const Fitness_fitness({super.key,this.workoutdata});
+  final String workout;
+  const Fitness_fitness({super.key,this.workoutdata, required this.workout});
 
   @override
   State<Fitness_fitness> createState() => _Fitness_fitnessState();
@@ -53,6 +56,25 @@ initialize()async{
         ),
       body: Container(
         padding: const EdgeInsets.symmetric(),
+        child: Column(
+          children: [
+            SizedBox(),
+            Center(
+              child: FadeAnimation(1.2,
+                      0,
+                      30,  
+                      Text(
+                        "${widget.workout} Workout",
+                        style: TextStyle(
+                         fontFamily: 'Poppins',
+                         fontSize: 26.sp,
+                         color:  Colors.black,
+                         ),
+                        )
+                      ),
+            )
+          ],
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: InkWell(
