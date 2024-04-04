@@ -72,6 +72,29 @@ initialize()async{
                          ),
                         )
                       ),
+            ),
+            SizedBox(height: 20.h,),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: ListView.builder(
+                itemBuilder: ( context , index ) => Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 2,
+                        offset: const Offset(0, 2), // changes position of shadow
+                      ),
+                    ],
+                    ),
+                  child: Row(
+                    children: [],
+                  ),
+                )
+                ),
             )
           ],
         ),
