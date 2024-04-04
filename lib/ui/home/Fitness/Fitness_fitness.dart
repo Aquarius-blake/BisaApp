@@ -55,7 +55,9 @@ initialize()async{
         backgroundColor:Colors.transparent 
         ),
       body: Container(
-        padding: const EdgeInsets.symmetric(),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20
+        ),
         child: Column(
           children: [
             SizedBox(),
@@ -77,7 +79,11 @@ initialize()async{
             Container(
               height: MediaQuery.of(context).size.height * 0.6,
               child: ListView.builder(
+                itemCount: widget.workoutdata.length,
                 itemBuilder: ( context , index ) => Container(
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 10
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -91,7 +97,48 @@ initialize()async{
                     ],
                     ),
                   child: Row(
-                    children: [],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset(
+                      //   widget.workoutdata[index]["gif"],
+                      //   fit: BoxFit.cover,
+                      //   ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(widget.workoutdata[index]["gif"]),
+                            fit: BoxFit.fill,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                        ),
+                      ),
+                        Column(
+                          children: [
+                            Text(
+                              widget.workoutdata[index]["name"],
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 18.sp,
+                                color:  Colors.black,
+                                ),
+                                ),
+                                Text(
+                                  widget.workoutdata[index]["duration"],
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 13.sp,
+                                    color:  Colors.black,
+                                    ),
+                                ),
+                          ],
+                        ),
+                        SizedBox()
+                    ],
                   ),
                 )
                 ),
