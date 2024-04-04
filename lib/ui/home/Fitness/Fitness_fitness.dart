@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 
 class Fitness_fitness extends StatefulWidget {
-  const Fitness_fitness({super.key});
+  final dynamic workoutdata;
+  const Fitness_fitness({super.key,this.workoutdata});
 
   @override
   State<Fitness_fitness> createState() => _Fitness_fitnessState();
