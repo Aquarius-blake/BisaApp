@@ -40,10 +40,20 @@ class _WorkoutPageState extends State<WorkoutPage> {
   }
   }
 
+
+  @override
+  void dispose() {
+    _player1.dispose();
+    _player2.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      floatingActionButton: Row(
+        children: [],
+      ),
     );
   }
 }
