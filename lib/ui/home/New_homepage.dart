@@ -438,13 +438,41 @@ initialize()async{
                                 ),
                                 child: Text(""),
                               ),
-                              Text(
-                                "No appointments today, \nour specialists are waiting to assist",
-                                style: TextStyle(
-                                  fontSize: 12
-                                ),
-                                textAlign: TextAlign.center,
-                                )
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(),
+                                  Center(
+                                    child: Text(
+                                      "No appointments today, \nour specialists are waiting to assist",
+                                      style: TextStyle(
+                                        fontSize: 12
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      ),
+                                  ),
+                                 // SizedBox(),
+                                    Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: InkWell(
+                                        child: Container(
+                                          margin: EdgeInsets.only(
+                                            right: 10
+                                          ),
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Color(0xFFB5E255),
+                                          ),
+                                          child: const Icon(
+                                            Icons.add,
+                                            color: Colors.white,
+                                            ),
+                                        ),
+                                      ),
+                                    )
+                                ],
+                              )
                             ],
                           ),
                         ),
