@@ -1,9 +1,12 @@
 
 
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
+import 'package:bisa_app/ui/home/Fitness/Fitness_workout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Fitness_fitness extends StatefulWidget {
@@ -80,65 +83,70 @@ initialize()async{
               height: MediaQuery.of(context).size.height * 0.6,
               child: ListView.builder(
                 itemCount: widget.workoutdata.length,
-                itemBuilder: ( context , index ) => Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 10
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: const Offset(0, 2), // changes position of shadow
-                      ),
-                    ],
+                itemBuilder: ( context , index ) => InkWell(
+                  onTap: (){
+                    PageAnimateNoRep(context, PageTransitionType.fade, WorkoutPage(index: index,workoutdata:widget.workoutdata[index], workoutdatalist: widget.workoutdata,));
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 10
                     ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Image.asset(
-                      //   widget.workoutdata[index]["gif"],
-                      //   fit: BoxFit.cover,
-                      //   ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(widget.workoutdata[index]["gif"]),
-                            fit: BoxFit.fill,
-                          ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                          ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset: const Offset(0, 2), // changes position of shadow
                         ),
+                      ],
                       ),
-                        Column(
-                          children: [
-                            Text(
-                              widget.workoutdata[index]["name"],
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 18.sp,
-                                color:  Colors.black,
-                                ),
-                                ),
-                                Text(
-                                  widget.workoutdata[index]["duration"],
-                                  style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 13.sp,
-                                    color:  Colors.black,
-                                    ),
-                                ),
-                          ],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Image.asset(
+                        //   widget.workoutdata[index]["gif"],
+                        //   fit: BoxFit.cover,
+                        //   ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(widget.workoutdata[index]["gif"]),
+                              fit: BoxFit.fill,
+                            ),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
                         ),
-                        SizedBox()
-                    ],
+                          Column(
+                            children: [
+                              Text(
+                                widget.workoutdata[index]["name"],
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 18.sp,
+                                  color:  Colors.black,
+                                  ),
+                                  ),
+                                  Text(
+                                    widget.workoutdata[index]["duration"],
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 13.sp,
+                                      color:  Colors.black,
+                                      ),
+                                  ),
+                            ],
+                          ),
+                          SizedBox()
+                      ],
+                    ),
                   ),
                 )
                 ),
