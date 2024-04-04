@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 class WorkoutPage extends StatefulWidget {
-  const WorkoutPage({super.key});
+  final dynamic workoutdatalist;
+  final dynamic workoutdata;
+  final int index;
+  const WorkoutPage({super.key, this.workoutdata ,this.workoutdatalist,required this.index});
 
   @override
   State<WorkoutPage> createState() => _WorkoutPageState();
@@ -52,7 +55,15 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: Row(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          widget.index == 0 ?Container():FloatingActionButton(
+            onPressed: (){}
+            ),
+            widget.index == widget.workoutdatalist.length-1 ?Container():FloatingActionButton(
+            onPressed: (){}
+            )
+        ],
       ),
     );
   }
