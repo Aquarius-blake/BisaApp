@@ -8,12 +8,58 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"",
-                    "gif":"",
-                    "duration":"",
+                    "name":"Planks",
+                    "gif":"assets/workout/plank2.png",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"30-60 seconds",
+                    "reptimer":30,
                     "level":"",
-                    "description":"",
-                    "Kcal":0
+                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "instructions":[
+                        "Get into a push-up position on the floor.",
+                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
+                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
+                        "Hold the position for as long as possible.",
+                        "Remember to breathe."
+                    ],
+                    "Kcal":11
+                },
+                {
+                    "name":"Bicycle Crunches",
+                    "gif":"assets/workout/bicycle.gif",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"12-15 reps",
+                    "reptimer":180,
+                    "level":"",
+                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "instructions":[
+                        "Get into a push-up position on the floor.",
+                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
+                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
+                        "Hold the position for as long as possible.",
+                        "Remember to breathe."
+                    ],
+                    "Kcal":11
+                },
+                {
+                    "name":"Leg Raises",
+                    "gif":"assets/workout/legraise.gif",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"30-60 seconds",
+                    "reptimer":30,
+                    "level":"",
+                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "instructions":[
+                        "Get into a push-up position on the floor.",
+                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
+                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
+                        "Hold the position for as long as possible.",
+                        "Remember to breathe."
+                    ],
+                    "Kcal":11
                 }
             ]
         },
