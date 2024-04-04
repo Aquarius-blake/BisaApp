@@ -33,31 +33,31 @@
                     "reps":"12-15 reps",
                     "reptimer":180,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        "Lie on your back with your hands behind your head.",
+                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
+                        "Bring your right elbow towards your left knee while straightening your right leg.",
+                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
+                        "Continue alternating sides in a pedaling motion."
                     ],
-                    "Kcal":11
+                    "Kcal":45
                 },
                 {
                     "name":"Leg Raises",
                     "gif":"assets/workout/legraise.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
-                    "reps":"30-60 seconds",
+                    "reps":"10-15 reps",
                     "reptimer":30,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        "Lie on your back with your legs straight and your arms by your sides.",
+                        "Lift your legs off the ground until they are perpendicular to the floor.",
+                        "Slowly lower your legs back down to the starting position.",
+                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":11
                 }
@@ -141,12 +141,58 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"",
-                    "gif":"",
-                    "duration":"",
+                    "name":"Planks",
+                    "gif":"assets/workout/plank2.png",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"30-60 seconds",
+                    "reptimer":30,
                     "level":"",
-                    "description":"",
-                    "Kcal":0
+                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "instructions":[
+                        "Get into a push-up position on the floor.",
+                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
+                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
+                        "Hold the position for as long as possible.",
+                        "Remember to breathe."
+                    ],
+                    "Kcal":11
+                },
+                {
+                    "name":"Bicycle Crunches",
+                    "gif":"assets/workout/bicycle.gif",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"12-15 reps",
+                    "reptimer":180,
+                    "level":"",
+                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "instructions":[
+                        "Lie on your back with your hands behind your head.",
+                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
+                        "Bring your right elbow towards your left knee while straightening your right leg.",
+                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
+                        "Continue alternating sides in a pedaling motion."
+                    ],
+                    "Kcal":45
+                },
+                {
+                    "name":"Leg Raises",
+                    "gif":"assets/workout/legraise.gif",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"10-15 reps",
+                    "reptimer":30,
+                    "level":"",
+                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "instructions":[
+                        "Lie on your back with your legs straight and your arms by your sides.",
+                        "Lift your legs off the ground until they are perpendicular to the floor.",
+                        "Slowly lower your legs back down to the starting position.",
+                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Repeat for the specified duration."
+                    ],
+                    "Kcal":11
                 }
             ]
         },
