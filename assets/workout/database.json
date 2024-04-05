@@ -14,6 +14,7 @@
                     "sets":3,
                     "reps":"30-60 seconds",
                     "reptimer":30,
+                    "breaktimer":60,
                     "level":"",
                     "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
                     "instructions":[
@@ -32,6 +33,7 @@
                     "sets":3,
                     "reps":"12-15 reps",
                     "reptimer":180,
+                    "breaktimer":120,
                     "level":"",
                     "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
                     "instructions":[
@@ -50,6 +52,7 @@
                     "sets":3,
                     "reps":"10-15 reps",
                     "reptimer":30,
+                    "breaktimer":60,
                     "level":"",
                     "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
                     "instructions":[
@@ -147,6 +150,7 @@
                     "sets":3,
                     "reps":"30-60 seconds",
                     "reptimer":30,
+                    "breaktimer":60,
                     "level":"",
                     "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
                     "instructions":[
@@ -165,6 +169,7 @@
                     "sets":3,
                     "reps":"12-15 reps",
                     "reptimer":180,
+                    "breaktimer":120,
                     "level":"",
                     "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
                     "instructions":[
@@ -183,6 +188,7 @@
                     "sets":3,
                     "reps":"10-15 reps",
                     "reptimer":30,
+                    "breaktimer":60,
                     "level":"",
                     "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
                     "instructions":[

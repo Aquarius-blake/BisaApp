@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:timer_count_down/timer_controller.dart';
+import 'package:timer_count_down/timer_count_down.dart';
 
 class WorkoutPage extends StatefulWidget {
   final dynamic workoutdatalist;
@@ -15,11 +18,16 @@ class WorkoutPage extends StatefulWidget {
 class _WorkoutPageState extends State<WorkoutPage> {
   final _player1 = AudioPlayer();
   final _player2 = AudioPlayer();
+  final CountdownController _controller = CountdownController();
+  int currentset = 1;
+  late int timer;
 
 
   @override
   void initState() {
-    
+    _setupAudioPlayers();
+    timer = widget.workoutdata['reptimer'];
+    _controller.start();
     super.initState();
   }
 
@@ -53,17 +61,234 @@ class _WorkoutPageState extends State<WorkoutPage> {
 
   @override
   Widget build(BuildContext context) {
+    _controller.start();
     return Scaffold(
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          widget.index == 0 ?Container():FloatingActionButton(
-            onPressed: (){}
-            ),
-            widget.index == widget.workoutdatalist.length-1 ?Container():FloatingActionButton(
-            onPressed: (){}
-            )
-        ],
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_outlined),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+      ),
+      body: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 10,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.workoutdata['name'],
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    widget.workoutdata['description'],
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.h,),
+              Container(
+                child: Image.asset(
+                  widget.workoutdata['gif'],
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(height:  20.h,),
+              Countdown(
+                seconds: timer, 
+                controller: _controller,
+                onFinished: (){
+                  if(currentset < widget.workoutdata['sets']){
+                    currentset++;
+                    setState(() {
+                      timer = widget.workoutdata['reptimer'];
+                    });
+                    _controller.restart();
+                    _player1.play();
+                    Future.delayed(Duration(seconds: 10),(){
+                      _player1.stop();
+                      _player1.seek(Duration.zero);
+                    });
+                  }else{
+                    currentset = 0;
+                    setState(() {
+                      timer = widget.workoutdata['breaktimer'];
+                    });
+                    _controller.restart();
+                    _player2.play();
+                    Future.delayed(Duration(seconds: 10),(){
+                      _player2.stop();
+                      _player2.seek(Duration.zero);
+                    });
+                  }
+                },
+                build: (BuildContext context,double time) => Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Set: ',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        currentset.toString(),
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Next Set in: ',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "${time}s",
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                )
+              // Row(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     Column(
+              //       children: [
+              //         Container(
+              //           padding: const EdgeInsets.all(15),
+              //           decoration: BoxDecoration(
+              //             shape: BoxShape.circle,
+              //             color: Color(0xFFB5E255),
+              //           ),
+              //           child: Icon(
+              //             Icons.play_arrow,
+              //             color: Colors.white,
+              //           ),
+              //         ),
+              //         const SizedBox(height: 10),
+              //         Text(
+              //           'Start Workout',
+              //           style: const TextStyle(
+              //             fontSize: 20,
+              //             fontWeight: FontWeight.bold,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //      Column(
+              //   children: [
+              //     Container(
+              //       padding: const EdgeInsets.all(15),
+              //       decoration: BoxDecoration(
+              //         shape: BoxShape.circle,
+              //         color: Color(0xFFB5E255),
+              //       ),
+              //       child: Icon(
+              //         Icons.pause,
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //     const SizedBox(height: 10),
+              //     Text(
+              //       'Pause Workout',
+              //       style: const TextStyle(
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.bold,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Column(
+              //   children: [
+              //     Container(
+              //       padding: const EdgeInsets.all(15),
+              //       decoration: BoxDecoration(
+              //         shape: BoxShape.circle,
+              //         color: Color(0xFFB5E255),
+              //       ),
+              //       child: Icon(
+              //         Icons.stop,
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //     const SizedBox(height: 10),
+              //     Text(
+              //       'Stop Workout',
+              //       style: const TextStyle(
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.bold,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              //   ],
+              // ),
+             
+            ],
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 10,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            widget.index == 0 ?Container():Container(
+              padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFB5E255),
+                ),
+                child: Icon(
+                  Icons.arrow_back_ios_outlined,
+                  color: Colors.white,
+                  ),
+                ),
+              widget.index == widget.workoutdatalist.length-1 ?Container():Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFB5E255),
+                ),
+                child: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.white,
+                  ),
+                
+              )
+          ],
+        ),
       ),
     );
   }
