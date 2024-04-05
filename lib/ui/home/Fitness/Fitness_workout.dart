@@ -18,6 +18,7 @@ class WorkoutPage extends StatefulWidget {
 class _WorkoutPageState extends State<WorkoutPage> {
   final _player1 = AudioPlayer();
   final _player2 = AudioPlayer();
+  final _player3 = AudioPlayer();
   final CountdownController _controller = CountdownController();
   int currentset = 1;
   late int timer;
@@ -43,9 +44,15 @@ class _WorkoutPageState extends State<WorkoutPage> {
       print("A Stream error occured: ${e.toString()}");
     }
   );
+  _player3.playbackEventStream.listen((event) { },
+    onError: (Object e, StackTrace stacktrace){
+      print("A Stream error occured: ${e.toString()}");
+    }
+  );
   try{
     _player1.setAudioSource(AudioSource.asset('assets/workout/nextset.mp3'));
      _player2.setAudioSource(AudioSource.asset('assets/workout/break.wav'));
+     _player3.setAudioSource(AudioSource.asset('assets/workout/good.wav'));
   }catch(e){
      print("Error Loading audio source: ${e.toString()}"); 
   }
@@ -56,12 +63,15 @@ class _WorkoutPageState extends State<WorkoutPage> {
   void dispose() {
     _player1.dispose();
     _player2.dispose();
+    _player3.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    _controller.start();
+   Future.delayed(Duration(seconds: 3),(){
+     _controller.start();
+   });
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -121,17 +131,24 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       timer = widget.workoutdata['reptimer'];
                     });
                     _controller.restart();
+                    _controller.pause();
                     _player1.play();
                     Future.delayed(Duration(seconds: 10),(){
                       _player1.stop();
                       _player1.seek(Duration.zero);
                     });
+                  }else if(currentset == 0){
+                    if(widget.index == widget.workoutdatalist.length-1){
+                       _player3.play();
+                    Future.delayed(Duration(seconds: 5),(){});
+                    }
                   }else{
                     currentset = 0;
                     setState(() {
                       timer = widget.workoutdata['breaktimer'];
                     });
                     _controller.restart();
+                    _controller.pause();
                     _player2.play();
                     Future.delayed(Duration(seconds: 10),(){
                       _player2.stop();
