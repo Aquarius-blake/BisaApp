@@ -1,7 +1,9 @@
 
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
@@ -140,7 +142,15 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   }else if(currentset == 0){
                     if(widget.index == widget.workoutdatalist.length-1){
                        _player3.play();
-                    Future.delayed(Duration(seconds: 5),(){});
+                    Future.delayed(const Duration(seconds: 7),(){
+                      Navigator.pop(context);
+                    });
+                    }else{
+                        _player3.play();
+                    Future.delayed(const Duration(seconds: 7),(){
+                      PagetransAnimate(context, PageTransitionType.fade, WorkoutPage(index: widget.index+1, workoutdatalist: widget.workoutdatalist, workoutdata: widget.workoutdatalist[widget.index+1]));
+                    });
+                      
                     }
                   }else{
                     currentset = 0;
