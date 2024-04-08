@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
@@ -36,6 +38,7 @@ class _NewHomePageState extends State<NewHomePage> {
   late SharedPreferences prefs;
   String? gender;
   List Indexcategories=[4,10,12,2,5,3];
+  Random random = Random();
 
   List routes = [
     StartQuestion(),
@@ -688,11 +691,57 @@ initialize()async{
                             color: Color.fromRGBO(23, 30, 60, 1),
                       ),
                       ),
-                      SizedBox(height: 40,),
-                      ListView.builder(
-                        itemCount: Indexcategories.length,
-                        itemBuilder: (context, index)=> Container()
+                      const SizedBox(height: 40,),
+                      Container(
+                        height: 200,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(4, currentUser),
+                          ),
+                           Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(10, currentUser),
+                          ),
+                           Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(12, currentUser),
+                          ),
+                           Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(2, currentUser),
+                          ),
+                           Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(5, currentUser),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:8.0
+                              ),
+                             // child: buildRandomArticle(5, currentUser),
+                            child: buildRandomArticle(3, currentUser),
+                          ),
+                          ],
                         )
+                      )
                 ],
               ),
             ),
@@ -709,6 +758,7 @@ initialize()async{
 }
 
  FadeAnimation buildRandomArticle(int index,currentUser) {
+  Random rand = Random();
     return FadeAnimation(
       1.2,
       -30,
@@ -724,10 +774,62 @@ initialize()async{
               return const Center(
                 child: Text('Sorry, unable to load articles'),
               );
-            } else {
+            } else if(snapshot.hasData){ 
               List res = snapshot.data;
+              print(res);
+              // if(res.length > 1) {
+              //   dynamic article = res[rand.nextInt(res.length - 1)];
+              // }else{
+              //   dynamic article = res[rand.nextInt(res.length)];
+              // }
+              dynamic article = res[rand.nextInt(res.length)];
               return Container(
-               
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: NetworkImage(article['image']),
+                    fit: BoxFit.cover,
+                    )
+                ),
+               child:Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.transparent
+                      ),
+                      child: Text(""),
+                    ),
+                    Container(
+                      height: 110,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                          colors: [
+                            // Colors.transparent,
+                            // Colors.transparent,
+                            // Colors.transparent,
+                            Colors.white.withOpacity(0.1),
+                            Colors.white.withOpacity(0.3),
+                            Colors.white.withOpacity(0.4),
+                            Colors.white.withOpacity(0.5),
+                            Colors.white.withOpacity(0.6),
+                            Colors.white.withOpacity(0.7),
+                            Colors.white.withOpacity(0.8),
+                            Colors.white.withOpacity(0.9)
+                          ]
+                          )
+                      ),
+                      child: Text(""),
+                    ),
+                    ],
+                ),
+               )
               );
               // return Column(
               //   mainAxisSize: MainAxisSize.min,
@@ -884,6 +986,8 @@ initialize()async{
               //     );
               //   }).toList(),
               // );
+            }else{
+              return CircularProgressIndicator.adaptive();
             }
           }),
     );
