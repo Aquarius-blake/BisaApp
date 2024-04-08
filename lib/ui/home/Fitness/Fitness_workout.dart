@@ -74,6 +74,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
     _player2.dispose();
     _player3.dispose();
     _player4.dispose();
+    
     super.dispose();
   }
 
