@@ -35,7 +35,7 @@ class _DietHomeState extends State<DietHome> {
           centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 20,
           vertical: 20
         ),
