@@ -35,6 +35,45 @@ class _DietHomeState extends State<DietHome> {
           centerTitle: true,
       ),
       body: Container(),
+      floatingActionButton: InkWell(
+        onTap: (){},
+        child: Container(
+          height: 50,
+          margin: EdgeInsets.only(
+            left: 30
+          ),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xFFB5E255),
+            borderRadius: BorderRadius.circular(15)
+          ),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/imgs/dietimage.png")
+                      )
+                  ),
+                  child: Text(""),
+                ),
+                Text(
+                  "SPEAK TO A DIETICIAN",
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                  textAlign: TextAlign.center,
+                  ),
+              ],
+            )
+          ),
+        )
+        ),
     );
   }
 }

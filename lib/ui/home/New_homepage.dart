@@ -17,14 +17,11 @@ import 'package:bisa_app/ui/tips/tip_details.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
-import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class NewHomePage extends StatefulWidget {
   const NewHomePage({super.key});
@@ -783,53 +780,83 @@ initialize()async{
               //   dynamic article = res[rand.nextInt(res.length)];
               // }
               dynamic article = res[rand.nextInt(res.length)];
-              return Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: NetworkImage(article['image']),
-                    fit: BoxFit.cover,
-                    )
-                ),
-               child:Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.transparent
+              return InkWell(
+                onTap: (){
+                  PageAnimateNoRep(context, PageTransitionType.fade, TipDetails(article: article));
+                },
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                      image: NetworkImage(article['image']),
+                      fit: BoxFit.cover,
+                      )
+                  ),
+                 child:Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 5
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Text(article['category'])
+                          ),
                       ),
-                      child: Text(""),
-                    ),
-                    Container(
-                      height: 110,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                          colors: [
-                            // Colors.transparent,
-                            // Colors.transparent,
-                            // Colors.transparent,
-                            Colors.white.withOpacity(0.1),
-                            Colors.white.withOpacity(0.3),
-                            Colors.white.withOpacity(0.4),
-                            Colors.white.withOpacity(0.5),
-                            Colors.white.withOpacity(0.6),
-                            Colors.white.withOpacity(0.7),
-                            Colors.white.withOpacity(0.8),
-                            Colors.white.withOpacity(0.9)
-                          ]
-                          )
+                      Container(
+                        height: 110,
+                        width: 200,
+                        padding: const  EdgeInsets.symmetric(
+                          horizontal: 5,
+                          vertical: 15
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                            colors: [
+                              // Colors.transparent,
+                              // Colors.transparent,
+                              // Colors.transparent,
+                              Colors.white.withOpacity(0.1),
+                              Colors.white.withOpacity(0.3),
+                              Colors.white.withOpacity(0.4),
+                              Colors.white.withOpacity(0.5),
+                              Colors.white.withOpacity(0.6),
+                              Colors.white.withOpacity(0.7),
+                              Colors.white.withOpacity(0.8),
+                              Colors.white.withOpacity(0.9),
+                              Colors.white
+                            ]
+                            )
+                        ),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            article['title'],
+                            style: TextStyle(
+                              fontSize: 20
+                            ),
+                            ),
+                        ),
                       ),
-                      child: Text(""),
-                    ),
-                    ],
+                      ],
+                  ),
+                 )
                 ),
-               )
               );
               // return Column(
               //   mainAxisSize: MainAxisSize.min,
