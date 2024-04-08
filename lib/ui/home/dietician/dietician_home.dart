@@ -1,6 +1,9 @@
 
+import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/ui/home/dietician/diet_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 
 class DietHome extends StatefulWidget {
   const DietHome({super.key});
@@ -55,7 +58,9 @@ class _DietHomeState extends State<DietHome> {
           ),
       ),
       floatingActionButton: InkWell(
-        onTap: (){},
+        onTap: (){
+          PageAnimateNoRep(context, PageTransitionType.fade, DietDetailPage());
+        },
         child: Container(
           height: 50,
           margin: EdgeInsets.only(
