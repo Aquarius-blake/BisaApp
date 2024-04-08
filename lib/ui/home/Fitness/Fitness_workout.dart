@@ -61,7 +61,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
     _player1.setAudioSource(AudioSource.asset('assets/workout/nextset.mp3'));
      _player2.setAudioSource(AudioSource.asset('assets/workout/break.wav'));
      _player3.setAudioSource(AudioSource.asset('assets/workout/good.wav'));
-      _player4.setAudioSource(AudioSource.asset('assets/workout/congrats.wav'));
+      _player4.setAudioSource(AudioSource.asset('assets/workout/congrats1.wav'));
   }catch(e){
      print("Error Loading audio source: ${e.toString()}"); 
   }
@@ -73,6 +73,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
     _player1.dispose();
     _player2.dispose();
     _player3.dispose();
+    _player4.dispose();
     super.dispose();
   }
 
@@ -317,7 +318,9 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   ),
             ),
               widget.index == widget.workoutdatalist.length-1 ?Container():InkWell(
-                onTap: (){},
+                onTap: (){
+                  PagetransAnimate(context, PageTransitionType.fade, WorkoutPage(index: widget.index+1, workoutdatalist: widget.workoutdatalist, workoutdata: widget.workoutdatalist[widget.index+1]));
+                },
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
