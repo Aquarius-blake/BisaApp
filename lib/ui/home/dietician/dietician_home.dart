@@ -34,7 +34,17 @@ class _DietHomeState extends State<DietHome> {
           ),
           centerTitle: true,
       ),
-      body: Container(),
+      body: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [],
+          )
+          ),
+      ),
       floatingActionButton: InkWell(
         onTap: (){},
         child: Container(
