@@ -41,7 +41,16 @@ class _DietHomeState extends State<DietHome> {
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: [],
+            children: [
+              const Text(
+                      "How to Eat?",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                      ),
+            ],
           )
           ),
       ),
