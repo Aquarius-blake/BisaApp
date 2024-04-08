@@ -9,7 +9,7 @@
             "workouts":[
                 {
                     "name":"Planks",
-                    "gif":"assets/workout/plank2.png",
+                    "gif":"assets/workout/plank.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",

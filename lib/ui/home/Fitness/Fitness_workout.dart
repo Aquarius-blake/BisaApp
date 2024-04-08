@@ -21,6 +21,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
   final _player1 = AudioPlayer();
   final _player2 = AudioPlayer();
   final _player3 = AudioPlayer();
+  final _player4 = AudioPlayer();
   final CountdownController _controller = CountdownController();
   int currentset = 1;
   late int timer;
@@ -46,15 +47,21 @@ class _WorkoutPageState extends State<WorkoutPage> {
       print("A Stream error occured: ${e.toString()}");
     }
   );
-  _player3.playbackEventStream.listen((event) { },
-    onError: (Object e, StackTrace stacktrace){
-      print("A Stream error occured: ${e.toString()}");
-    }
-  );
+    _player3.playbackEventStream.listen((event) { },
+      onError: (Object e, StackTrace stacktrace){
+        print("A Stream error occured: ${e.toString()}");
+      }
+    );
+     _player4.playbackEventStream.listen((event) { },
+      onError: (Object e, StackTrace stacktrace){
+        print("A Stream error occured: ${e.toString()}");
+      }
+    );
   try{
     _player1.setAudioSource(AudioSource.asset('assets/workout/nextset.mp3'));
      _player2.setAudioSource(AudioSource.asset('assets/workout/break.wav'));
      _player3.setAudioSource(AudioSource.asset('assets/workout/good.wav'));
+      _player4.setAudioSource(AudioSource.asset('assets/workout/congrats.wav'));
   }catch(e){
      print("Error Loading audio source: ${e.toString()}"); 
   }
@@ -127,7 +134,21 @@ class _WorkoutPageState extends State<WorkoutPage> {
                 seconds: timer, 
                 controller: _controller,
                 onFinished: (){
-                  if(currentset < widget.workoutdata['sets']){
+                if(currentset == 0){
+                    if(widget.index == widget.workoutdatalist.length-1){
+                     
+                       _player4.play();
+                    Future.delayed(const Duration(seconds: 7),(){
+                      Navigator.pop(context);
+                    });
+                    }else{
+                        _player3.play();
+                    Future.delayed(const Duration(seconds: 7),(){
+                      PagetransAnimate(context, PageTransitionType.fade, WorkoutPage(index: widget.index+1, workoutdatalist: widget.workoutdatalist, workoutdata: widget.workoutdatalist[widget.index+1]));
+                    });
+                      
+                    }
+                  }else if(currentset < widget.workoutdata['sets']){
                     currentset++;
                     setState(() {
                       timer = widget.workoutdata['reptimer'];
@@ -139,23 +160,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       _player1.stop();
                       _player1.seek(Duration.zero);
                     });
-                  }else if(currentset == 0){
-                    if(widget.index == widget.workoutdatalist.length-1){
-                       _player3.play();
-                    Future.delayed(const Duration(seconds: 7),(){
-                      Navigator.pop(context);
-                    });
-                    }else{
-                        _player3.play();
-                    Future.delayed(const Duration(seconds: 7),(){
-                      PagetransAnimate(context, PageTransitionType.fade, WorkoutPage(index: widget.index+1, workoutdatalist: widget.workoutdatalist, workoutdata: widget.workoutdatalist[widget.index+1]));
-                    });
-                      
-                    }
                   }else{
-                    currentset = 0;
+                   
                     setState(() {
                       timer = widget.workoutdata['breaktimer'];
+                       currentset = 0; 
                     });
                     _controller.restart();
                     _controller.pause();
@@ -291,28 +300,36 @@ class _WorkoutPageState extends State<WorkoutPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            widget.index == 0 ?Container():Container(
-              padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xFFB5E255),
-                ),
-                child: Icon(
-                  Icons.arrow_back_ios_outlined,
-                  color: Colors.white,
-                  ),
-                ),
-              widget.index == widget.workoutdatalist.length-1 ?Container():Container(
+            widget.index == 0 ?Container():InkWell(
+              onTap: (){
+                PagetransAnimate(context, PageTransitionType.fade, WorkoutPage(index: widget.index-1, workoutdatalist: widget.workoutdatalist, workoutdata: widget.workoutdatalist[widget.index-1]));
+              },
+              child: Container(
                 padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xFFB5E255),
-                ),
-                child: Icon(
-                  Icons.arrow_forward_ios_outlined,
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFB5E255),
                   ),
-                
+                  child: Icon(
+                    Icons.arrow_back_ios_outlined,
+                    color: Colors.white,
+                    ),
+                  ),
+            ),
+              widget.index == widget.workoutdatalist.length-1 ?Container():InkWell(
+                onTap: (){},
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFB5E255),
+                  ),
+                  child: Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Colors.white,
+                    ),
+                  
+                ),
               )
           ],
         ),
