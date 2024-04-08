@@ -15,7 +15,10 @@ class _DietHomeState extends State<DietHome> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.white,
+            ),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -28,7 +31,8 @@ class _DietHomeState extends State<DietHome> {
             fontFamily: 'Poppins',
             fontSize: 20.sp,
           ),
-          )
+          ),
+          centerTitle: true,
       ),
       body: Container(),
     );

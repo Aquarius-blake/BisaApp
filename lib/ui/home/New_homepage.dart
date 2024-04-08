@@ -1,21 +1,28 @@
 
 import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
+import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
 import 'package:bisa_app/ui/home/Search_screen.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
+import 'package:bisa_app/ui/home/dietician/dietician_home.dart';
+import 'package:bisa_app/ui/tips/tip_details.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class NewHomePage extends StatefulWidget {
   const NewHomePage({super.key});
@@ -28,6 +35,8 @@ class _NewHomePageState extends State<NewHomePage> {
   late CurrentUser currentUser;
   late SharedPreferences prefs;
   String? gender;
+  List Indexcategories=[4,10,12,2,5,3];
+
   List routes = [
     StartQuestion(),
     CycleHome(),
@@ -75,6 +84,7 @@ initialize()async{
   @override
   Widget build(BuildContext context) {
     currentUser = context.read<CurrentUserProvider>().currentUser!;
+    //print(currentUser.token);
     return Scaffold(
     //  backgroundColor: Color.fromARGB(255, 253, 253, 253),
       extendBody: true,
@@ -317,7 +327,9 @@ initialize()async{
             ),
            const SizedBox(height: 20,),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                PageAnimateNoRep(context, PageTransitionType.fade, DietHome());
+              },
               child: Container(
                 height: 150,
                 width: MediaQuery.of(context).size.width*0.99,
@@ -666,9 +678,25 @@ initialize()async{
                           ],
                         ),
                       ),
+                      SizedBox(height: 40,),
+            const  Text(
+                      "Health Tips & Articles",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromRGBO(23, 30, 60, 1),
+                      ),
+                      ),
+                      SizedBox(height: 40,),
+                      ListView.builder(
+                        itemCount: Indexcategories.length,
+                        itemBuilder: (context, index)=> Container()
+                        )
                 ],
               ),
             ),
+            
           SizedBox(
             height: 200,
           )
@@ -679,3 +707,184 @@ initialize()async{
     );
   }
 }
+
+ FadeAnimation buildRandomArticle(int index,currentUser) {
+    return FadeAnimation(
+      1.2,
+      -30,
+      0,
+      FutureBuilder(
+          future: getArticles({'id': index, 'token': currentUser.token}),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (!snapshot.hasData) {
+              return const Center(
+                child: CircularProgressIndicator.adaptive(),
+              );
+            } else if (snapshot.hasError) {
+              return const Center(
+                child: Text('Sorry, unable to load articles'),
+              );
+            } else {
+              List res = snapshot.data;
+              return Container(
+               
+              );
+              // return Column(
+              //   mainAxisSize: MainAxisSize.min,
+              //   children: res.reversed.take(3).map((e) {
+              //     var day = DateFormat('EEEE')
+              //         .format(
+              //           DateTime.parse(e['created_at']),
+              //         )
+              //         .substring(0, 3);
+              //     var num = DateFormat('d').format(
+              //       DateTime.parse(e['created_at']),
+              //     );
+
+              //     var desc = e['intro'] ??
+              //         "This is an awesome article to read. Check it out.";
+              //     return InkWell(
+              //       onTap: () {
+              //         Navigator.push(
+              //           context,
+              //           PageAnimationTransition(
+              //             pageAnimationType: RightToLeftFadedTransition(),
+              //             page: TipDetails(
+              //               article: e,
+              //             ),
+              //           ),
+              //         );
+              //       },
+              //       child: Column(
+              //         mainAxisSize: MainAxisSize.min,
+              //         children: [
+              //           Container(
+              //             height: 100.h,
+              //             width: 1.sw - 25.w,
+              //             decoration: BoxDecoration(
+              //                 color: Colors.white,
+              //                 borderRadius: BorderRadius.circular(15),
+              //                 boxShadow: const [
+              //                   BoxShadow(
+              //                     color: Color.fromRGBO(0, 0, 0, .21),
+              //                     blurRadius: 20,
+              //                     offset: Offset(0, 10),
+              //                   )
+              //                 ]),
+              //             child: Row(
+              //               children: [
+              //                 ClipRRect(
+              //                   borderRadius: BorderRadius.circular(15),
+              //                   child: SizedBox(
+              //                     width: 120.w,
+              //                     child: Hero(
+              //                       tag: '${e['image']}',
+              //                       child: FadeInImage.memoryNetwork(
+              //                         placeholder: kTransparentImage,
+              //                         image: '${e['image']}',
+              //                         fit: BoxFit.cover,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 SizedBox(
+              //                   width: 12.w,
+              //                 ),
+              //                 Expanded(
+              //                   child: Column(
+              //                     mainAxisAlignment: MainAxisAlignment.center,
+              //                     crossAxisAlignment: CrossAxisAlignment.start,
+              //                     children: [
+              //                       Text(
+              //                         '${e['title']}',
+              //                         style: TextStyle(
+              //                           fontFamily: 'Poppins',
+              //                           fontSize: 16.sp,
+              //                           fontWeight: FontWeight.w600,
+              //                           // letterSpacing: 2,
+              //                           height: 0.99,
+              //                           color: const Color.fromRGBO(
+              //                               97, 99, 95, 0.98),
+              //                         ),
+              //                         maxLines: 2,
+              //                       ),
+              //                       SizedBox(
+              //                         height: 5.h,
+              //                       ),
+              //                       // Html(
+              //                       //   data:'${e['content'].split('>')[2]}',
+              //                       //   shrinkWrap: true,
+              //                       // ),
+              //                       Text(
+              //                         desc,
+              //                         style: TextStyle(
+              //                           fontFamily: 'Lato',
+              //                           fontSize: 10.sp,
+              //                           fontWeight: FontWeight.w400,
+              //                           color: const Color.fromRGBO(
+              //                               109, 109, 109, 1),
+              //                         ),
+              //                         maxLines: 2,
+              //                         overflow: TextOverflow.ellipsis,
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+              //                 Container(
+              //                   width: 40.w,
+              //                   height: 60.h,
+              //                   decoration: BoxDecoration(
+              //                       color: Colors.white,
+              //                       borderRadius: BorderRadius.circular(8),
+              //                       boxShadow: const [
+              //                         BoxShadow(
+              //                           color: Color.fromRGBO(0, 0, 0, .18),
+              //                           blurRadius: 20,
+              //                           offset: Offset(0, 10),
+              //                         )
+              //                       ]),
+              //                   child: Column(
+              //                     mainAxisAlignment: MainAxisAlignment.center,
+              //                     children: [
+              //                       Text(
+              //                         day.toUpperCase(),
+              //                         style: TextStyle(
+              //                           fontFamily: 'Poppins',
+              //                           fontSize: 13.sp,
+              //                           fontWeight: FontWeight.w400,
+              //                           color: const Color.fromRGBO(
+              //                               108, 112, 106, 1),
+              //                         ),
+              //                       ),
+              //                       SizedBox(
+              //                         height: 3.h,
+              //                       ),
+              //                       Text(
+              //                         num,
+              //                         style: TextStyle(
+              //                           fontFamily: 'Poppins',
+              //                           fontSize: 15.sp,
+              //                           fontWeight: FontWeight.w400,
+              //                           color: const Color.fromRGBO(
+              //                               108, 112, 106, 1),
+              //                         ),
+              //                       )
+              //                     ],
+              //                   ),
+              //                 ),
+              //                 SizedBox(
+              //                   width: 5.w,
+              //                 )
+              //               ],
+              //             ),
+              //           ),
+              //           SizedBox(height: 10.h)
+              //         ],
+              //       ),
+              //     );
+              //   }).toList(),
+              // );
+            }
+          }),
+    );
+  }
