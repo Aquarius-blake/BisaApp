@@ -12,6 +12,7 @@ class _DietDetailPageState extends State<DietDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 230, 229, 229),
       body: Container(),
        floatingActionButton: InkWell(
         onTap: (){},

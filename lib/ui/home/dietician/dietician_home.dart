@@ -16,6 +16,7 @@ class _DietHomeState extends State<DietHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 230, 229, 229),
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
@@ -44,15 +45,182 @@ class _DietHomeState extends State<DietHome> {
         ),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                      "How to Eat?",
+                      "Lose belly fat",
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                       ),
+                      SizedBox(height:20.h),
+                      Container(
+                        height: 140,
+                        width: MediaQuery.of(context).size.width*0.9,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 20
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: const DecorationImage(
+                            image: AssetImage('assets/imgs/lowcal.png'),
+                            fit: BoxFit.cover
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Low Calorie",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color.fromRGBO(23, 30, 60, 1),
+                              ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.6,
+                                child: const Text(
+                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  style: TextStyle(
+                                    height: 1.0
+                                  ),
+                                  ),
+                              )
+                          ],
+                        ),
+                      ),
+                      SizedBox(height:20.h),
+                      Container(
+                        height: 140,
+                        width: MediaQuery.of(context).size.width*0.9,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 20
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: const DecorationImage(
+                            image: AssetImage('assets/imgs/lowfat.png'),
+                            fit: BoxFit.cover
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Low Fat",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color.fromRGBO(23, 30, 60, 1),
+                              ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.6,
+                                child: const Text(
+                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  style: TextStyle(
+                                    height: 1.0
+                                  ),
+                                  ),
+                              )
+                          ],
+                        ),
+                      ),
+                      SizedBox(height:20.h),
+                      const Text(
+                      "Building Muscle",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                      ),
+                      SizedBox(height:20.h),
+                      Container(
+                        height: 140,
+                        width: MediaQuery.of(context).size.width*0.9,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 20
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: const DecorationImage(
+                            image: AssetImage('assets/imgs/highprot.png'),
+                            fit: BoxFit.cover
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "High Protein",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color.fromRGBO(23, 30, 60, 1),
+                              ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.6,
+                                child: const Text(
+                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  style: TextStyle(
+                                    height: 1.0
+                                  ),
+                                  ),
+                              )
+                          ],
+                        ),
+                      ),
+                      SizedBox(height:20.h),
+                      Container(
+                        height: 140,
+                        width: MediaQuery.of(context).size.width*0.9,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 20
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: const DecorationImage(
+                            image: AssetImage('assets/imgs/highcal.png'),
+                            fit: BoxFit.cover
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "High Calcium",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color.fromRGBO(23, 30, 60, 1),
+                              ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.6,
+                                child: const Text(
+                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  style: TextStyle(
+                                    height: 1.0
+                                  ),
+                                  ),
+                              )
+                          ],
+                        ),
+                      ),
+                      SizedBox(height:20.h),
             ],
           )
           ),
@@ -79,13 +247,17 @@ class _DietHomeState extends State<DietHome> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  height: 40,
+                  width: 30,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/imgs/dietimage.png")
+                      image: AssetImage("assets/imgs/dietimage.png"),
+                      fit: BoxFit.fill
                       )
                   ),
                   child: Text(""),
                 ),
+                SizedBox(width: 10),
                 Text(
                   "SPEAK TO A DIETICIAN",
                   style: TextStyle(
