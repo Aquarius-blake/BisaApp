@@ -106,8 +106,8 @@ initialize()async{
                     RotatedBox(
                       quarterTurns: 3,
                       child: Container(
-                        height: 400,
-                        width: 400,
+                        height: 450,
+                        width: 450,
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
@@ -132,7 +132,7 @@ initialize()async{
                                 //color: Colors.blue,
                                 image: const DecorationImage(
                                   image: AssetImage("assets/workout/malegym2.png"),
-                                  fit: BoxFit.contain
+                                  fit: BoxFit.cover
                                   )
                               ),
                               child: Text(""),
@@ -144,8 +144,8 @@ initialize()async{
                     RotatedBox(
                       quarterTurns: 3,
                       child: Container(
-                        height: 400,
-                        width: 400,
+                        height: 450,
+                        width: 450,
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
@@ -163,11 +163,11 @@ initialize()async{
                               ),
                             ),
                             Container(
-                              width: 400,
-                              height: 400,
+                              width: 450,
+                              height: 450,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                //color: Colors.blue,
+                               // color: Colors.blue,
                                 image: DecorationImage(
                                   image: AssetImage("assets/workout/femalegym2.png"),
                                   fit: BoxFit.cover

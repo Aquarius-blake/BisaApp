@@ -3,6 +3,7 @@
 import 'package:bisa_app/ui/home/Fitness/Fitness_Profile.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_training.dart';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FitnessHome extends StatefulWidget {
@@ -19,13 +20,29 @@ class _FitnessHomeState extends State<FitnessHome> {
   late PageController pageController;
   String? gender;
   int _pageIndex = 0;
+  final AudioPlayer _player = AudioPlayer();
 
 
 @override
   void initState() {
     pageController = PageController();
     initialize();
+    _setupplayer();
     super.initState();
+  }
+
+  Future<void>_setupplayer()async{
+    _player.playbackEventStream.listen((event) { },
+    onError: (Object e, StackTrace stacktrace){
+      print("A Stream error occured: ${e.toString()}");
+    }
+  );
+  try {
+   _player.setAudioSource(AudioSource.asset('assets/workout/workoutintro.wav'));
+   Future.delayed(const Duration(seconds: 1), () => _player.play());
+  } catch (e) {
+    print("Error Loading audio source: ${e.toString()}"); 
+  }
   }
 
 initialize()async{
@@ -56,6 +73,7 @@ void OnpageChange(int page){
 @override
   void dispose() {
     pageController.dispose();
+    _player.dispose();
     super.dispose();
   }
 

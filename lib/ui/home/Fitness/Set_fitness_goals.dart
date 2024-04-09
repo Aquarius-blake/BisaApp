@@ -79,7 +79,7 @@ initialize()async{
       child: Container(
         decoration:  BoxDecoration(
           image: DecorationImage(
-            image: gender == "Male" ? const AssetImage("assets/workout/test.png"): const AssetImage("assets/workout/test2.png"),
+            image: gender == "Male" ? const AssetImage("assets/workout/test3.png"): const AssetImage("assets/workout/test4.png"),
             fit: BoxFit.cover,
             colorFilter: const ColorFilter.mode(Colors.black54, BlendMode.darken)
           )
