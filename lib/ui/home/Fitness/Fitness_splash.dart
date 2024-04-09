@@ -91,7 +91,7 @@ initialize()async{
                ),
              Container(
               width: MediaQuery.of(context).size.width*0.8,
-              height: 400,
+              height: 450,
                child: RotatedBox(
                 quarterTurns: 1,
                  child: ListWheelScrollView(
@@ -115,8 +115,8 @@ initialize()async{
                               child: Transform.rotate(
                                 angle: 0.8,
                                 child: Container(
-                                  height: 200,
-                                  width: 200,
+                                  height: 170,
+                                  width: 170,
                                   decoration: BoxDecoration(
                                     color: selectedindex == 0 ? Colors.amber:Colors.transparent,
                                     borderRadius: BorderRadius.circular(20)
@@ -125,14 +125,14 @@ initialize()async{
                               ),
                             ),
                             Container(
-                              width: 400,
-                              height: 400,
+                              width: 450,
+                              height: 450,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 //color: Colors.blue,
-                                image: DecorationImage(
-                                  image: AssetImage("assets/workout/malegym.png"),
-                                  fit: BoxFit.cover
+                                image: const DecorationImage(
+                                  image: AssetImage("assets/workout/malegym2.png"),
+                                  fit: BoxFit.contain
                                   )
                               ),
                               child: Text(""),

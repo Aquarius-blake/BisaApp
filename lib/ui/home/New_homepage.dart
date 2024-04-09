@@ -14,6 +14,7 @@ import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
 import 'package:bisa_app/ui/home/dietician/dietician_home.dart';
 import 'package:bisa_app/ui/tips/tip_details.dart';
+import 'package:bisa_app/ui/tips/tips_page.dart';
 import 'package:bisa_app/ui/vaccination/testing_region.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,6 +40,7 @@ class _NewHomePageState extends State<NewHomePage> {
 
   List routes = [
     StartQuestion(),
+    TipsPage(),
     CycleHome(),
     WaterHome(),
     TestingRegion(),
@@ -47,19 +49,22 @@ class _NewHomePageState extends State<NewHomePage> {
     ];
   List<String?> routename = [
     'Ask a doctor',
+    ' Emergencies',
     ' Cycle\nTracker',
     ' Hydration',
     ' Labs',
     ' Fitness',
-    'Babies & infants'
+    'Babies & infants',
   ];
   List<String?> routeimage = [
-    'assets/imgs/experts1.png',
+    'assets/imgs/doc.png',
+    'assets/imgs/bandaid.png',
     'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
     'assets/imgs/labo.png',
     'assets/imgs/exercise.png',
-    'assets/imgs/baby.png'
+    'assets/imgs/baby.png',
+    
   ];
 
 
