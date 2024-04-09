@@ -1,6 +1,7 @@
 
 import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/ui/home/dietician/diet_details.dart';
+import 'package:bisa_app/ui/home/dietician/speak_dietician.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
@@ -27,7 +28,7 @@ class _DietHomeState extends State<DietHome> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Color.fromRGBO(23, 30, 60, 1),
+        backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
         title: Text(
           'Diet & Nutrition',
           style: TextStyle(
@@ -56,42 +57,47 @@ class _DietHomeState extends State<DietHome> {
                       ),
                       ),
                       SizedBox(height:20.h),
-                      Container(
-                        height: 140,
-                        width: MediaQuery.of(context).size.width*0.9,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 20
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage('assets/imgs/lowcal.png'),
-                            fit: BoxFit.cover
-                            )
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Low Calorie",
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: Color.fromRGBO(23, 30, 60, 1),
-                              ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.6,
-                                child: const Text(
-                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
-                                  style: TextStyle(
-                                    height: 1.0
-                                  ),
-                                  ),
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Lose belly fat" ,description: "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.", title: "Low Calorie", intro: ""));
+                        },
+                        child: Container(
+                          height: 140,
+                          width: MediaQuery.of(context).size.width*0.9,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 20
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/imgs/lowcal.png'),
+                              fit: BoxFit.cover
                               )
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Low Calorie",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width*0.6,
+                                  child: const Text(
+                                    "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                    style: TextStyle(
+                                      height: 1.0
+                                    ),
+                                    ),
+                                )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height:20.h),
@@ -124,7 +130,7 @@ class _DietHomeState extends State<DietHome> {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width*0.6,
                                 child: const Text(
-                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  "Elevate Your Health with Low-Fat Options: Enjoy Delicious, Lighter Fare for a Healthier You",
                                   style: TextStyle(
                                     height: 1.0
                                   ),
@@ -172,7 +178,7 @@ class _DietHomeState extends State<DietHome> {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width*0.6,
                                 child: const Text(
-                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  "Boost Your Strength with High-Protein Choices: Fuel Your Body, Build Muscle, and Thrive.",
                                   style: TextStyle(
                                     height: 1.0
                                   ),
@@ -211,7 +217,7 @@ class _DietHomeState extends State<DietHome> {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width*0.6,
                                 child: const Text(
-                                  "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
+                                  "Discover the Benefits of High-Calcium Foods: Support Your Health and Wellness with Delicious, Nutrient-Rich Options.",
                                   style: TextStyle(
                                     height: 1.0
                                   ),
@@ -220,14 +226,14 @@ class _DietHomeState extends State<DietHome> {
                           ],
                         ),
                       ),
-                      SizedBox(height:20.h),
+                      SizedBox(height:80.h),
             ],
           )
           ),
       ),
       floatingActionButton: InkWell(
         onTap: (){
-          PageAnimateNoRep(context, PageTransitionType.fade, DietDetailPage());
+          PageAnimateNoRep(context, PageTransitionType.fade, Dieticanspeak());
         },
         child: Container(
           height: 50,
