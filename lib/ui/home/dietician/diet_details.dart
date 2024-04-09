@@ -51,9 +51,55 @@ class _DietDetailPageState extends State<DietDetailPage> {
               ),
               SizedBox(height: 20.h,),
               Text(
-                widget.title,
+                "${widget.title} Foods",
                 textAlign: TextAlign.left,
-                )
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 30.sp,
+                  color: const Color.fromRGBO(23, 30, 60, 1),
+                ),
+                ),
+                SizedBox(height: 20.h,),
+                Text(
+                  widget.intro,
+                  style: TextStyle(),
+                  ),
+                  SizedBox(height: 30.h,),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal: 20
+                    ),
+                    width: MediaQuery.of(context).size.width *0.9,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.title,
+                        style: const TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                        SizedBox(height: 15.h,),
+                        Text(
+                          widget.description,
+                          textAlign: TextAlign.justify,
+                          style: const TextStyle(
+                            fontFamily: 'Poppins',
+                            color: Color.fromRGBO(23, 30, 60, 1),
+                          ),
+                          )
+                      ],
+                    ),
+                  )
             ],
           ),
         ),
