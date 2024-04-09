@@ -169,7 +169,7 @@ initialize()async{
                                 borderRadius: BorderRadius.circular(20),
                                 //color: Colors.blue,
                                 image: DecorationImage(
-                                  image: AssetImage("assets/workout/femalegym.png"),
+                                  image: AssetImage("assets/workout/femalegym2.png"),
                                   fit: BoxFit.cover
                                   )
                               ),
