@@ -32,7 +32,9 @@ class _DietDetailPageState extends State<DietDetailPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    }, 
                   icon: const Icon(
                     Icons.arrow_back_ios_new_outlined,
                     color: Color.fromRGBO(23, 30, 60, 1),

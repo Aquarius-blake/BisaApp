@@ -59,7 +59,7 @@ class _DietHomeState extends State<DietHome> {
                       SizedBox(height:20.h),
                       InkWell(
                         onTap: (){
-                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Lose belly fat" ,description: "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.", title: "Low Calorie", intro: ""));
+                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Lose belly fat" ,description: "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.", title: "Low Calorie", intro: "Integrate Nutrient-Dense Choices into Your Diet to Facilitate Weight  Management, Elevate Energy Levels, and Cultivate Holistic Well-Being"));
                         },
                         child: Container(
                           height: 140,
@@ -101,42 +101,47 @@ class _DietHomeState extends State<DietHome> {
                         ),
                       ),
                       SizedBox(height:20.h),
-                      Container(
-                        height: 140,
-                        width: MediaQuery.of(context).size.width*0.9,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 20
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage('assets/imgs/lowfat.png'),
-                            fit: BoxFit.cover
-                            )
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Low Fat",
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: Color.fromRGBO(23, 30, 60, 1),
-                              ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.6,
-                                child: const Text(
-                                  "Elevate Your Health with Low-Fat Options: Enjoy Delicious, Lighter Fare for a Healthier You",
-                                  style: TextStyle(
-                                    height: 1.0
-                                  ),
-                                  ),
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Lose belly fat" ,description: "Elevate Your Health with Low-Fat Options: Enjoy Delicious, Lighter Fare for a Healthier You", title: "Low Fat", intro: "Integrate Nutrient-Dense Choices into Your Diet to Facilitate Weight  Management, Elevate Energy Levels, and Cultivate Holistic Well-Being"));
+                        },
+                        child: Container(
+                          height: 140,
+                          width: MediaQuery.of(context).size.width*0.9,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 20
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/imgs/lowfat.png'),
+                              fit: BoxFit.cover
                               )
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Low Fat",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width*0.6,
+                                  child: const Text(
+                                    "Elevate Your Health with Low-Fat Options: Enjoy Delicious, Lighter Fare for a Healthier You",
+                                    style: TextStyle(
+                                      height: 1.0
+                                    ),
+                                    ),
+                                )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height:20.h),
@@ -149,81 +154,91 @@ class _DietHomeState extends State<DietHome> {
                       ),
                       ),
                       SizedBox(height:20.h),
-                      Container(
-                        height: 140,
-                        width: MediaQuery.of(context).size.width*0.9,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 20
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage('assets/imgs/highprot.png'),
-                            fit: BoxFit.cover
-                            )
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "High Protein",
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: Color.fromRGBO(23, 30, 60, 1),
-                              ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.6,
-                                child: const Text(
-                                  "Boost Your Strength with High-Protein Choices: Fuel Your Body, Build Muscle, and Thrive.",
-                                  style: TextStyle(
-                                    height: 1.0
-                                  ),
-                                  ),
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Building Muscle" ,description: "Boost Your Strength with High-Protein Choices: Fuel Your Body, Build Muscle, and Thrive.", title: "High Protein", intro: "Integrate Nutrient-Dense Choices into Your Diet to Facilitate Weight  Management, Elevate Energy Levels, and Cultivate Holistic Well-Being"));
+                        },
+                        child: Container(
+                          height: 140,
+                          width: MediaQuery.of(context).size.width*0.9,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 20
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/imgs/highprot.png'),
+                              fit: BoxFit.cover
                               )
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "High Protein",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width*0.6,
+                                  child: const Text(
+                                    "Boost Your Strength with High-Protein Choices: Fuel Your Body, Build Muscle, and Thrive.",
+                                    style: TextStyle(
+                                      height: 1.0
+                                    ),
+                                    ),
+                                )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height:20.h),
-                      Container(
-                        height: 140,
-                        width: MediaQuery.of(context).size.width*0.9,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 20
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage('assets/imgs/highcal.png'),
-                            fit: BoxFit.cover
-                            )
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "High Calcium",
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: Color.fromRGBO(23, 30, 60, 1),
-                              ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.6,
-                                child: const Text(
-                                  "Discover the Benefits of High-Calcium Foods: Support Your Health and Wellness with Delicious, Nutrient-Rich Options.",
-                                  style: TextStyle(
-                                    height: 1.0
-                                  ),
-                                  ),
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, DietDetailPage(category: "Building Muscle" ,description: "Discover the Benefits of High-Calcium Foods: Support Your Health and Wellness with Delicious, Nutrient-Rich Options.", title: "High Calcium", intro: "Integrate Nutrient-Dense Choices into Your Diet to Facilitate Weight  Management, Elevate Energy Levels, and Cultivate Holistic Well-Being"));
+                        },
+                        child: Container(
+                          height: 140,
+                          width: MediaQuery.of(context).size.width*0.9,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 20
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/imgs/highcal.png'),
+                              fit: BoxFit.cover
                               )
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "High Calcium",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width*0.6,
+                                  child: const Text(
+                                    "Discover the Benefits of High-Calcium Foods: Support Your Health and Wellness with Delicious, Nutrient-Rich Options.",
+                                    style: TextStyle(
+                                      height: 1.0
+                                    ),
+                                    ),
+                                )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height:80.h),
