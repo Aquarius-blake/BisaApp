@@ -184,15 +184,15 @@
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":60,
+                    "reptimer":100,
                     "breaktimer":300,
                     "level":"",
                     "description":"Get ready to sculpt and strengthen your biceps with this intense biceps curl workout.Biceps curls with rings or a bar are effective exercises for targeting the biceps muscles. ",
                     "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Hold the dumbbells with an underhand grip (palms facing up).",
+                        "Curl the dumbbells towards your shoulders, keeping your elbows close to your sides.",
+                        "Slowly lower the dumbbells back to the starting position.",
                         "Repeat for the specified duration."
                     ],
                     "Kcal":11
