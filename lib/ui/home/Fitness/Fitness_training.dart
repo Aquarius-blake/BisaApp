@@ -48,7 +48,7 @@ Random random =  Random();
 
   initprefs()async{
     prefs = await SharedPreferences.getInstance();
-    gender = await prefs.getString('gender') ?? 'male';
+    gender = await prefs.getString('gender') ?? 'female';
     if(gender == 'female'){
      workoutresponse = await _workoutService.getfemaleWorkouts();
      if(mounted){

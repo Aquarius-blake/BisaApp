@@ -335,7 +335,7 @@
         {
             "name":"Core",
             "duration":30,
-            "image":"assets/workout/fabs1.png",
+            "image":"assets/workout/fabs2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -401,7 +401,7 @@
         {
             "name":"Chest",
             "duration":30,
-            "image":"assets/workout/fchest1.png",
+            "image":"assets/workout/fchest2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -467,7 +467,7 @@
         {
             "name":"Arms",
             "duration":30,
-            "image":"assets/workout/farm1.png",
+            "image":"assets/workout/farm3.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -533,7 +533,7 @@
         {
             "name":"Back/Shoulder",
             "duration":30,
-            "image":"assets/workout/fback1.png",
+            "image":"assets/workout/fback2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -599,7 +599,7 @@
         {
             "name":"Glutes",
             "duration":30,
-            "image":"assets/workout/glutes.png",
+            "image":"assets/workout/glutes2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -665,7 +665,7 @@
         {
             "name":"Legs",
             "duration":30,
-            "image":"assets/workout/fleg1.png",
+            "image":"assets/workout/fleg2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
