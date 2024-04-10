@@ -246,19 +246,19 @@
                 },
                 {
                     "name":"Upright Row",
-                    "gif":"assets/workout/legraise.gif",
+                    "gif":"assets/workout/row.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":30,
+                    "reptimer":90,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your shoulders with this intense upright row workout. Upright rows are compound exercises primarily targeting the deltoid muscles of the shoulders, as well as the trapezius and the muscles of the upper back.",
                     "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Stand with your feet shoulder-width apart and a barbell in front of your thighs.",
+                        "Grasp the barbell with an overhand grip slightly narrower than shoulder-width apart.",
+                        "Pull the barbell up towards your chin, keeping your elbows high and close to your body.",
+                        "Slowly lower the barbell back to the starting position.",
                         "Repeat for the specified duration."
                     ],
                     "Kcal":11
