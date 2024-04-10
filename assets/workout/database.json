@@ -110,6 +110,25 @@
                         "Repeat for the specified duration."
                     ],
                     "Kcal":45
+                },
+                {
+                    "name":"Push ups",
+                    "gif":"assets/workout/push.gif",
+                    "duration":"5-10 minutes",
+                    "sets":3,
+                    "reps":"12-15 reps",
+                    "reptimer":30,
+                    "breaktimer":300,
+                    "level":"",
+                    "description":"Push-ups are a classic bodyweight exercise that target the chest, shoulders, triceps, and core muscles.",
+                    "instructions":[
+                        "Get into a push-up position with your hands slightly wider than shoulder-width apart.",
+                        "Lower your body until your chest nearly touches the ground.",
+                        "Push through your palms to return to the starting position.",
+                        "Keep your core engaged and your body in a straight line throughout the movement.",
+                        "Repeat for the specified duration."
+                    ],
+                    "Kcal":45
                 }
 
             ]
@@ -127,7 +146,7 @@
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
-                    "reptimer":30,
+                    "reptimer":75,
                     "breaktimer":300,
                     "level":"",
                     "description":"Hammer curls are an effective arm exercise that primarily targets the biceps brachii, brachialis, and brachioradialis muscles.",
@@ -138,37 +157,37 @@
                         "Slowly lower the dumbbells back to the starting position.",
                         "Repeat for the specified duration."
                     ],
-                    "Kcal":11
+                    "Kcal":14
                 },
                 {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
-                    "duration":"5-10 minutes",
+                    "name":"Push ups",
+                    "gif":"assets/workout/push.gif",
+                    "duration":"3-8 minutes",
                     "sets":3,
                     "reps":"12-15 reps",
-                    "reptimer":180,
+                    "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "description":"Push-ups are a classic bodyweight exercise that target the chest, shoulders, triceps, and core muscles.",
                     "instructions":[
-                        "Lie on your back with your hands behind your head.",
-                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
-                        "Bring your right elbow towards your left knee while straightening your right leg.",
-                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
-                        "Continue alternating sides in a pedaling motion."
+                        "Get into a push-up position with your hands slightly wider than shoulder-width apart.",
+                        "Lower your body until your chest nearly touches the ground.",
+                        "Push through your palms to return to the starting position.",
+                        "Keep your core engaged and your body in a straight line throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
+                    "name":"Biceps curls",
                     "gif":"assets/workout/legraise.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":30,
+                    "reptimer":60,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your biceps with this intense biceps curl workout.Biceps curls with rings or a bar are effective exercises for targeting the biceps muscles. ",
                     "instructions":[
                         "Lie on your back with your legs straight and your arms by your sides.",
                         "Lift your legs off the ground until they are perpendicular to the floor.",
