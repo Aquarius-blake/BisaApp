@@ -130,13 +130,13 @@
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Hammer curls are an effective arm exercise that primarily targets the biceps brachii, brachialis, and brachioradialis muscles.",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Hold the dumbbells with a neutral grip (palms facing each other).",
+                        "Curl the dumbbells towards your shoulders, keeping your elbows close to your sides.",
+                        "Slowly lower the dumbbells back to the starting position.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":11
                 },
