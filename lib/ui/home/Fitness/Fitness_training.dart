@@ -68,7 +68,7 @@ Random random =  Random();
 
 
   initialize()async{
-   if(gender == 'female'){
+   if(gender == 'Female'){
      workoutresponse = await _workoutService.getfemaleWorkouts();
      if(mounted){
       setState(() {
