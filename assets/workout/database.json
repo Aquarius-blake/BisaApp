@@ -3,7 +3,7 @@
         {
             "name":"Abs",
             "duration":30,
-            "image":"assets/workout/mabs1.png",
+            "image":"assets/workout/mabs2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -69,7 +69,7 @@
         {
             "name":"Chest",
             "duration":30,
-            "image":"assets/workout/mchest1.png",
+            "image":"assets/workout/mchest2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -135,7 +135,7 @@
         {
             "name":"Arms",
             "duration":30,
-            "image":"assets/workout/marm1.png",
+            "image":"assets/workout/marm2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -201,7 +201,7 @@
         {
             "name":"Back/Shoulder",
             "duration":30,
-            "image":"assets/workout/mback1.png",
+            "image":"assets/workout/mback2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
@@ -267,7 +267,7 @@
         {
             "name":"Legs",
             "duration":30,
-            "image":"assets/workout/mleg1.png",
+            "image":"assets/workout/mleg2.png",
             "level":"Beginner",
             "noE":0,
             "workouts":[
