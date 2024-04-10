@@ -74,62 +74,44 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Hammer Press",
+                    "gif":"assets/workout/hammer1.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"The hammer press is typically performed on a chest press machine or using dumbbells. It targets the muscles of the chest, shoulders, and triceps.",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        "Sit on the chest press machine with your back flat against the backrest.",
+                        "Grasp the handles with a neutral grip (palms facing each other).",
+                        "Press the handles forward until your arms are fully extended.",
+                        "Slowly return to the starting position.",
+                        "Repeat for the specified duration."
                     ],
-                    "Kcal":11
+                    "Kcal":20
                 },
                 {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
+                    "name":"Incline Bench Press",
+                    "gif":"assets/workout/ben.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"12-15 reps",
-                    "reptimer":180,
+                    "reptimer":60,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "description":"Get ready to engage your upper chest with this incline bench press workout.The incline bench press is a variation of the traditional bench press exercise that primarily targets the upper portion of the chest muscles,",
                     "instructions":[
-                        "Lie on your back with your hands behind your head.",
-                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
-                        "Bring your right elbow towards your left knee while straightening your right leg.",
-                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
-                        "Continue alternating sides in a pedaling motion."
-                    ],
-                    "Kcal":45
-                },
-                {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
-                    "duration":"5-10 minutes",
-                    "sets":3,
-                    "reps":"10-15 reps",
-                    "reptimer":30,
-                    "breaktimer":300,
-                    "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
-                    "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Lie on an incline bench with your feet flat on the floor.",
+                        "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart.",
+                        "Lower the barbell to your chest, keeping your elbows at a 45-degree angle.",
+                        "Press the barbell back up to the starting position.",
                         "Repeat for the specified duration."
                     ],
-                    "Kcal":11
+                    "Kcal":45
                 }
+
             ]
         },
         {
@@ -140,8 +122,8 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Hammer Curls",
+                    "gif":"assets/workout/hcurl.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
