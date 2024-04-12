@@ -85,11 +85,75 @@ initialize()async{
   }
 }
 
+void _getlist(){
+  if(gender=='Male'){
+     routes = [
+    StartQuestion(),
+    TipsPage(),
+   // CycleHome(),
+    WaterHome(),
+    TestingRegion(),
+    FitnessSplash(),
+    Babyhome()
+    ];
+   routename = [
+    'Ask a doctor',
+    ' Emergencies',
+   // ' Cycle\nTracker',
+    ' Hydration',
+    ' Labs',
+    ' Fitness',
+    'Babies & infants',
+  ];
+   routeimage = [
+    'assets/imgs/doc.png',
+    'assets/imgs/bandaid.png',
+  //  'assets/imgs/femcycle.png',
+    'assets/imgs/hydration.png',
+    'assets/imgs/labo.png',
+    'assets/imgs/exercise.png',
+    'assets/imgs/baby.png',
+    
+  ];
+    }else{
+      routes = [
+    StartQuestion(),
+    TipsPage(),
+    CycleHome(),
+    WaterHome(),
+    TestingRegion(),
+    FitnessSplash(),
+    Babyhome()
+    ];
+   routename = [
+    'Ask a doctor',
+    ' Emergencies',
+    ' Cycle\nTracker',
+    ' Hydration',
+    ' Labs',
+    ' Fitness',
+    'Babies & infants',
+  ];
+   routeimage = [
+    'assets/imgs/doc.png',
+    'assets/imgs/bandaid.png',
+    'assets/imgs/femcycle.png',
+    'assets/imgs/hydration.png',
+    'assets/imgs/labo.png',
+    'assets/imgs/exercise.png',
+    'assets/imgs/baby.png',
+    
+  ];
+    }
+}
+
   
   @override
   Widget build(BuildContext context) {
+    _getlist();
     currentUser = context.read<CurrentUserProvider>().currentUser!;
-    //print(currentUser.token);
+    //print(currentUser.gender);
+    
     return Scaffold(
     //  backgroundColor: Color.fromARGB(255, 253, 253, 253),
       extendBody: true,

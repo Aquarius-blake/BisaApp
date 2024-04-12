@@ -130,7 +130,7 @@ initialize()async{
                                 widget.workoutdata[index]["name"],
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
-                                  fontSize: 18.sp,
+                                  fontSize: 17.sp,
                                   color:  Colors.black,
                                   ),
                                   ),
@@ -156,7 +156,9 @@ initialize()async{
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: InkWell(
-        onTap: (){},
+        onTap: (){
+          PageAnimateNoRep(context, PageTransitionType.fade, WorkoutPage(index: 0,workoutdata:widget.workoutdata[0], workoutdatalist: widget.workoutdata,));
+        },
         child: Container(
             height: 50,
             width: 200,

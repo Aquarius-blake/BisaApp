@@ -49,6 +49,7 @@ initialize()async{
 
   @override
   Widget build(BuildContext context) {
+    //prefs.remove('gender');
     return gender!=null? FitnessHome() : Scaffold(
       body: Center(
         child: Container(
@@ -187,6 +188,11 @@ initialize()async{
              SizedBox(
               child: InkWell(
                 onTap: (){
+                  if(selectedindex == 0){
+                    prefs.setString('gender','Male');
+                  }else{
+                    prefs.setString('gender','female');
+                  }
                   PagetransAnimate(context, PageTransitionType.fade, FitnessHome());
                 },
                 child: Container(
