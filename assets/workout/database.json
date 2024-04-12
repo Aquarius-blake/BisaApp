@@ -180,7 +180,7 @@
                 },
                 {
                     "name":"Biceps curls",
-                    "gif":"assets/workout/legraise.gif",
+                    "gif":"assets/workout/biceps.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
@@ -307,15 +307,15 @@
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Squats",
+                    "gif":"assets/workout/squats.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your legs with some intense squat workout. Squats are compound exercises that target multiple muscle groups, including the quadriceps, hamstrings, glutes, and core muscles. ",
                     "instructions":[
                         "Lie on your back with your legs straight and your arms by your sides.",
                         "Lift your legs off the ground until they are perpendicular to the floor.",
@@ -403,15 +403,15 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Dumbbell Shoulder Press",
+                    "gif":"assets/workout/should.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
-                    "reptimer":30,
+                    "reptimer":60,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to strengthen your chest muscles with this Dumbbell Shoulder Press workout. The dumbbell shoulder press is a compound exercise that primarily targets the deltoid muscles of the shoulders, as well as the triceps and upper chest",
                     "instructions":[
                         "Get into a push-up position on the floor.",
                         "Bend your elbows 90 degrees and rest your weight on your forearms.",
@@ -422,39 +422,39 @@
                     "Kcal":11
                 },
                 {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
-                    "duration":"5-10 minutes",
+                    "name":"Push ups",
+                    "gif":"assets/workout/push.gif",
+                    "duration":"3-8 minutes",
                     "sets":3,
                     "reps":"12-15 reps",
-                    "reptimer":180,
+                    "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "description":"Push-ups are a classic bodyweight exercise that target the chest, shoulders, triceps, and core muscles.",
                     "instructions":[
-                        "Lie on your back with your hands behind your head.",
-                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
-                        "Bring your right elbow towards your left knee while straightening your right leg.",
-                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
-                        "Continue alternating sides in a pedaling motion."
+                        "Get into a push-up position with your hands slightly wider than shoulder-width apart.",
+                        "Lower your body until your chest nearly touches the ground.",
+                        "Push through your palms to return to the starting position.",
+                        "Keep your core engaged and your body in a straight line throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Biceps curls",
+                    "gif":"assets/workout/biceps.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":30,
+                    "reptimer":100,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your biceps with this intense biceps curl workout.Biceps curls with rings or a bar are effective exercises for targeting the biceps muscles. ",
                     "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Hold the dumbbells with an underhand grip (palms facing up).",
+                        "Curl the dumbbells towards your shoulders, keeping your elbows close to your sides.",
+                        "Slowly lower the dumbbells back to the starting position.",
                         "Repeat for the specified duration."
                     ],
                     "Kcal":11
@@ -469,58 +469,58 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Hammer Curls",
+                    "gif":"assets/workout/hcurl.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
+                    "reptimer":75,
+                    "breaktimer":300,
+                    "level":"",
+                    "description":"Hammer curls are an effective arm exercise that primarily targets the biceps brachii, brachialis, and brachioradialis muscles.",
+                    "instructions":[
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Hold the dumbbells with a neutral grip (palms facing each other).",
+                        "Curl the dumbbells towards your shoulders, keeping your elbows close to your sides.",
+                        "Slowly lower the dumbbells back to the starting position.",
+                        "Repeat for the specified duration."
+                    ],
+                    "Kcal":14
+                },
+                {
+                    "name":"Push ups",
+                    "gif":"assets/workout/push.gif",
+                    "duration":"3-8 minutes",
+                    "sets":3,
+                    "reps":"12-15 reps",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Push-ups are a classic bodyweight exercise that target the chest, shoulders, triceps, and core muscles.",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
-                    ],
-                    "Kcal":11
-                },
-                {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
-                    "duration":"5-10 minutes",
-                    "sets":3,
-                    "reps":"12-15 reps",
-                    "reptimer":180,
-                    "breaktimer":300,
-                    "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
-                    "instructions":[
-                        "Lie on your back with your hands behind your head.",
-                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
-                        "Bring your right elbow towards your left knee while straightening your right leg.",
-                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
-                        "Continue alternating sides in a pedaling motion."
+                        "Get into a push-up position with your hands slightly wider than shoulder-width apart.",
+                        "Lower your body until your chest nearly touches the ground.",
+                        "Push through your palms to return to the starting position.",
+                        "Keep your core engaged and your body in a straight line throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Biceps curls",
+                    "gif":"assets/workout/biceps.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":30,
+                    "reptimer":100,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your biceps with this intense biceps curl workout.Biceps curls with rings or a bar are effective exercises for targeting the biceps muscles. ",
                     "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Hold the dumbbells with an underhand grip (palms facing up).",
+                        "Curl the dumbbells towards your shoulders, keeping your elbows close to your sides.",
+                        "Slowly lower the dumbbells back to the starting position.",
                         "Repeat for the specified duration."
                     ],
                     "Kcal":11
@@ -535,58 +535,58 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Military Press",
+                    "gif":"assets/workout/military.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to strengthen your shoulders with this intense military press workout. The military press, also known as the overhead press, is a compound exercise that primarily targets the deltoid muscles of the shoulders, as well as the triceps and upper chest. ",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        "Stand with your feet shoulder-width apart and a barbell resting on your shoulders.",
+                        "Press the barbell overhead until your arms are fully extended.",
+                        "Lower the barbell back to the starting position.",
+                        "Keep your core engaged and your back straight throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":11
                 },
                 {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
+                    "name":"Lateral Raises",
+                    "gif":"assets/workout/raises.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"12-15 reps",
-                    "reptimer":180,
+                    "reptimer":100,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "description":"Get ready to engage your entire shoulder with this dynamic lateral raises workout. Lateral raises are isolation exercises that primarily target the lateral deltoids, the muscles on the sides of the shoulders",
                     "instructions":[
-                        "Lie on your back with your hands behind your head.",
-                        "Lift your legs off the ground and bend your knees to a 90-degree angle.",
-                        "Bring your right elbow towards your left knee while straightening your right leg.",
-                        "Switch sides, bringing your left elbow towards your right knee while straightening your left leg.",
-                        "Continue alternating sides in a pedaling motion."
+                        "Stand with your feet shoulder-width apart and a dumbbell in each hand.",
+                        "Raise the dumbbells out to the sides until they are parallel to the floor.",
+                        "Slowly lower the dumbbells back to the starting position.",
+                        "Keep your core engaged and your back straight throughout the movement.",
+                        "Repeat for the specified duration."
                     ],
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Upright Row",
+                    "gif":"assets/workout/row.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
-                    "reptimer":30,
+                    "reptimer":90,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your shoulders with this intense upright row workout. Upright rows are compound exercises primarily targeting the deltoid muscles of the shoulders, as well as the trapezius and the muscles of the upper back.",
                     "instructions":[
-                        "Lie on your back with your legs straight and your arms by your sides.",
-                        "Lift your legs off the ground until they are perpendicular to the floor.",
-                        "Slowly lower your legs back down to the starting position.",
-                        "Keep your core engaged and your lower back pressed into the floor throughout the movement.",
+                        "Stand with your feet shoulder-width apart and a barbell in front of your thighs.",
+                        "Grasp the barbell with an overhand grip slightly narrower than shoulder-width apart.",
+                        "Pull the barbell up towards your chin, keeping your elbows high and close to your body.",
+                        "Slowly lower the barbell back to the starting position.",
                         "Repeat for the specified duration."
                     ],
                     "Kcal":11
@@ -601,15 +601,15 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Deadlifts",
+                    "gif":"assets/workout/dead2.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
-                    "reptimer":30,
+                    "reptimer":90,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to shape your glute with this intense deadlift workout. Deadlifts are compound exercises that primarily target the posterior chain, including the lower back, glutes, hamstrings, and grip strength",
                     "instructions":[
                         "Get into a push-up position on the floor.",
                         "Bend your elbows 90 degrees and rest your weight on your forearms.",
@@ -620,15 +620,15 @@
                     "Kcal":11
                 },
                 {
-                    "name":"Bicycle Crunches",
-                    "gif":"assets/workout/bicycle.gif",
+                    "name":"Glute Bridges",
+                    "gif":"assets/workout/bridge.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"12-15 reps",
-                    "reptimer":180,
+                    "reptimer":120,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to engage your entire core with this dynamic bicycle crunch workout. Bicycle crunches are a powerhouse exercise that targets the upper and lower abdominals, obliques, and hip flexors. Follow along with this session to sculpt a strong and defined midsection!",
+                    "description":"Glute bridges are effective exercises for targeting the gluteal muscles (glutes) and hamstrings, as well as strengthening the lower back and core",
                     "instructions":[
                         "Lie on your back with your hands behind your head.",
                         "Lift your legs off the ground and bend your knees to a 90-degree angle.",
@@ -639,15 +639,15 @@
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Squats",
+                    "gif":"assets/workout/squats.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your legs with some intense squat workout. Squats are compound exercises that target multiple muscle groups, including the quadriceps, hamstrings, glutes, and core muscles. ",
                     "instructions":[
                         "Lie on your back with your legs straight and your arms by your sides.",
                         "Lift your legs off the ground until they are perpendicular to the floor.",
@@ -667,21 +667,17 @@
             "noE":0,
             "workouts":[
                 {
-                    "name":"Planks",
-                    "gif":"assets/workout/plank.gif",
+                    "name":"Deadlifts",
+                    "gif":"assets/workout/deadlift.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"30-60 seconds",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to strengthen your core with this intense plank workout. Planks are an effective exercise for building core stability and endurance. Follow along and challenge yourself with this session!",
+                    "description":"Get ready to strengthen your muscles with this intense deadlift workout. Deadlifts are compound exercises that primarily target the posterior chain, including the lower back, glutes, hamstrings, and grip strength",
                     "instructions":[
-                        "Get into a push-up position on the floor.",
-                        "Bend your elbows 90 degrees and rest your weight on your forearms.",
-                        "Your elbows should be directly beneath your shoulders, and your body should form a straight line from your head to your feet.",
-                        "Hold the position for as long as possible.",
-                        "Remember to breathe."
+                        
                     ],
                     "Kcal":11
                 },
@@ -705,15 +701,15 @@
                     "Kcal":45
                 },
                 {
-                    "name":"Leg Raises",
-                    "gif":"assets/workout/legraise.gif",
+                    "name":"Squats",
+                    "gif":"assets/workout/squats.gif",
                     "duration":"5-10 minutes",
                     "sets":3,
                     "reps":"10-15 reps",
                     "reptimer":30,
                     "breaktimer":300,
                     "level":"",
-                    "description":"Get ready to sculpt and strengthen your lower abs with this intense leg raise workout. Leg raises are a fantastic exercise for targeting the lower abdominal muscles and improving core stability. Follow this session for a quick and effective lower ab burn!",
+                    "description":"Get ready to sculpt and strengthen your legs with some intense squat workout. Squats are compound exercises that target multiple muscle groups, including the quadriceps, hamstrings, glutes, and core muscles. ",
                     "instructions":[
                         "Lie on your back with your legs straight and your arms by your sides.",
                         "Lift your legs off the ground until they are perpendicular to the floor.",
