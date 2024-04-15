@@ -17,6 +17,7 @@ class _CycleHomeState extends State<CycleHome> {
   DateTime? lastperiod;
   int? Cycledays;
   int? periodduration;
+  final TextEditingController _controller = TextEditingController();
   final TextEditingController _CycledaysController = TextEditingController();
    final TextEditingController _periodController = TextEditingController();
   final _scaffoldkey = GlobalKey<ScaffoldState>();
@@ -47,12 +48,23 @@ class _CycleHomeState extends State<CycleHome> {
             key: _formkey,
             child: Column(
               children: [
+                TextFormField(
+                  controller: _controller,
+                  decoration: InputDecoration(
+                    suffix: IconButton(
+                      onPressed: (){}, 
+                      icon: const Icon(
+                        Icons.calculate_outlined,
+                        color: Colors.pink,
+                        )
+                      )
+                  ),
+                ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-
                       TextButton(
                         onPressed: (){
                           Navigator.pop(context);
