@@ -52,7 +52,11 @@ class _CycleHomeState extends State<CycleHome> {
                   controller: _controller,
                   decoration: InputDecoration(
                     suffix: IconButton(
-                      onPressed: (){}, 
+                      onPressed: (){
+                        // showDatePicker(
+                        //   context: context, firstDate: firstDate, lastDate: lastDate
+                        //   );
+                      }, 
                       icon: const Icon(
                         Icons.calculate_outlined,
                         color: Colors.pink,
