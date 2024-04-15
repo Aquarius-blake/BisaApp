@@ -401,6 +401,9 @@ class _CycleHomeState extends State<CycleHome> {
                       ),
                      ),
                    ) : InkWell(
+                    onTap: (){
+                      showDialogbox(context);
+                    },
                     child: Container(
                        height: 150,
                         width: 150,

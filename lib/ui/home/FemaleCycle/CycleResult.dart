@@ -36,11 +36,11 @@ class _CycleResultState extends State<CycleResult> {
           child: Column(
             children: [
               TableCalendar(
-                focusedDay: widget.lastperiod, 
+                focusedDay: widget.lastperiod.add(Duration(days:widget.cycle!)), 
                 firstDay: DateTime(1800), 
                 lastDay: widget.lastperiod.add(const Duration(days: 365)),
-                rangeStartDay: widget.lastperiod,
-                rangeEndDay: widget.lastperiod.add(Duration(days: widget.period!)),
+                rangeStartDay: widget.lastperiod.add(Duration(days:widget.cycle!)),
+                rangeEndDay: widget.lastperiod.add(Duration(days: widget.period!+ widget.cycle!)),
                 calendarStyle: CalendarStyle(
                   rangeHighlightColor: Colors.pink[200]!,
                   rangeStartDecoration: BoxDecoration(
