@@ -13,6 +13,17 @@ class CycleHome extends StatefulWidget {
 
 class _CycleHomeState extends State<CycleHome> {
 
+  int? Datefomprefs;
+  DateTime? lastperiod;
+
+  @override
+  void initState() {
+    initialize();
+    super.initState();
+  }
+
+  initialize()async{}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +40,7 @@ class _CycleHomeState extends State<CycleHome> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(
                   vertical: 20,
-                  horizontal: 10
+                  horizontal: 20
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -53,8 +64,53 @@ class _CycleHomeState extends State<CycleHome> {
                      ),
                   )
                    ),
-                   SizedBox(height: 20,)
-                   
+                   SizedBox(height: 20,),
+                   Align(
+                    alignment: Alignment.centerLeft,
+                     child: Text(
+                      "Your Last Cycle",
+                       style: TextStyle(
+                       fontFamily: 'Poppins',
+                       fontSize: 16.sp,
+                       color:  Colors.pink,
+                       ),
+                       textAlign: TextAlign.left,
+                      ),
+                   ),
+                   SizedBox(height: 30,),
+                   lastperiod == null? InkWell(
+                    onTap: (){
+                      //showDatePicker(context: context, firstDate: firstDate, lastDate: lastDate)
+                    },
+                     child: Container(
+                      height: 150,
+                      width: 150,
+                      padding:const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.pink[300],
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                           BoxShadow(
+                          color:Colors.pink[200]!,
+                          spreadRadius: 9,
+                          blurRadius: 10,
+                          offset: const Offset(0, 0), // changes position of shadow
+                        ),
+                        ]
+                      ),
+                      child: Center(
+                        child: Text(
+                          "When was your\n last period?",
+                          style: TextStyle(
+                           fontFamily: 'Poppins',
+                           fontSize: 16.sp,
+                           color:  Colors.white,
+                           ),
+                           textAlign: TextAlign.center,
+                          ),
+                      ),
+                     ),
+                   ) : Container()
                   ],
                 ),
               )
