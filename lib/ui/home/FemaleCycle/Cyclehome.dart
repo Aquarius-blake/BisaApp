@@ -48,9 +48,21 @@ class _CycleHomeState extends State<CycleHome> {
             key: _formkey,
             child: Column(
               children: [
+                const SizedBox(height: 10,),
                 TextFormField(
                   controller: _controller,
+                  style: TextStyle(
+                            fontSize: 12,
+                            height: 0.1
+                          ),
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.transparent,
+                    label: Text("Choose last period Start Date"),
+                    hintText: "Choose a date",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
                     suffix: IconButton(
                       onPressed: (){
                         // showDatePicker(
@@ -62,6 +74,41 @@ class _CycleHomeState extends State<CycleHome> {
                         color: Colors.pink,
                         )
                       )
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                TextFormField(
+                  controller: _controller,
+                  style: TextStyle(
+                            fontSize: 12,
+                            height: 0.1
+                          ),
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.transparent,
+                    label: Text("Cycle duration in days"),
+                    hintText: "Choose a date",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                TextFormField(
+                  controller: _controller,
+                  style: TextStyle(
+                            fontSize: 12,
+                            height: 0.1
+                          ),
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.transparent,
+                    label: Text("Period Duration in days"),
+                    hintText: "Choose a date",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10,),
