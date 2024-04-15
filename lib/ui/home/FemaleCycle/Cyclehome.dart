@@ -58,12 +58,13 @@ class _CycleHomeState extends State<CycleHome> {
                         //   );
                       }, 
                       icon: const Icon(
-                        Icons.calculate_outlined,
+                        Icons.calendar_today_outlined,
                         color: Colors.pink,
                         )
                       )
                   ),
                 ),
+                const SizedBox(height: 10,),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Row(
