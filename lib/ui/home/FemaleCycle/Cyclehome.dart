@@ -150,8 +150,10 @@ class _CycleHomeState extends State<CycleHome> {
                         TextButton(
                         onPressed: (){
                           setState(() {
-                            
+                            periodduration = int.parse(_periodController.text);
+                            Cycledays = int.parse(_CycledaysController.text);
                           });
+                           Navigator.pop(context);
                         }, 
                         child: Text(
                           "Continue",
