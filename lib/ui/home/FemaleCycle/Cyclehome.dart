@@ -20,6 +20,7 @@ class _CycleHomeState extends State<CycleHome> {
   final TextEditingController _CycledaysController = TextEditingController();
    final TextEditingController _periodController = TextEditingController();
   final _scaffoldkey = GlobalKey<ScaffoldState>();
+  final _formkey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -30,13 +31,44 @@ class _CycleHomeState extends State<CycleHome> {
   initialize()async{}
 
   showDialogbox(context){
+
     return showDialog(
       context: context, 
       builder: (context) => Dialog(
         child: Container(
           height: 500,
           width: MediaQuery.of(context).size.width*0.85,
+          padding: EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10
+          ),
           decoration: BoxDecoration(),
+          child: Form(
+            key: _formkey,
+            child: Column(
+              children: [
+
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Row(
+                    children: [
+                      TextButton(
+                        onPressed: (){}, 
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(
+                           fontFamily: 'Poppins',
+                           fontSize: 12.sp,
+                           color:  Colors.white,
+                           ),
+                          )
+                        )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       )
       );
