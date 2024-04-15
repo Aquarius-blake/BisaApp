@@ -118,6 +118,41 @@ class _CycleHomeState extends State<CycleHome> {
           ),
         ),
       ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+                      height: 50,
+                      width: 200,
+                      margin: const EdgeInsets.only(
+                        top: 10,
+                        bottom: 10
+                        ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pink,
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: const Offset(0, 2), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Track Period",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 20.sp,
+                            color:  Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+        ],
+      ),
     );
   }
 }
