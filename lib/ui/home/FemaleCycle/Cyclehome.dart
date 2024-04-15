@@ -3,6 +3,7 @@
 import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class CycleHome extends StatefulWidget {
   const CycleHome({super.key});
@@ -40,34 +41,47 @@ class _CycleHomeState extends State<CycleHome> {
           height: 500,
           width: MediaQuery.of(context).size.width*0.85,
           padding: EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 10
+            horizontal: 20,
+            vertical: 20
           ),
           decoration: BoxDecoration(),
           child: Form(
             key: _formkey,
             child: Column(
               children: [
-                const SizedBox(height: 10,),
+                const SizedBox(height: 20,),
                 TextFormField(
                   controller: _controller,
-                  style: TextStyle(
+                  style: const TextStyle(
                             fontSize: 12,
                             height: 0.1
                           ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.transparent,
-                    label: Text("Choose last period Start Date"),
+                    label: const Text("Choose last period Start Date"),
                     hintText: "Choose a date",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)
                     ),
                     suffix: IconButton(
                       onPressed: (){
-                        // showDatePicker(
-                        //   context: context, firstDate: firstDate, lastDate: lastDate
-                        //   );
+                        showDatePicker(
+                          context: context, 
+                          firstDate: DateTime(1800), 
+                          lastDate: DateTime.now(),
+                          builder: (context, child)=>Theme(
+                            data: ThemeData(
+                            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+                            ), 
+                            child: child!
+                            )
+                          ).then((value) {
+                            lastperiod = value;
+                            if(lastperiod !=null){
+                              _controller.text =  DateFormat('dd-MM-yyyy').format(lastperiod!);
+                            }
+                          });
                       }, 
                       icon: const Icon(
                         Icons.calendar_today_outlined,
@@ -76,46 +90,49 @@ class _CycleHomeState extends State<CycleHome> {
                       )
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 30,),
                 TextFormField(
-                  controller: _controller,
-                  style: TextStyle(
+                  controller: _CycledaysController,
+                  style: const TextStyle(
                             fontSize: 12,
-                            height: 0.1
+                            height: 0.9
                           ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.transparent,
                     label: Text("Cycle duration in days"),
-                    hintText: "Choose a date",
+                    hintText: "Enter the number of days in your cycle",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)
                     ),
-                    
                   ),
+                  keyboardType: TextInputType.number,
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 30,),
                 TextFormField(
-                  controller: _controller,
-                  style: TextStyle(
+                  controller: _periodController,
+                  style: const TextStyle(
                             fontSize: 12,
-                            height: 0.1
+                            height: 0.9
                           ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.transparent,
                     label: Text("Period Duration in days"),
-                    hintText: "Choose a date",
+                    hintText: "Enter a number of days",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)
                     ),
                   ),
+                  keyboardType: TextInputType.number,
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 30,),
+                Expanded(child: SizedBox()),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       TextButton(
                         onPressed: (){
@@ -243,7 +260,49 @@ class _CycleHomeState extends State<CycleHome> {
                           ),
                       ),
                      ),
-                   ) : Container(),
+                   ) : Container(
+                     height: 150,
+                      width: 150,
+                      padding:const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.pink[300],
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                           BoxShadow(
+                          color:Colors.pink[200]!,
+                          spreadRadius: 9,
+                          blurRadius: 10,
+                          offset: const Offset(0, 0), // changes position of shadow
+                        ),
+                        ]
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "${DateFormat('dd').format(lastperiod!.add(Duration(days:periodduration ?? 0 )))} ",
+                              style: TextStyle(
+                               fontFamily: 'Poppins',
+                               fontWeight: FontWeight.w600,
+                               fontSize: 40.sp,
+                               color:  Colors.white,
+                               ),
+                               textAlign: TextAlign.center,
+                              ),
+                              Text(
+                              " ${DateFormat('MMMM').format(lastperiod!.add(Duration(days:periodduration ?? 0 )))}",
+                              style: TextStyle(
+                               fontFamily: 'Poppins',
+                               fontSize: 20.sp,
+                               color:  Colors.white,
+                               ),
+                               textAlign: TextAlign.center,
+                              ),
+                          ],
+                        ),
+                      ),
+                   ),
                    const SizedBox(height: 60,),
                    Cycledays == null? InkWell(
                     onTap: (){
