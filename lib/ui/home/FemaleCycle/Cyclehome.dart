@@ -52,9 +52,11 @@ class _CycleHomeState extends State<CycleHome> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      
+
                       TextButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                          Navigator.pop(context);
+                        }, 
                         child: Text(
                           "Cancel",
                           style: TextStyle(
