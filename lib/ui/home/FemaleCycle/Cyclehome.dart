@@ -343,7 +343,49 @@ class _CycleHomeState extends State<CycleHome> {
                       ),
                      ),
                    ) : InkWell(
-                    child: Container()
+                    child: Container(
+                       height: 150,
+                        width: 150,
+                        padding:const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.pink[300],
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                             BoxShadow(
+                            color:Colors.pink[200]!,
+                            spreadRadius: 9,
+                            blurRadius: 10,
+                            offset: const Offset(0, 0), // changes position of shadow
+                          ),
+                          ]
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "$Cycledays",
+                                style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                 fontWeight: FontWeight.w600,
+                                 fontSize: 40.sp,
+                                 color:  Colors.white,
+                                 ),
+                                 textAlign: TextAlign.center,
+                                ),
+                                Text(
+                                " Days",
+                                style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                 fontSize: 20.sp,
+                                 color:  Colors.white,
+                                 ),
+                                 textAlign: TextAlign.center,
+                                ),
+                            ],
+                          ),
+                        ),
+                    )
                     ),
                     const SizedBox(height: 60,),
                    periodduration == null? InkWell(
@@ -382,7 +424,49 @@ class _CycleHomeState extends State<CycleHome> {
                     onTap: (){
                       showDialogbox(context);
                     },
-                    child: Container()
+                    child: Container(
+                      height: 150,
+                        width: 150,
+                        padding:const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.pink[300],
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                             BoxShadow(
+                            color:Colors.pink[200]!,
+                            spreadRadius: 9,
+                            blurRadius: 10,
+                            offset: const Offset(0, 0), // changes position of shadow
+                          ),
+                          ]
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "$periodduration ",
+                                style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                 fontWeight: FontWeight.w600,
+                                 fontSize: 40.sp,
+                                 color:  Colors.white,
+                                 ),
+                                 textAlign: TextAlign.center,
+                                ),
+                                Text(
+                                " Days",
+                                style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                 fontSize: 20.sp,
+                                 color:  Colors.white,
+                                 ),
+                                 textAlign: TextAlign.center,
+                                ),
+                            ],
+                          ),
+                        ),
+                    )
                     ),
                   ],
                 ),
