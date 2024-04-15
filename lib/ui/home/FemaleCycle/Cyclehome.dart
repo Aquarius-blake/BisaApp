@@ -3,6 +3,7 @@
 import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/CycleResult.dart';
+import 'package:bisa_app/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -96,6 +97,7 @@ class _CycleHomeState extends State<CycleHome> {
                 const SizedBox(height: 30,),
                 TextFormField(
                   controller: _CycledaysController,
+                  validator: (value) => Validator.textValidator(value),
                   style: const TextStyle(
                             fontSize: 12,
                             height: 0.9
@@ -114,6 +116,7 @@ class _CycleHomeState extends State<CycleHome> {
                 const SizedBox(height: 30,),
                 TextFormField(
                   controller: _periodController,
+                  validator: (value) => Validator.textValidator(value),
                   style: const TextStyle(
                             fontSize: 12,
                             height: 0.9
@@ -152,11 +155,14 @@ class _CycleHomeState extends State<CycleHome> {
                         ),
                         TextButton(
                         onPressed: (){
-                          setState(() {
+                         if(_formkey.currentState!.validate()){
+                           setState(() {
                             periodduration = int.parse(_periodController.text);
                             Cycledays = int.parse(_CycledaysController.text);
                           });
-                           Navigator.pop(context);
+                          Navigator.pop(context);
+                         }
+                           
                         }, 
                         child: Text(
                           "Continue",
@@ -532,7 +538,17 @@ class _CycleHomeState extends State<CycleHome> {
         children: [
           InkWell(
             onTap: (){
-              if(lastperiod!=null || Cycledays!=null || periodduration!=null) {}
+              if(lastperiod!=null || Cycledays!=null || periodduration!=null) {
+                PageAnimateNoRep(context, PageTransitionType.fade, CycleResult(lastperiod: lastperiod!,cycle: Cycledays, period: periodduration,));
+              }else{
+                 ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("Please answer all questions before continuing"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Colors.red,
+                                )
+                        );
+              }
             },
             child: Container(
                         height: 50,
