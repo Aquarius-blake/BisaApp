@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 
 class CycleResult extends StatefulWidget {
-  const CycleResult({super.key});
+  final DateTime lastperiod;
+  final int? period;
+  final int? cycle;
+  const CycleResult({super.key, required this.lastperiod, this.period, this.cycle});
 
   @override
   State<CycleResult> createState() => _CycleResultState();
