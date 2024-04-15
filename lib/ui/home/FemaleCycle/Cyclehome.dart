@@ -70,7 +70,7 @@ class _CycleHomeState extends State<CycleHome> {
                           style: TextStyle(
                            fontFamily: 'Poppins',
                            fontSize: 12.sp,
-                           color:  Colors.grey,
+                           color:  Colors.pink,
                            ),
                           )
                         ),
