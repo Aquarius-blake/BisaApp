@@ -59,10 +59,21 @@ class _CycleHomeState extends State<CycleHome> {
                           style: TextStyle(
                            fontFamily: 'Poppins',
                            fontSize: 12.sp,
-                           color:  Colors.white,
+                           color:  Colors.grey,
                            ),
                           )
-                        )
+                        ),
+                        TextButton(
+                        onPressed: (){}, 
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                           fontFamily: 'Poppins',
+                           fontSize: 12.sp,
+                           color:  Colors.grey,
+                           ),
+                          )
+                        ),
                     ],
                   ),
                 )
