@@ -1,9 +1,12 @@
 
 
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
+import 'package:bisa_app/ui/home/FemaleCycle/CycleResult.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CycleHome extends StatefulWidget {
   const CycleHome({super.key});
@@ -528,7 +531,9 @@ class _CycleHomeState extends State<CycleHome> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
-            onTap: (){},
+            onTap: (){
+              if(lastperiod!=null || Cycledays!=null || periodduration!=null) {}
+            },
             child: Container(
                         height: 50,
                         width: 200,
