@@ -15,6 +15,11 @@ class _CycleHomeState extends State<CycleHome> {
 
   int? Datefomprefs;
   DateTime? lastperiod;
+  int? Cycledays;
+  int? periodduration;
+  final TextEditingController _CycledaysController = TextEditingController();
+   final TextEditingController _periodController = TextEditingController();
+  final _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -24,9 +29,23 @@ class _CycleHomeState extends State<CycleHome> {
 
   initialize()async{}
 
+  showDialogbox(context){
+    return showDialog(
+      context: context, 
+      builder: (context) => Dialog(
+        child: Container(
+          height: 500,
+          width: MediaQuery.of(context).size.width*0.85,
+          decoration: BoxDecoration(),
+        ),
+      )
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       backgroundColor: Colors.pink[100],
       body: Container(
         child: SingleChildScrollView(
@@ -38,11 +57,11 @@ class _CycleHomeState extends State<CycleHome> {
               Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(
+                padding: const  EdgeInsets.symmetric(
                   vertical: 20,
                   horizontal: 20
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(40),
@@ -64,7 +83,7 @@ class _CycleHomeState extends State<CycleHome> {
                      ),
                   )
                    ),
-                   SizedBox(height: 20,),
+                   const SizedBox(height: 20,),
                    Align(
                     alignment: Alignment.centerLeft,
                      child: Text(
@@ -77,8 +96,42 @@ class _CycleHomeState extends State<CycleHome> {
                        textAlign: TextAlign.left,
                       ),
                    ),
-                   SizedBox(height: 30,),
+                   const SizedBox(height: 30,),
                    lastperiod == null? InkWell(
+                    onTap: (){
+                      showDialogbox(context);
+                    },
+                     child: Container(
+                      height: 150,
+                      width: 150,
+                      padding:const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.pink[300],
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                           BoxShadow(
+                          color:Colors.pink[200]!,
+                          spreadRadius: 9,
+                          blurRadius: 10,
+                          offset: const Offset(0, 0), // changes position of shadow
+                        ),
+                        ]
+                      ),
+                      child: Center(
+                        child: Text(
+                          "When did your last period start?",
+                          style: TextStyle(
+                           fontFamily: 'Poppins',
+                           fontSize: 16.sp,
+                           color:  Colors.white,
+                           ),
+                           textAlign: TextAlign.center,
+                          ),
+                      ),
+                     ),
+                   ) : Container(),
+                   const SizedBox(height: 60,),
+                   Cycledays == null? InkWell(
                     onTap: (){
                       //showDatePicker(context: context, firstDate: firstDate, lastDate: lastDate)
                     },
@@ -100,7 +153,7 @@ class _CycleHomeState extends State<CycleHome> {
                       ),
                       child: Center(
                         child: Text(
-                          "When was your\n last period?",
+                          "How Long is your Cycle?",
                           style: TextStyle(
                            fontFamily: 'Poppins',
                            fontSize: 16.sp,
@@ -110,7 +163,41 @@ class _CycleHomeState extends State<CycleHome> {
                           ),
                       ),
                      ),
-                   ) : Container()
+                   ) : Container(),
+                    const SizedBox(height: 60,),
+                   periodduration == null? InkWell(
+                    onTap: (){
+                      //showDatePicker(context: context, firstDate: firstDate, lastDate: lastDate)
+                    },
+                     child: Container(
+                      height: 150,
+                      width: 150,
+                      padding:const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.pink[300],
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                           BoxShadow(
+                          color:Colors.pink[200]!,
+                          spreadRadius: 9,
+                          blurRadius: 10,
+                          offset: const Offset(0, 0), // changes position of shadow
+                        ),
+                        ]
+                      ),
+                      child: Center(
+                        child: Text(
+                          "How Long does a period last?",
+                          style: TextStyle(
+                           fontFamily: 'Poppins',
+                           fontSize: 16.sp,
+                           color:  Colors.white,
+                           ),
+                           textAlign: TextAlign.center,
+                          ),
+                      ),
+                     ),
+                   ) : Container(),
                   ],
                 ),
               )
