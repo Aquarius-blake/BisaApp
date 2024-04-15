@@ -47,29 +47,34 @@ class _CycleHomeState extends State<CycleHome> {
             key: _formkey,
             child: Column(
               children: [
-
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      
                       TextButton(
                         onPressed: (){}, 
                         child: Text(
                           "Cancel",
                           style: TextStyle(
                            fontFamily: 'Poppins',
-                           fontSize: 12.sp,
+                           fontSize: 14.sp,
                            color:  Colors.grey,
                            ),
                           )
                         ),
                         TextButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                          setState(() {
+                            
+                          });
+                        }, 
                         child: Text(
                           "Continue",
                           style: TextStyle(
                            fontFamily: 'Poppins',
-                           fontSize: 12.sp,
+                           fontSize: 14.sp,
                            color:  Colors.pink,
                            ),
                           )
