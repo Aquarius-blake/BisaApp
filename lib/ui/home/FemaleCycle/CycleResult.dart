@@ -342,6 +342,7 @@ initprefs()async{
                                   backgroundColor: Colors.pink,
                                 )
                         );
+                Future.delayed(const Duration(seconds: 3));
             },
             child: Container(
                         height: 50,
