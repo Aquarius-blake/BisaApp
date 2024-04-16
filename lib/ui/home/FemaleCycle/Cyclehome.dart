@@ -40,6 +40,8 @@ class _CycleHomeState extends State<CycleHome> {
   initialize()async{
     prefs = await SharedPreferences.getInstance();
     Datefomprefs = await prefs.getInt('Lastperiod');
+    Cycledays = await prefs.getInt('cycle');
+    periodduration = await prefs.getInt('bleed');
     if(Datefomprefs!=null){
       lastperiod = DateTime.fromMicrosecondsSinceEpoch(Datefomprefs!);
     }
