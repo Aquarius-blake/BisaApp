@@ -199,12 +199,25 @@ class _CycleHomeState extends State<CycleHome> {
     return Scaffold(
       key: _scaffoldkey,
       backgroundColor: Colors.pink[100],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 30,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.white,
+            ),
+          ),
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: 150,
+                height: 100,
               ),
               Container(
                 height: MediaQuery.of(context).size.height,
