@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CycleHome extends StatefulWidget {
   const CycleHome({super.key});
@@ -28,6 +29,7 @@ class _CycleHomeState extends State<CycleHome> {
    final TextEditingController _periodController = TextEditingController();
   final _scaffoldkey = GlobalKey<ScaffoldState>();
   final _formkey = GlobalKey<FormState>();
+  late final SharedPreferences prefs;
 
   @override
   void initState() {
@@ -35,7 +37,13 @@ class _CycleHomeState extends State<CycleHome> {
     super.initState();
   }
 
-  initialize()async{}
+  initialize()async{
+    prefs = await SharedPreferences.getInstance();
+    Datefomprefs = await prefs.getInt('Lastperiod');
+    if(Datefomprefs!=null){
+      lastperiod = DateTime.fromMicrosecondsSinceEpoch(Datefomprefs!);
+    }
+  }
 
   showDialogbox(context){
 

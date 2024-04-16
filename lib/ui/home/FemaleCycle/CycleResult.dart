@@ -107,7 +107,7 @@ initprefs()async{
                 0,
                 30,
                 Text(
-                  "Estimated Period Range",
+                  "Estimated Next Period Range",
                   style: TextStyle(
                      fontFamily: 'Poppins',
                      fontSize: 20.sp,
@@ -297,7 +297,7 @@ initprefs()async{
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "${DateFormat('dd').format(safedays.reversed.last)} ",
+                                      "${DateFormat('dd').format(safedays.reversed.toList()[safedays.length-2])} ",
                                       style: TextStyle(
                                        fontFamily: 'Poppins',
                                        fontWeight: FontWeight.w600,
@@ -307,7 +307,7 @@ initprefs()async{
                                        textAlign: TextAlign.center,
                                       ),
                                       Text(
-                                      " ${DateFormat('MMMM').format(safedays.reversed.last)}",
+                                      " ${DateFormat('MMMM').format(safedays.reversed.toList()[safedays.length-2])}",
                                       style: TextStyle(
                                        fontFamily: 'Poppins',
                                        fontSize: 10.sp,
@@ -342,7 +342,9 @@ initprefs()async{
                                   backgroundColor: Colors.pink,
                                 )
                         );
-                Future.delayed(const Duration(seconds: 3));
+                Future.delayed(const Duration(seconds: 3),(){
+                  Navigator.pop(context);
+                });
             },
             child: Container(
                         height: 50,
