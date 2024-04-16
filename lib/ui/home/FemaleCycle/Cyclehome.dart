@@ -22,6 +22,7 @@ class _CycleHomeState extends State<CycleHome> {
   DateTime? lastperiod;
   int? Cycledays;
   int? periodduration;
+  int? per;
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _CycledaysController = TextEditingController();
    final TextEditingController _periodController = TextEditingController();
@@ -159,6 +160,7 @@ class _CycleHomeState extends State<CycleHome> {
                            setState(() {
                             periodduration = int.parse(_periodController.text);
                             Cycledays = int.parse(_CycledaysController.text);
+                            per = periodduration!-1;
                           });
                           Navigator.pop(context);
                          }
@@ -341,7 +343,7 @@ class _CycleHomeState extends State<CycleHome> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "${DateFormat('dd').format(lastperiod!.add(Duration(days:periodduration ?? 0 )))} ",
+                                    "${DateFormat('dd').format(lastperiod!.add(Duration(days:per ?? 0 )))} ",
                                     style: TextStyle(
                                      fontFamily: 'Poppins',
                                      fontWeight: FontWeight.w600,
@@ -351,7 +353,7 @@ class _CycleHomeState extends State<CycleHome> {
                                      textAlign: TextAlign.center,
                                     ),
                                     Text(
-                                    " ${DateFormat('MMMM').format(lastperiod!.add(Duration(days:periodduration ?? 0 )))}",
+                                    " ${DateFormat('MMMM').format(lastperiod!.add(Duration(days:per ?? 0 )))}",
                                     style: TextStyle(
                                      fontFamily: 'Poppins',
                                      fontSize: 10.sp,

@@ -17,6 +17,23 @@ class CycleResult extends StatefulWidget {
 }
 
 class _CycleResultState extends State<CycleResult> {
+
+ int? per;
+ List safedays = [];
+
+@override
+  void initState() {
+    per = widget.period!-1;
+    initialize();
+    super.initState();
+  }
+initialize(){
+  for (int i = widget.cycle!; i >= widget.cycle!-10;i--){
+    safedays.add(widget.lastperiod.add(Duration(days: i)));
+    print(i);
+  }
+  print(safedays.toString());
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +60,7 @@ class _CycleResultState extends State<CycleResult> {
                 firstDay: DateTime(1800), 
                 lastDay: widget.lastperiod.add(const Duration(days: 365)),
                 rangeStartDay: widget.lastperiod.add(Duration(days:widget.cycle!)),
-                rangeEndDay: widget.lastperiod.add(Duration(days: widget.period!+ widget.cycle!)),
+                rangeEndDay: widget.lastperiod.add(Duration(days: per!+ widget.cycle!)),
                 calendarStyle: CalendarStyle(
                   rangeHighlightColor: Colors.pink[200]!,
                   rangeStartDecoration: BoxDecoration(
@@ -54,8 +71,25 @@ class _CycleResultState extends State<CycleResult> {
                     color: Colors.pink[300],
                     shape: BoxShape.circle
                   ),
+                  holidayDecoration: BoxDecoration(
+                    color: Colors.pink[100],
+                    shape: BoxShape.circle
+                  ),
+                  holidayTextStyle: TextStyle(
+                    color: Colors.white,
+
+                  )
                 ),
                 onFormatChanged: (value){},
+                holidayPredicate: (value){
+                  print(safedays);
+                   print(value);
+                  if(safedays.contains(value.toLocal())){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                },
                 ),
                 const SizedBox(height: 20,),
                 FadeAnimation(
@@ -142,7 +176,7 @@ class _CycleResultState extends State<CycleResult> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "${DateFormat('dd').format(widget.lastperiod.add(Duration(days: widget.period!+ widget.cycle!)))} ",
+                                      "${DateFormat('dd').format(widget.lastperiod.add(Duration(days: per!+ widget.cycle!)))} ",
                                       style: TextStyle(
                                        fontFamily: 'Poppins',
                                        fontWeight: FontWeight.w600,
@@ -152,7 +186,7 @@ class _CycleResultState extends State<CycleResult> {
                                        textAlign: TextAlign.center,
                                       ),
                                       Text(
-                                      " ${DateFormat('MMMM').format(widget.lastperiod.add(Duration(days: widget.period!+ widget.cycle!)))}",
+                                      " ${DateFormat('MMMM').format(widget.lastperiod.add(Duration(days: per!+ widget.cycle!)))}",
                                       style: TextStyle(
                                        fontFamily: 'Poppins',
                                        fontSize: 10.sp,
@@ -167,7 +201,7 @@ class _CycleResultState extends State<CycleResult> {
                          ],
                        ),
                    ),
-                     const SizedBox(height: 30,),
+                     const SizedBox(height: 40,),
                      FadeAnimation(
                 1.2,
                 0,
@@ -179,8 +213,106 @@ class _CycleResultState extends State<CycleResult> {
                      fontSize: 20.sp,
                      color:  Colors.pink,
                      ),
+                     textAlign: TextAlign.center,
                   )
                    ),
+                   const SizedBox(height: 40,),
+                   FadeAnimation(
+                        1.2,
+                    0,
+                    30,
+                     Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [ Container(
+                             height: 100,
+                              width: 100,
+                              padding:const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.pink[200],
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                   BoxShadow(
+                                  color:Colors.pink[100]!,
+                                  spreadRadius: 9,
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 0), // changes position of shadow
+                                ),
+                                ]
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "${DateFormat('dd').format(safedays.reversed.first)} ",
+                                      style: TextStyle(
+                                       fontFamily: 'Poppins',
+                                       fontWeight: FontWeight.w600,
+                                       fontSize: 30.sp,
+                                       color:  Colors.white,
+                                       ),
+                                       textAlign: TextAlign.center,
+                                      ),
+                                      Text(
+                                      " ${DateFormat('MMMM').format(safedays.reversed.first)}",
+                                      style: TextStyle(
+                                       fontFamily: 'Poppins',
+                                       fontSize: 10.sp,
+                                       color:  Colors.white,
+                                       ),
+                                       textAlign: TextAlign.center,
+                                      ),
+                                  ],
+                                ),
+                              ),
+                           ),
+                           Container(
+                             height: 100,
+                              width: 100,
+                              padding:const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.pink[200],
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                   BoxShadow(
+                                  color:Colors.pink[100]!,
+                                  spreadRadius: 9,
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 0), // changes position of shadow
+                                ),
+                                ]
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "${DateFormat('dd').format(safedays.reversed.last)} ",
+                                      style: TextStyle(
+                                       fontFamily: 'Poppins',
+                                       fontWeight: FontWeight.w600,
+                                       fontSize: 30.sp,
+                                       color:  Colors.white,
+                                       ),
+                                       textAlign: TextAlign.center,
+                                      ),
+                                      Text(
+                                      " ${DateFormat('MMMM').format(safedays.reversed.last)}",
+                                      style: TextStyle(
+                                       fontFamily: 'Poppins',
+                                       fontSize: 10.sp,
+                                       color:  Colors.white,
+                                       ),
+                                       textAlign: TextAlign.center,
+                                      ),
+                                  ],
+                                ),
+                              ),
+                           ),
+                         ],
+                       ),
+                   ),
+                   SizedBox(height: 60.h,)
             ],
           ),
         ),
