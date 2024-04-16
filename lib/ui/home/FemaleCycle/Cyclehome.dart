@@ -45,6 +45,11 @@ class _CycleHomeState extends State<CycleHome> {
     if(Datefomprefs!=null){
       lastperiod = DateTime.fromMicrosecondsSinceEpoch(Datefomprefs!);
     }
+    if(mounted){
+      setState(() {
+        
+      });
+    }
   }
 
   showDialogbox(context){
