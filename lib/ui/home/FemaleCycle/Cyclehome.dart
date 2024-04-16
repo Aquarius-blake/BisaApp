@@ -39,9 +39,12 @@ class _CycleHomeState extends State<CycleHome> {
 
   initialize()async{
     prefs = await SharedPreferences.getInstance();
-    Datefomprefs = await prefs.getInt('Lastperiod');
-    Cycledays = await prefs.getInt('cycle');
-    periodduration = await prefs.getInt('bleed');
+    Datefomprefs =  prefs.getInt('Lastperiod');
+    Cycledays =  prefs.getInt('cycle');
+    periodduration =  prefs.getInt('bleed');
+    if(periodduration!=null){
+      per = periodduration!-1;
+    }
     if(Datefomprefs!=null){
       lastperiod = DateTime.fromMicrosecondsSinceEpoch(Datefomprefs!);
     }
@@ -259,7 +262,7 @@ class _CycleHomeState extends State<CycleHome> {
                    Align(
                     alignment: Alignment.centerLeft,
                      child: Text(
-                      "Your Last Cycle",
+                      "Your Last Cycle Tracked",
                        style: TextStyle(
                        fontFamily: 'Poppins',
                        fontSize: 16.sp,
