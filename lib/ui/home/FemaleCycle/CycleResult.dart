@@ -4,6 +4,7 @@ import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CycleResult extends StatefulWidget {
@@ -18,22 +19,28 @@ class CycleResult extends StatefulWidget {
 
 class _CycleResultState extends State<CycleResult> {
 
+late final SharedPreferences prefs;
  int? per;
  List safedays = [];
 
 @override
   void initState() {
     per = widget.period!-1;
+    initprefs();
     initialize();
     super.initState();
   }
+
 initialize(){
   for (int i = widget.cycle!; i >= widget.cycle!-10;i--){
     safedays.add(widget.lastperiod.add(Duration(days: i)));
-    print(i);
   }
-  print(safedays.toString());
 }
+
+initprefs()async{
+  prefs = await SharedPreferences.getInstance();
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,9 +82,12 @@ initialize(){
                     color: Colors.pink[100],
                     shape: BoxShape.circle
                   ),
-                  holidayTextStyle: TextStyle(
+                  holidayTextStyle: const TextStyle(
                     color: Colors.white,
-
+                  ),
+                  todayDecoration: const BoxDecoration(
+                    color: Color(0xFFB5E255),
+                    shape: BoxShape.circle
                   )
                 ),
                 onFormatChanged: (value){},
@@ -312,10 +322,60 @@ initialize(){
                          ],
                        ),
                    ),
-                   SizedBox(height: 60.h,)
+                   SizedBox(height: 100.h,)
             ],
           ),
         ),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          InkWell(
+            onTap: (){
+              prefs.setInt('Lastperiod', widget.lastperiod.microsecondsSinceEpoch);
+              prefs.setInt('cycle', widget.cycle!);
+              prefs.setInt('bleed', widget.period!);
+               ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("Cycle saved successfully"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Colors.pink,
+                                )
+                        );
+            },
+            child: Container(
+                        height: 50,
+                        width: 200,
+                        margin: const EdgeInsets.only(
+                          top: 10,
+                          bottom: 10,
+                          left:30
+                          ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.pink,
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: const Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Save",
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 20.sp,
+                              color:  Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+          ),
+        ],
       ),
     );
   }
