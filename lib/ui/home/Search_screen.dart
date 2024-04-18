@@ -39,6 +39,10 @@ class _SearchScreenState extends State<SearchScreen> {
      // body: SearchBar(),
      appBar: AppBar(
       backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
+      leading: IconButton(
+        onPressed: (){},
+        icon: Icon(Icons.arrow_back_ios_new_outlined),
+        ),
       title: Container(
         child: TextFormField(
           controller: _searchcontroller,
