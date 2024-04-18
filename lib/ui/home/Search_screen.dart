@@ -16,7 +16,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   dynamic searchResponse;
   Map<String,dynamic>? data;
-  bool? loading;
+  bool loading=false;
   final TextEditingController _searchcontroller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
  late CurrentUser currentUser;
@@ -27,11 +27,21 @@ class _SearchScreenState extends State<SearchScreen> {
 
   onSearch(String text,token)async{
 
+    setState(() {
+      loading = true;
+    });
     data =({
       'search': text,
       'token': token
     });
-    searchResponse = await getSearchresult(data);
+
+   Future.delayed(Duration(seconds: 5),()async{
+     searchResponse = await getSearchresult(data).then((value) {
+      setState(() {
+        loading = false;
+      });
+    });
+   });
 
   }
 
@@ -47,7 +57,9 @@ class _SearchScreenState extends State<SearchScreen> {
       backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
       centerTitle: true,
       leading: IconButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.pop(context);
+        },
         icon: const Icon(
           Icons.arrow_back_ios_new_outlined,
           color: Colors.white,
@@ -89,14 +101,23 @@ class _SearchScreenState extends State<SearchScreen> {
                 Icons.search,
                 color: Colors.white,
                 ),
-              onPressed: (){},
+              onPressed: (){
+                onSearch(_searchcontroller.text, currentUser.token);
+              },
             )
       ],
      ),
     body: Container(
       child: Column(
         children: [
-          Container()
+          loading? const Center(
+            child: CircularProgressIndicator()
+            ):Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 10,
+                horizontal: 10,
+              ),
+            )
         ],
       ),
     ),
