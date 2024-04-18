@@ -1,38 +1,25 @@
 
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Pharmahome extends StatefulWidget {
-  const Pharmahome({super.key});
+class PharmacyDrugs extends StatefulWidget {
+  final String? pharmacyname;
+  const PharmacyDrugs({super.key, this.pharmacyname});
 
   @override
-  State<Pharmahome> createState() => _PharmahomeState();
+  State<PharmacyDrugs> createState() => _PharmacyDrugsState();
 }
 
-class _PharmahomeState extends State<Pharmahome> {
-
-  bool loading = true;
-  dynamic pharmresponse;
-
-  @override
-  void initState() {
-    initialize();
-    super.initState();
-  }
-
-
-  initialize()async{
-    
-  }
-
+class _PharmacyDrugsState extends State<PharmacyDrugs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
         title: Text(
-          'Pharmacy',
+         widget.pharmacyname ?? 'Pharmacy',
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',
