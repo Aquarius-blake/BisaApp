@@ -9,11 +9,9 @@ import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/Chatbot_screen.dart';
 // import 'package:bisa_app/ui/chat/chat_details.dart';
 import 'package:bisa_app/ui/chat/chat_list.dart';
-import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/New_homepage.dart';
-import 'package:bisa_app/ui/home/home.dart';
+import 'package:bisa_app/ui/home/Pharmacy/Pharmacy_home.dart';
 import 'package:bisa_app/ui/profile/profile_page.dart';
-import 'package:bisa_app/ui/tips/tips_page.dart';
 // import 'package:bisa_app/ui/widgets/popup.dart';
 import 'package:flutter/cupertino.dart';
 // import 'package:flutter/foundation.dart';
@@ -61,7 +59,8 @@ class HomePageState extends State<HomePage> {
       //const Home(),
       const NewHomePage(),
       const ChatListScreen(),
-      const TipsPage(),
+      //const TipsPage(),
+      const Pharmahome(),
       const ProfilePage()
     ];
 
