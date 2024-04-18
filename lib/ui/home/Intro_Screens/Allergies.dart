@@ -1,7 +1,6 @@
 
 
 import 'package:bisa_app/animation/PageTransition.dart';
-import 'package:bisa_app/ui/home/home_page.dart';
 import 'package:bisa_app/ui/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:material_tag_editor/tag_editor.dart';
