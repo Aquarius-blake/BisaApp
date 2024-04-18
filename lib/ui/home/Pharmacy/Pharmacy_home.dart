@@ -12,6 +12,13 @@ class Pharmahome extends StatefulWidget {
 class _PharmahomeState extends State<Pharmahome> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
   }
 }
