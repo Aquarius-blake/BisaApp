@@ -16,6 +16,9 @@ class PharmacyDrugs extends StatefulWidget {
 
 class _PharmacyDrugsState extends State<PharmacyDrugs> {
 
+  bool isloading = true;
+
+
   List drugs = [
     'Drug A',
     'Drug B',
@@ -28,6 +31,25 @@ class _PharmacyDrugsState extends State<PharmacyDrugs> {
 
   List<int?> Selected = [];
   List<int?> quantity = [];
+
+  @override
+  void initState() {
+    initialize();
+    super.initState();
+  }
+
+  Future<void> initialize()async{
+    try{
+
+      if(mounted){
+        setState(() {
+          isloading = false;
+        });
+      }
+    }catch(e){
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
