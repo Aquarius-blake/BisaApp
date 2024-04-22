@@ -41,6 +41,7 @@ class _PharmahomeState extends State<Pharmahome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
         title: Text(
           'Pharmacy',
