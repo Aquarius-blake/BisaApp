@@ -61,15 +61,18 @@ class _PharmahomeState extends State<Pharmahome> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height *0.9,
+              height: MediaQuery.of(context).size.height *0.85,
               child: ListView.builder(
                 itemCount: pharmacies.length,
                 itemBuilder: (context,index) => InkWell(
                   onTap: (){
-                    PageAnimateNoRep(context, PageTransitionType.leftToRight, PharmacyDrugs(pharmacyname:pharmacies[index],));
+                    PageAnimateNoRep(context, PageTransitionType.rightToLeft, PharmacyDrugs(pharmacyname:pharmacies[index],));
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 10
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -78,7 +81,7 @@ class _PharmahomeState extends State<Pharmahome> {
                           color: Colors.grey,
                           spreadRadius: 1,
                           blurRadius: 2,
-                          offset: const Offset(-2, -1), 
+                          offset:  Offset(2, 1), 
                         )
                       ]
                     ),
