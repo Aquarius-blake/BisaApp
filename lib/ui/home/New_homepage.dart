@@ -11,6 +11,7 @@ import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
 import 'package:bisa_app/ui/home/Labs/labs_home.dart';
 import 'package:bisa_app/ui/home/Search_screen.dart';
+import 'package:bisa_app/ui/home/Specialist/Specialist_home.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
 import 'package:bisa_app/ui/home/dietician/dietician_home.dart';
@@ -536,11 +537,14 @@ void _getlist(){
                                     Align(
                                       alignment: Alignment.bottomRight,
                                       child: InkWell(
+                                        onTap: (){
+                                          PageAnimateNoRep(context, PageTransitionType.rightToLeft, SpecialistHome());
+                                        },
                                         child: Container(
-                                          margin: EdgeInsets.only(
+                                          margin: const EdgeInsets.only(
                                             right: 10
                                           ),
-                                          padding: EdgeInsets.all(5),
+                                          padding: const EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: Color(0xFFB5E255),

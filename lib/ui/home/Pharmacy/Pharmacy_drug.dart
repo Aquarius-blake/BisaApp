@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
 
 class PharmacyDrugs extends StatefulWidget {
   final String? pharmacyname;
@@ -14,16 +16,29 @@ class PharmacyDrugs extends StatefulWidget {
 
 class _PharmacyDrugsState extends State<PharmacyDrugs> {
 
-  List drugs = [];
+  List drugs = [
+    'Drug A',
+    'Drug B',
+    'Drug C',
+    'Drug D',
+    'Drug E',
+    'Drug F',
+    'Drug G',
+  ];
 
+  List<int?> Selected = [];
+  List<int?> quantity = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
+        centerTitle: true,
         leading: IconButton(
-          onPressed: (){}, 
+          onPressed: (){
+            Navigator.pop(context); 
+          }, 
           icon: const Icon(
             Icons.arrow_back_ios_new_outlined,
             color: Colors.white,
@@ -37,11 +52,100 @@ class _PharmacyDrugsState extends State<PharmacyDrugs> {
             fontSize: 20.sp,
           ),
           ),
-          centerTitle: true,
+          actions: [
+           Selected.isEmpty ? IconButton(
+              onPressed: (){}, 
+              icon: const FaIcon(
+                FontAwesomeIcons.cartShopping,
+                color: Colors.white,
+                ),
+              ):Badge(
+                label: Text(
+                  "${Selected.length}",
+                  style: TextStyle(
+                    color: const Color.fromRGBO(23, 30, 60, 1),
+                  ),
+                  ),
+                offset: const Offset(0, 0),
+                backgroundColor: Color(0xFFB5E255),
+                child: IconButton(
+                onPressed: (){}, 
+                icon: const FaIcon(
+                  FontAwesomeIcons.cartShopping,
+                  color: Colors.white,
+                  ),
+                ),
+              )
+          ],
       ),
       body: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal:20,
+          vertical: 10
+        ),
         child: Column(
-          children: [],
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height*0.85,
+              padding: const EdgeInsets.only(
+                top: 30,
+              ),
+              child: WaterfallFlow.builder(
+                itemCount: 5,
+                gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 15.0,
+                            mainAxisSpacing: 30.0,
+                          ), 
+                itemBuilder: (context, index) => Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical:10,
+                    horizontal: 10
+                    ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                     boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: const Color(0xFFB5E255).withOpacity(0.4),
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset: index % 2 == 0? const Offset(2, 3):const Offset(-2, 3), 
+                         // offset:  Offset(2, 1), 
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMTBEAlg102mxxp916OYttXF2kPStrVMruEQ&s')
+                          )
+                        ),
+                        child: const Text(""),
+                      ),
+                      Text(
+                        "${drugs[index]}"
+                        ),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            IconButton(onPressed: (){}, icon: Icon(Icons.remove)),
+                            Text("0"),
+                             IconButton(onPressed: (){}, icon: Icon(Icons.add))
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+                ),
+            )
+          ],
         ),
       ),
       floatingActionButton:  Row(

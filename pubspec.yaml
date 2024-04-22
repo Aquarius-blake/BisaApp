@@ -91,6 +91,7 @@ dependencies:
   cron: ^0.6.0
   timer_count_down: ^2.2.2
   table_calendar: ^3.0.9
+  font_awesome_flutter: ^10.7.0
   # textfield_tags: ^3.0.0
   # flutter_inappwebview: ^5.7.2+3
 
