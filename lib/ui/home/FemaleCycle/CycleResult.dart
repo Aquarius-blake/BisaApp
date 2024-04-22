@@ -52,7 +52,10 @@ initprefs()async{
           onPressed: (){
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          icon: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.pink[200],
+            ),
           ),
       ),
       body: Container(
