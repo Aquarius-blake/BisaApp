@@ -9,6 +9,7 @@ import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
+import 'package:bisa_app/ui/home/Labs/labs_home.dart';
 import 'package:bisa_app/ui/home/Search_screen.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
@@ -43,7 +44,7 @@ class _NewHomePageState extends State<NewHomePage> {
     TipsPage(),
     CycleHome(),
     WaterHome(),
-    TestingRegion(),
+    LabsHome(),
     FitnessSplash(),
     Babyhome()
     ];
@@ -92,7 +93,7 @@ void _getlist(){
     TipsPage(),
    // CycleHome(),
     WaterHome(),
-    TestingRegion(),
+    LabsHome(),
     FitnessSplash(),
     Babyhome()
     ];
@@ -121,7 +122,7 @@ void _getlist(){
     TipsPage(),
     CycleHome(),
     WaterHome(),
-    TestingRegion(),
+    LabsHome(),
     FitnessSplash(),
     Babyhome()
     ];
