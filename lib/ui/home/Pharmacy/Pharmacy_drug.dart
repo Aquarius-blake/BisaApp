@@ -13,6 +13,10 @@ class PharmacyDrugs extends StatefulWidget {
 }
 
 class _PharmacyDrugsState extends State<PharmacyDrugs> {
+
+  List drugs = [];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

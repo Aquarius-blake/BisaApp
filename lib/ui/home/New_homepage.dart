@@ -16,7 +16,6 @@ import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
 import 'package:bisa_app/ui/home/dietician/dietician_home.dart';
 import 'package:bisa_app/ui/tips/tip_details.dart';
 import 'package:bisa_app/ui/tips/tips_page.dart';
-import 'package:bisa_app/ui/vaccination/testing_region.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
