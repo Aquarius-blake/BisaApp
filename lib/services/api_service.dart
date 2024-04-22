@@ -845,6 +845,14 @@ Future getPharmacies(data)async{
   }
 }
 
+Future getdrugs(data)async{
+    try {
+     
+  } catch (e) {
+    print(e.toString()); 
+  }
+}
+
 Future getSearchresult(data)async{
   try {
     
