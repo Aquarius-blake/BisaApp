@@ -322,7 +322,11 @@ Future<void> initialize()async{
                               Expanded(
                                 child: Text(
                                   " ${DateFormat('dd-MM-yyyy').format(Vaccinationsdates[index])}",
-                                  style: TextStyle(),
+                                   style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                          fontSize: 16.sp,
+                                          color: const Color.fromRGBO(23, 30, 60, 1),
+                                    ),
                                   )
                                   ),
                             ],
