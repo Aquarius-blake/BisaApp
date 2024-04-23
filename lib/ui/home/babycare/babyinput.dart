@@ -161,8 +161,24 @@ class _BabyinputState extends State<Babyinput> {
           InkWell(
             onTap: (){
               if(_DOB.text.isNotEmpty){
-
+                prefs.setInt('BDOB',BDOB!.millisecondsSinceEpoch);
               }
+              if(_sleep.text.isNotEmpty){
+                prefs.setString('Bsleep', _sleep.text);
+              }
+              if(_weight.text.isNotEmpty){
+                prefs.setString('Bweight', _weight.text);
+              }
+                ScaffoldMessenger.of(context).showSnackBar(
+                               const  SnackBar(
+                                  content:  Text("Details Updated Succesffuly"),
+                                  duration:  Duration(seconds: 3),
+                                  backgroundColor: Color(0xFFB5E255),
+                                )
+                        );
+                Future.delayed(const Duration(seconds: 3),(){
+                  Navigator.pop(context);
+                });
             },
             child: Container(
                         height: 50,

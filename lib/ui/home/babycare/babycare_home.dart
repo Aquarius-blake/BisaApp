@@ -17,9 +17,24 @@ class Babyhome extends StatefulWidget {
 class _BabyhomeState extends State<Babyhome> {
 
 late SharedPreferences prefs;
+String? weight;
+String? sleep;
+int? sinceEpoch;
+DateTime? Birthday;
 List Vaccinationsdates = [
   
 ];
+List Vaccines =[
+  "BCG, OPVO, Hepatitis B",
+"OPV1, DPT/HiB/HepB1, Rotavirus 1, Pneumococcal 1",
+"OPV2, DPT/HiB/HepB2, Rotavirus2, Pneumococcal 2",
+"OPV3, DPT/HiB/HepB3, Pneumococcal 3, Inactivated Polio vaccine (IPV)",
+"Vitamin A",
+"MR1, Yellow fever",
+"Vitamin A",
+"MR2, MenA"
+];
+List intervals = [0,42,70,98,183,274,365,548];
 
 @override
   void initState() {
@@ -29,6 +44,26 @@ List Vaccinationsdates = [
 
 Future<void> initialize()async{
   prefs = await SharedPreferences.getInstance();
+  weight = prefs.getString('Bweight');
+  sleep = prefs.getString('Bsleep');
+  sinceEpoch = prefs.getInt('BDOB') ?? 0;
+  Birthday = DateTime.fromMillisecondsSinceEpoch(sinceEpoch!);
+
+  intervals.forEach((element) {
+    Vaccinationsdates.add(Birthday!.add(Duration(days:element)));
+   });
+
+  if(weight!=null){
+    weight = "${weight!} Kg";
+  }
+  if(sleep!=null){
+    sleep = "${weight!} Hrs";
+  }
+  if(mounted){
+    setState(() {
+      
+    });
+  }
 }
 
   @override
@@ -110,7 +145,7 @@ Future<void> initialize()async{
                               ),
                              const SizedBox(height: 10,),
                             Text( 
-                              "N/A",
+                              weight ?? "N/A",
                               style: TextStyle(
                                  fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w600,
@@ -161,7 +196,7 @@ Future<void> initialize()async{
                               ),
                              const SizedBox(height: 10,),
                             Text( 
-                              "N/A",
+                              sleep ?? "N/A",
                               style: TextStyle(
                                  fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w600,
@@ -203,6 +238,12 @@ Future<void> initialize()async{
                         ),
                       ),
                ),
+               Container(
+                height: double.maxFinite,
+                child: ListView.builder(
+                  itemBuilder: (context,index) => Container()
+                  ),
+               )
             ],
           )
           ),
