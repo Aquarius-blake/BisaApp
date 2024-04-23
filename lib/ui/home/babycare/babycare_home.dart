@@ -58,7 +58,7 @@ Future<void> initialize()async{
     weight = "${weight!} Kg";
   }
   if(sleep!=null){
-    sleep = "${weight!} Hrs";
+    sleep = "${sleep!} Hrs";
   }
   if(mounted){
     setState(() {
@@ -289,7 +289,15 @@ Future<void> initialize()async{
                                 ),
                                 const SizedBox(width: 10,),
                               Expanded(
-                                child: Text(" ${Vaccines[index]}")),
+                                child: Text(
+                                  " ${Vaccines[index]}",
+                                   style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                    fontSize: 16.sp,
+                                    color: const Color.fromRGBO(23, 30, 60, 1),
+                              ),
+                                  )
+                                  ),
                             ],
                           ),
                         ),
@@ -309,7 +317,11 @@ Future<void> initialize()async{
                                 ),
                                 const SizedBox(width: 10,),
                               Expanded(
-                                child: Text(" ${DateFormat('dd-MM-yyyy').format(Vaccinationsdates[index])}")),
+                                child: Text(
+                                  " ${DateFormat('dd-MM-yyyy').format(Vaccinationsdates[index])}",
+                                  style: TextStyle(),
+                                  )
+                                  ),
                             ],
                           ),
                         ),
@@ -318,7 +330,10 @@ Future<void> initialize()async{
                     ),
                   )
                   ),
-               )
+               ),
+               SizedBox(
+                height:60.h
+                )
             ],
           )
           ),
