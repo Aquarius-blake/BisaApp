@@ -247,6 +247,9 @@ Future<void> initialize()async{
                ),
                Container(
                 height: 700,
+                margin: EdgeInsets.symmetric(
+                  horizontal: 10
+                ),
                 child: ListView.builder(
                   itemCount: Vaccines.length,
                   itemBuilder: (context,index) => Container(
@@ -332,7 +335,7 @@ Future<void> initialize()async{
                   ),
                ),
                SizedBox(
-                height:60.h
+                height:120.h
                 )
             ],
           )
