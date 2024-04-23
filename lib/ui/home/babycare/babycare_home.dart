@@ -4,6 +4,7 @@ import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/ui/home/babycare/babyinput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,7 +39,7 @@ List intervals = [0,42,70,98,183,274,365,548];
 
 @override
   void initState() {
-    initialize();
+   initialize();
     super.initState();
   }
 
@@ -66,8 +67,14 @@ Future<void> initialize()async{
   }
 }
 
+@override
+  void didUpdateWidget(covariant Babyhome oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
   @override
   Widget build(BuildContext context) {
+   // print(Birthday);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -239,9 +246,77 @@ Future<void> initialize()async{
                       ),
                ),
                Container(
-                height: double.maxFinite,
+                height: 700,
                 child: ListView.builder(
-                  itemBuilder: (context,index) => Container()
+                  itemCount: Vaccines.length,
+                  itemBuilder: (context,index) => Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 10
+                    ),
+                    padding:const EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 20
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: const [
+                        BoxShadow(
+                              color: Color(0xFFB5E255),
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset:  Offset(1, 2), // changes position of shadow
+                            ),
+                      ]
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width*0.8,
+                          child: Row(
+                            children: [
+                              Text(
+                                "Vaccines:",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  color: const Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                const SizedBox(width: 10,),
+                              Expanded(
+                                child: Text(" ${Vaccines[index]}")),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Container(
+                          width: MediaQuery.of(context).size.width*0.8,
+                          child: Row(
+                            children: [
+                              Text(
+                                "Due Date:",
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  color: const Color.fromRGBO(23, 30, 60, 1),
+                                ),
+                                ),
+                                const SizedBox(width: 10,),
+                              Expanded(
+                                child: Text(" ${DateFormat('dd-MM-yyyy').format(Vaccinationsdates[index])}")),
+                            ],
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  )
                   ),
                )
             ],
@@ -254,6 +329,7 @@ Future<void> initialize()async{
           InkWell(
             onTap: (){
               PageAnimateNoRep(context, PageTransitionType.rightToLeft, Babyinput());
+
             },
             child: Container(
                         height: 50,
