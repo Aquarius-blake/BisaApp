@@ -1,7 +1,9 @@
 
 import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
+import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
+import 'package:bisa_app/ui/tips/tips_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
@@ -17,15 +19,21 @@ class GeneralWellnes extends StatefulWidget {
 class _GeneralWellnesState extends State<GeneralWellnes> {
 
    List items = [
-    WaterHome()
+    WaterHome(),
+    TipsPage(),
+    CycleHome()
   ];
 
   List itemname = [
-    "Body Hydration"
+    "Body Hydration",
+    "Read Articles",
+    "Cycle Tracker"
   ];
 
   List itemimage = [
     'assets/imgs/hydration.png',
+    'assets/imgs/books.png',
+    'assets/imgs/cyclefem.png',
   ];
 
 
