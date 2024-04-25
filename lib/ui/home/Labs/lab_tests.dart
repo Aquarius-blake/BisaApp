@@ -96,9 +96,13 @@ late int Selectedindex ;
               child: ListView.builder(
                 itemCount: Tests.length,
                 itemBuilder: (context,index) => InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    setState(() {
+                      Selectedindex = index;
+                    });
+                  },
                   child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
+                    margin:const EdgeInsets.symmetric(vertical: 20),
                     padding: const EdgeInsets.symmetric(
                       vertical: 20,
                       horizontal: 20
