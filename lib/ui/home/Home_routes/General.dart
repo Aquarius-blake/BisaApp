@@ -102,7 +102,7 @@ class _GeneralWellnesState extends State<GeneralWellnes> {
                     margin: const EdgeInsets.symmetric(
                       horizontal: 10
                     ),
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
