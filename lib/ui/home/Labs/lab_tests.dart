@@ -1,4 +1,5 @@
 
+import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -69,6 +70,27 @@ late int Selectedindex ;
         ),
         child: Column(
           children: [
+            Center(
+                 child: FadeAnimation(
+                        1.2,
+                        0,
+                        30,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Available Tests",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 22.sp,
+                                color: const Color.fromRGBO(99, 93, 93, 0.98),
+                              ),
+                              textAlign: TextAlign.center,
+                              )
+                          ],
+                        ),
+                      ),
+               ),
             Container(
               height: MediaQuery.of(context).size.height*0.8,
               child: ListView.builder(
@@ -76,6 +98,7 @@ late int Selectedindex ;
                 itemBuilder: (context,index) => InkWell(
                   onTap: (){},
                   child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.symmetric(
                       vertical: 20,
                       horizontal: 20
@@ -99,7 +122,7 @@ late int Selectedindex ;
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ),

@@ -32,6 +32,15 @@ List labs = [
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context); 
+          }, 
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.white,
+            )
+          ),
         title: Text(
           'Labs',
           style: TextStyle(
