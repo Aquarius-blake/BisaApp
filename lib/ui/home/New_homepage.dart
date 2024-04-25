@@ -9,6 +9,9 @@ import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/FemaleCycle/Cyclehome.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
+import 'package:bisa_app/ui/home/Home_routes/General.dart';
+import 'package:bisa_app/ui/home/Home_routes/Nutri_guide.dart';
+import 'package:bisa_app/ui/home/Home_routes/Physic.dart';
 import 'package:bisa_app/ui/home/Labs/labs_home.dart';
 import 'package:bisa_app/ui/home/Search_screen.dart';
 import 'package:bisa_app/ui/home/Specialist/Specialist_home.dart';
@@ -569,186 +572,201 @@ void _getlist(){
                       style: TextStyle(),
                       ),
                       const SizedBox(height: 10,),
-                      Container(
-                        width: MediaQuery.of(context).size.width*0.95,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                             BoxShadow(
-                                         color: Colors.grey,
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset:  Offset(1, 2), 
-                                      )
-                          ]
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Container(child: Image.asset('assets/imgs/diet2.png'),),
-                                        Container(child: Image.asset('assets/imgs/med.png'),),
-                                        Container(child: Image.asset('assets/imgs/nutplus.png'),),
-                                    
-                                      ],
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.fade, NutritionGuide());
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width*0.95,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                               BoxShadow(
+                                           color: Colors.grey,
+                                            spreadRadius: 1,
+                                            blurRadius: 2,
+                                            offset:  Offset(1, 2), 
+                                        )
+                            ]
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Container(child: Image.asset('assets/imgs/diet2.png'),),
+                                          Container(child: Image.asset('assets/imgs/med.png'),),
+                                          Container(child: Image.asset('assets/imgs/nutplus.png'),),
+                                      
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                    ),
-                                  Text(
-                                    "Nutrition Guidance",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20
-                                    ),
-                                    ),
-                                    SizedBox(height: 2,),
+                                    const SizedBox(
+                                      height: 10,
+                                      ),
                                     Text(
-                                    "Get the best of nutritional facts and recommendations from health experts",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      height: 0.9
-                                    ),
-                                    ),
-                                ],
+                                      "Nutrition Guidance",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+                                      ),
+                                      ),
+                                      SizedBox(height: 2,),
+                                      Text(
+                                      "Get the best of nutritional facts and recommendations from health experts",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        height: 0.9
+                                      ),
+                                      ),
+                                  ],
+                                )
+                                ),
+                              IconButton(
+                                onPressed: (){},
+                                icon: const Icon(Icons.arrow_forward_ios_outlined),
                               )
-                              ),
-                            IconButton(
-                              onPressed: (){},
-                              icon: Icon(Icons.arrow_forward_ios_outlined),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                        SizedBox(height: 20,),
-                      Container(
-                        width: MediaQuery.of(context).size.width*0.95,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                             BoxShadow(
-                                         color: Colors.grey,
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset:  Offset(1, 2), 
-                                      )
-                          ]
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Container(child: Image.asset('assets/imgs/bic.png'),),
-                                        Container(child: Image.asset('assets/imgs/walk.png'),),
-                                        Container(child: Image.asset('assets/imgs/explus.png'),),
-                                    
-                                      ],
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.fade, Physic());
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width*0.95,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                               BoxShadow(
+                                           color: Colors.grey,
+                                            spreadRadius: 1,
+                                            blurRadius: 2,
+                                            offset:  Offset(1, 2), 
+                                        )
+                            ]
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Container(child: Image.asset('assets/imgs/bic.png'),),
+                                          Container(child: Image.asset('assets/imgs/walk.png'),),
+                                          Container(child: Image.asset('assets/imgs/explus.png'),),
+                                      
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                    ),
-                                  Text(
-                                    "Physical Activities",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20
-                                    ),
-                                    ),
-                                    SizedBox(height: 2,),
+                                    const SizedBox(
+                                      height: 10,
+                                      ),
                                     Text(
-                                    "When it comes to eating right and exercising, there is no \" I\'ll start tomorrow\"",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      height: 1.0
-                                    ),
-                                    ),
-                                ],
+                                      "Physical Activities",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+                                      ),
+                                      ),
+                                      SizedBox(height: 2,),
+                                      Text(
+                                      "When it comes to eating right and exercising, there is no \" I\'ll start tomorrow\"",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        height: 1.0
+                                      ),
+                                      ),
+                                  ],
+                                )
+                                ),
+                              IconButton(
+                                onPressed: (){},
+                                icon: Icon(Icons.arrow_forward_ios_outlined),
                               )
-                              ),
-                            IconButton(
-                              onPressed: (){},
-                              icon: Icon(Icons.arrow_forward_ios_outlined),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                        SizedBox(height: 20,),
-                      Container(
-                        width: MediaQuery.of(context).size.width*0.95,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                             BoxShadow(
-                                         color: Colors.grey,
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset:  Offset(1, 2), 
-                                      )
-                          ]
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Container(child: Image.asset('assets/imgs/playwell.png'),),
-                                        Container(child: Image.asset('assets/imgs/markwell.png'),),
-                                        Container(child: Image.asset('assets/imgs/wellplus.png'),),
-                                    
-                                      ],
+                      InkWell(
+                        onTap: (){
+                          PageAnimateNoRep(context, PageTransitionType.fade, GeneralWellnes());
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width*0.95,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                               BoxShadow(
+                                           color: Colors.grey,
+                                            spreadRadius: 1,
+                                            blurRadius: 2,
+                                            offset:  Offset(1, 2), 
+                                        )
+                            ]
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Container(child: Image.asset('assets/imgs/playwell.png'),),
+                                          Container(child: Image.asset('assets/imgs/markwell.png'),),
+                                          Container(child: Image.asset('assets/imgs/wellplus.png'),),
+                                      
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                    ),
-                                  Text(
-                                    "General Wellness",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20
-                                    ),
-                                    ),
-                                    SizedBox(height: 2,),
+                                    const SizedBox(
+                                      height: 10,
+                                      ),
                                     Text(
-                                    "The groundwork for all happiness is good health",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      height: 0.9
-                                    ),
-                                    ),
-                                ],
+                                      "General Wellness",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+                                      ),
+                                      ),
+                                      SizedBox(height: 2,),
+                                      Text(
+                                      "The groundwork for all happiness is good health",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        height: 0.9
+                                      ),
+                                      ),
+                                  ],
+                                )
+                                ),
+                              IconButton(
+                                onPressed: (){},
+                                icon: Icon(Icons.arrow_forward_ios_outlined),
                               )
-                              ),
-                            IconButton(
-                              onPressed: (){},
-                              icon: Icon(Icons.arrow_forward_ios_outlined),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 40,),
