@@ -11,6 +11,33 @@ class LabTest extends StatefulWidget {
 }
 
 class _LabTestState extends State<LabTest> {
+
+
+late int Selectedindex ;
+
+ List Tests = [
+  "Blood test",
+  "Hepatitis b",
+  "complete blood count",
+  "Some Tests",
+  "Some Tests",
+  "Some Tests",
+  "Some Tests",
+  "Some Tests",
+  "Some Tests",
+  "Some Tests",
+ ];
+
+@override
+  void initState() {
+    initialze();
+    super.initState();
+  }
+
+  initialze(){
+    Selectedindex = Tests.length + 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +61,52 @@ class _LabTestState extends State<LabTest> {
             fontSize: 20.sp,
           ),
           ),
-         
+      ),
+      body: Container(
+        padding: const EdgeInsets.symmetric(
+           vertical: 20,
+           horizontal: 10
+        ),
+        child: Column(
+          children: [
+            Container(
+              child: ListView.builder(
+                itemCount: Tests.length,
+                itemBuilder: (context,index) => InkWell(
+                  onTap: (){},
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal: 20
+                    ),
+                  decoration: BoxDecoration(
+                    color: Selectedindex > Tests.length || Selectedindex != index? Colors.white : const Color(0xFFB5E255),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                          color: const Color(0xFFB5E255).withOpacity(0.4),
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset:  const Offset(1, 2)
+                         // offset:  Offset(2, 1), 
+                        )
+                    ]
+                  ),
+                  child: Text(
+                    "${Tests[index]}",
+                     style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+                ),
+            )
+          ],
+        ),
       ),
     );
   }
