@@ -1,6 +1,9 @@
 
+import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/ui/home/Labs/lab_tests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LabsHome extends StatefulWidget {
   const LabsHome({super.key});
@@ -41,7 +44,7 @@ List labs = [
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(
-          vertical: 10,
+          vertical: 20,
           horizontal: 10
         ),
         child: Column(
@@ -52,7 +55,7 @@ List labs = [
                 itemCount: labs.length,
                 itemBuilder: (context,index) => InkWell(
                   onTap: (){
-                   // PageAnimateNoRep(context, PageTransitionType.rightToLeft, LabcyDrugs(Labcyname:Labcies[index],));
+                    PageAnimateNoRep(context, PageTransitionType.rightToLeft,LabTest(lab: labs[index],));
                   },
                   child: Container(
                     padding: const EdgeInsets.all(20),

@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class LabTest extends StatefulWidget {
-  const LabTest({super.key});
+  final String? lab;
+   const LabTest({super.key,this.lab});
 
   @override
   State<LabTest> createState() => _LabTestState();
