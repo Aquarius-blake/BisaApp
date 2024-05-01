@@ -1,7 +1,10 @@
 
 
+import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/ui/home/Specialist/Specialist_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SpecialistHome extends StatefulWidget {
   const SpecialistHome({super.key});
@@ -11,6 +14,16 @@ class SpecialistHome extends StatefulWidget {
 }
 
 class _SpecialistHomeState extends State<SpecialistHome> {
+
+  List Specialist = [
+    'Specialist A',
+    'Specialist B',
+    'Specialist C',
+    'Specialist D',
+    'Specialist E',
+    'Specialist F'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +47,50 @@ class _SpecialistHomeState extends State<SpecialistHome> {
           ),
           ),
           centerTitle: true,
+      ),
+      body:  Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 10
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height*0.8,
+              child: ListView.builder(
+                itemCount: Specialist.length,
+                itemBuilder: (context,index) => InkWell(
+                  onTap: (){
+                    PageAnimateNoRep(context, PageTransitionType.rightToLeft,BookSpecialist());
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 10
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow:const <BoxShadow>[
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 1,
+                          blurRadius: 2,
+                          offset:  Offset(2, 1), 
+                        )
+                      ]
+                    ),
+                    child: Row(
+                      children: [
+                        Text(Specialist[index]),
+                      ],
+                    ),
+                  ),
+                )
+                ),
+            )
+          ],
+        ),
       ),
     );
   }

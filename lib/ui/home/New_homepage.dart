@@ -44,8 +44,8 @@ class _NewHomePageState extends State<NewHomePage> {
 
   List routes = [
     StartQuestion(),
-    TipsPage(),
-    CycleHome(),
+  CycleHome(), 
+   TipsPage(),
     WaterHome(),
     LabsHome(),
     FitnessSplash(),
@@ -53,8 +53,8 @@ class _NewHomePageState extends State<NewHomePage> {
     ];
   List<String?> routename = [
     'Ask a doctor',
+   ' Cycle\nTracker',
     ' Emergencies',
-    ' Cycle\nTracker',
     ' Hydration',
     ' Labs',
     ' Fitness',
@@ -62,8 +62,8 @@ class _NewHomePageState extends State<NewHomePage> {
   ];
   List<String?> routeimage = [
     'assets/imgs/doc.png',
+   'assets/imgs/cyclefem.png',
     'assets/imgs/bandaid.png',
-    'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
     'assets/imgs/labo.png',
     'assets/imgs/exercise.png',
@@ -122,8 +122,8 @@ void _getlist(){
     }else{
       routes = [
     StartQuestion(),
-    TipsPage(),
     CycleHome(),
+    TipsPage(),
     WaterHome(),
     LabsHome(),
     FitnessSplash(),
@@ -131,8 +131,8 @@ void _getlist(){
     ];
    routename = [
     'Ask a doctor',
-    ' Emergencies',
     ' Cycle\nTracker',
+    ' Emergencies',
     ' Hydration',
     ' Labs',
     ' Fitness',
@@ -140,8 +140,8 @@ void _getlist(){
   ];
    routeimage = [
     'assets/imgs/doc.png',
+    'assets/imgs/cyclefem.png',
     'assets/imgs/bandaid.png',
-    'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
     'assets/imgs/labo.png',
     'assets/imgs/exercise.png',

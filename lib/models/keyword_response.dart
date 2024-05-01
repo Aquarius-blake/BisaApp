@@ -1,7 +1,7 @@
  List<String> keywords = [
   'not feeling well',
   'feeling sick',
-  'sick'
+  'sick',
   'do you do',
   'can you do',
   'greetings',
@@ -35,7 +35,10 @@
   'child health',
   'nutrition',
   'other',
-  'yourself'
+  'yourself',
+  'good health',
+  'good',
+  'do that'
 ];
 
  List<String> responses = [
@@ -53,7 +56,7 @@
   'hey, how are you feeling today?',
   'Sure, I\'m always availabe here :)',
   'Understood. is there anything else you would like to share? if not you can tap the top chat icon to speak to a doctor',
-  'Sure, I\'m always availabe here :) ',
+  'Sure, I\'m always availabe here :)',
   'Sure, I\'m always availabe here :)',
   'Why did the scarecrow win an award? Because he was outstanding in his field.',
   'I exist in the virtual realm',
@@ -75,5 +78,8 @@
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
-  'Likewise, how can I be of service today?'
+  'Likewise, how can I be of service today?',
+  'That\'s good to hear, I\' glad you are taking good care of yourself :)',
+  'I\'m glad.',
+  'do what?'
 ];

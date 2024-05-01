@@ -116,6 +116,7 @@ class _MeditationHomeState extends State<MeditationHome> {
                WaterfallFlow.builder(
       shrinkWrap: true,
     //  physics: const NeverScrollableScrollPhysics(),
+    
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 10,
@@ -124,6 +125,7 @@ class _MeditationHomeState extends State<MeditationHome> {
         crossAxisCount: 2,
         crossAxisSpacing: 5.0,
         mainAxisSpacing: 15.0,
+        
       ),
       itemCount: images.length,
       itemBuilder: (BuildContext context, int index) {
