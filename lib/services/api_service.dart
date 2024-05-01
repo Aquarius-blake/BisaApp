@@ -837,6 +837,30 @@ Future<dynamic> getArticles(data) async {
   }
 }
 
+Future getPharmacies(data)async{
+  try {
+     
+  } catch (e) {
+    print(e.toString()); 
+  }
+}
+
+Future getdrugs(data)async{
+    try {
+     
+  } catch (e) {
+    print(e.toString()); 
+  }
+}
+
+Future getSearchresult(data)async{
+  try {
+    
+  } catch (e) {
+    print(e.toString()); 
+  }
+}
+
 Future<VideosRes> getVideos(data) async {
   try {
     final http.Response response = await http.get(

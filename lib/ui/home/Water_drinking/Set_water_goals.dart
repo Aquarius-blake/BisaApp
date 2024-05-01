@@ -1,6 +1,15 @@
 
+import 'dart:math';
+
+import 'package:bisa_app/animation/fade_animation.dart';
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_quantity_card.dart';
+import 'package:bisa_app/utils/validator.dart';
+import 'package:cron/cron.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterGoals extends StatefulWidget {
@@ -15,7 +24,40 @@ class _WaterGoalsState extends State<WaterGoals> {
 final _formkey = GlobalKey<FormState>();
 TextEditingController _goalController = TextEditingController();
 final goalfocusNode = FocusNode();
+final cron = Cron();
  int Selectedindex = 6;
+ String? dailygoal;
+ Random random = Random();
+ List<String> ids = [];
+ List<String> reminders = [
+  "Drink water now",
+  "Time to drink water",
+  "Hydrate yourself",
+  "Drink water",
+  "Water time",
+  "Stay hydrated",
+    "Stay hydrated, stay unstoppable!",
+    "A sip for health, a gulp for vitality!",
+    "Don't wait till you're thirsty, drink now and feel the difference!",
+    "Hydration, your body's best friend!",
+    "Water: the elixir of life. Drink up!",
+    "Sip by sip, staying refreshed and fit!",
+    "Fuel your day with water, the ultimate energy booster!",
+    "Keep calm and hydrate on!",
+    "Water, the natural remedy for a rejuvenated you!",
+    "Every drop counts, stay hydrated for peak performance!",
+    "Hydration station: where greatness begins!",
+    "H2O - Your body's superhero!",
+    "Water: the key to unlocking your full potential!",
+    "Drink water like it's your job, because it is – for your health!",
+    "Hydrate your way to success!",
+    "Pour, sip, conquer!",
+    "Water: your body's best defense against fatigue!",
+    "Don't let dehydration sneak up on you – sip smart, stay sharp!",
+    "One glass closer to your health goals!",
+    "Hydrate today for a better tomorrow!"
+ ];
+ late SharedPreferences prefs;
 List images = [
   'assets/imgs/cup.png',
   'assets/imgs/glass1.png',
@@ -26,23 +68,33 @@ List images = [
   ];
 
   @override
+  void initState() {
+    _initPrefs();
+    super.initState();
+  }
+
+Future <void> _initPrefs() async{
+  prefs = await SharedPreferences.getInstance();
+}
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       body: Container(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 10
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 10
                 ),
                 width: MediaQuery.of(context).size.width,
                 height: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.lightBlueAccent,
                   // borderRadius: BorderRadius.only(
                   //   bottomLeft: Radius.circular(30),
@@ -78,7 +130,7 @@ List images = [
                 ),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height - 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
@@ -88,7 +140,10 @@ List images = [
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
+                   const SizedBox(
+                      height: 20,
+                    ),
+                   const Center(
                       child: Text(
                         "Set Water Goals",
                         style: TextStyle(
@@ -98,7 +153,7 @@ List images = [
                           )
                         ),
                     ),
-                    SizedBox(
+                  const  SizedBox(
                       height: 20,
                     ),
                     Center(
@@ -116,17 +171,25 @@ List images = [
                           //   ),
                           child: TextFormField(
                             controller: _goalController,
-                            decoration: InputDecoration(
-                              
+                              validator:(text) => Validator.textValidator(text),
+                              keyboardType: TextInputType.number,
+                                decoration:  InputDecoration(
+                                  filled: true,
+                                  fillColor: Color.fromRGBO(255, 255, 255, 1),
+                                  labelText: 'Set your daily goal',
+                                  hintText: 'Enter your goal in ml',
+                                   border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                                )
                             ),
                           )
                           ),
                       ),
                     ),
-                    SizedBox(
+                   const SizedBox(
                       height: 40,
                     ),
-                    Text(
+                  const  Text(
                       "Choose your water container size:",
                       style: TextStyle(
                         color: Colors.lightBlueAccent,
@@ -135,7 +198,7 @@ List images = [
                         ),
                         textAlign: TextAlign.start,
                       ),
-                     SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     WaterfallFlow.builder(
@@ -185,16 +248,167 @@ List images = [
         ),
       ),
       floatingActionButton: InkWell(
-        onTap: (){},
-        child: Container(
-          height: 170,
-          width: 170,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/imgs/waterdrop.png'),
-              fit: BoxFit.cover
-              )
-          ),
+        onTap: (){
+
+          if(_formkey.currentState!.validate()){
+            if(Selectedindex < 6){
+              var Noiterations = int.parse(_goalController.text)/((Selectedindex + 1) * 100);
+              dailygoal = _goalController.text;
+              if(Noiterations.runtimeType == double){
+               var iterations = Noiterations.round();
+
+               if(iterations == 0){
+                iterations++;
+               }
+
+               for( int i = 1 ; i <= iterations ; i++ ){
+                //Schedule the notifications here
+                var interval1 = (16*60)/iterations;
+               var duration = interval1*i;
+               ids.add(i.toString());
+                print(duration);
+
+
+              // Schedule a task that will run every 1 day
+                  cron.schedule(Schedule(minutes: duration.round()), () async {
+                    // Schedule a notification right now
+                    LocalNotifications.showSimpleNotification(
+                      id: i,
+                      title: "Bisa Hydration Reminder",
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder",);
+                      //Schedules a notification 24hr later
+                    LocalNotifications.showPeriodicNotifications(
+                      title: "Bisa Hydration Reminder", 
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder", 
+                      id: i, 
+                      interval: RepeatInterval.daily);
+                      // LocalNotifications.showScheduledNotification(
+                      //     title: "Bisa Hydration Reminder", 
+                      //     body: reminders[random.nextInt(reminders.length)], 
+                      //     payload: "Water Reminder", 
+                      //     id: i, 
+                      //     interval: duration.round()
+                      //     );
+                  });
+
+              
+
+               }
+
+              }else if(Noiterations.runtimeType == int){
+                 for( int i = 1 ; i <= Noiterations ; i++ ){
+                //Schedule the notifications here
+                 var interval1 = (16*60)/Noiterations;
+               var duration = interval1*i;
+               ids.add(i.toString());
+                print(duration);
+
+
+                LocalNotifications.showScheduledNotification(
+                          title: "Bisa Hydration Reminder", 
+                          body: reminders[random.nextInt(reminders.length)], 
+                          payload: "Water Reminder", 
+                          id: i, 
+                          interval: duration.round()
+                          );
+
+               // Schedule a task that will run every 1 day
+                  cron.schedule(Schedule(minutes: duration.round()), () async {
+                    // Schedule a notification right now
+                    LocalNotifications.showSimpleNotification(
+                      id: i,
+                      title: "Bisa Hydration Reminder",
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder",);
+                       //Schedules a notification 24hr later
+                    LocalNotifications.showPeriodicNotifications(
+                      title: "Bisa Hydration Reminder", 
+                      body: reminders[random.nextInt(reminders.length)], 
+                      payload: "Water Reminder", 
+                      id: i, 
+                      interval: RepeatInterval.daily);
+                      // LocalNotifications.showScheduledNotification(
+                      //     title: "Bisa Hydration Reminder", 
+                      //     body: reminders[random.nextInt(reminders.length)], 
+                      //     payload: "Water Reminder", 
+                      //     id: i, 
+                      //     interval: duration.round()
+                      //     );
+                  });
+
+               }
+              }else{
+                //Error message
+                print(Noiterations.runtimeType);
+              }
+            }else{
+               ScaffoldMessenger.of(context).showSnackBar(
+                   const SnackBar(
+                      content: Text("Please choose your water container size"),
+                      duration: Duration(seconds: 3),
+                      backgroundColor: Colors.redAccent,
+                    )
+                  );
+            }
+            prefs.setStringList("Water", ids);
+            prefs.setString('Watergoal', dailygoal!);
+            ScaffoldMessenger.of(context).showSnackBar(
+                        const  SnackBar(
+                            content: Text("Hydration goal set successfully"),
+                            duration: Duration(seconds: 3),
+                            backgroundColor: Colors.lightBlueAccent,
+                          )
+                        );
+        //    Navigator.pop(context);
+          }
+
+         // LocalNotifications.showSimpleNotification(title: "Bisa test", body: "testing", payload: "Bisa Test");
+        // LocalNotifications.showPeriodicNotifications(title: "Hydration test", body: "Test Message", payload: "DATA", id: 1, interval: RepeatInterval.everyMinute);
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   SnackBar(
+        //     content: Text("Water goal set successfully"),
+        //     duration: Duration(seconds: 3),
+        //     backgroundColor: Colors.lightBlueAccent,
+        //   )
+        // );
+        },
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Container(
+              height: 170,
+              width: 170,
+              decoration:const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/imgs/waterdrop.png'),
+                  fit: BoxFit.cover
+                  )
+              ),
+            ),
+             Positioned(
+              top: 6,
+              left: -20,
+              child: _goalController.text.isNotEmpty && Selectedindex < 6 ? FadeAnimation(
+                      1.2,
+                        0,
+                        30,
+                 ChatBubble(
+                  backGroundColor: Colors.lightBlueAccent,
+                  clipper: ChatBubbleClipper9(type: BubbleType.sendBubble),
+                  child: Text(
+                    "Tap on me",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
+                      )
+                    ),
+                ),
+              ):Container()
+            )
+          ],
         ),
       ),
     );

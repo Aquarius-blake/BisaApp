@@ -1,6 +1,7 @@
  List<String> keywords = [
   'not feeling well',
   'feeling sick',
+  'sick'
   'do you do',
   'can you do',
   'greetings',
@@ -33,10 +34,12 @@
   'HIV',
   'child health',
   'nutrition',
-  'other'
+  'other',
+  'yourself'
 ];
 
  List<String> responses = [
+  'Sorry to hear that, Which of the following categories would you categorize your condition as: \nGeneral Health \nPregnancy \nCovid-19 \nSexual Health \nHIV \nChild Health \nNutrition \nOther',
   'Sorry to hear that, Which of the following categories would you categorize your condition as: \nGeneral Health \nPregnancy \nCovid-19 \nSexual Health \nHIV \nChild Health \nNutrition \nOther',
   'Sorry to hear that, Which of the following categories would you categorize your condition as: \nGeneral Health \nPregnancy \nCovid-19 \nSexual Health \nHIV \nChild Health \nNutrition \nOther',
   'I can tell a joke, refer you to a doctor if necessary and I\'m also available for a quick chat',
@@ -72,4 +75,5 @@
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
   'Understood, could you please tell me more about your current condition? or would you like to be referred to a doctor?',
+  'Likewise, how can I be of service today?'
 ];

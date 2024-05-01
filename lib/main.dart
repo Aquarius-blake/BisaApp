@@ -1,6 +1,7 @@
 import 'package:bisa_app/providers/bottom_nav_provider.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
 import 'package:bisa_app/providers/settings_provider.dart';
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/chat/chat_list.dart';
 import 'package:bisa_app/ui/home/home_page.dart';
 import 'package:bisa_app/ui/insurance/confirm_form.dart';
@@ -40,6 +41,7 @@ Future<void> main() async {
   _currentUserProvider.currentUser;
   // _settingsProvider.getSettings();
   WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotifications.init();
   // await Firebase.initializeApp();
 
   // // Set the background messaging handler early on, as a named top-level function

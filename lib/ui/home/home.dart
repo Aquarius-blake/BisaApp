@@ -5,6 +5,7 @@ import 'package:bisa_app/providers/current_user_provider.dart';
 import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/start_question.dart';
 import 'package:bisa_app/ui/home/Fitness/Fitness_home.dart';
+import 'package:bisa_app/ui/home/Fitness/Fitness_splash.dart';
 import 'package:bisa_app/ui/home/Meditation/Meditation_home.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/covid_page/main.dart';
@@ -195,7 +196,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                     PageAnimationTransition(
                                       pageAnimationType:
                                           FadeAnimationTransition(),
-                                      page: const FitnessHome(),
+                                      page: const FitnessSplash(),
                                     ),
                                   );
                                 },

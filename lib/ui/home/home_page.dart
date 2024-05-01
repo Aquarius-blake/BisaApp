@@ -9,10 +9,9 @@ import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/chat/Chatbot_screen.dart';
 // import 'package:bisa_app/ui/chat/chat_details.dart';
 import 'package:bisa_app/ui/chat/chat_list.dart';
-import 'package:bisa_app/ui/chat/start_question.dart';
-import 'package:bisa_app/ui/home/home.dart';
+import 'package:bisa_app/ui/home/New_homepage.dart';
+import 'package:bisa_app/ui/home/Pharmacy/Pharmacy_home.dart';
 import 'package:bisa_app/ui/profile/profile_page.dart';
-import 'package:bisa_app/ui/tips/tips_page.dart';
 // import 'package:bisa_app/ui/widgets/popup.dart';
 import 'package:flutter/cupertino.dart';
 // import 'package:flutter/foundation.dart';
@@ -57,9 +56,11 @@ class HomePageState extends State<HomePage> {
     currentUser = context.read<CurrentUserProvider>().currentUser!;
     super.initState();
     _widgetOptions = <Widget>[
-      const Home(),
+      //const Home(),
+      const NewHomePage(),
       const ChatListScreen(),
-      const TipsPage(),
+      //const TipsPage(),
+      const Pharmahome(),
       const ProfilePage()
     ];
 
@@ -169,6 +170,8 @@ class HomePageState extends State<HomePage> {
           0,
           BottomAppBar(
             shape: const CircularNotchedRectangle(),
+            surfaceTintColor: Colors.transparent,
+            color: Colors.white,
             notchMargin: 8,
             child: Row(
               //children inside bottom appbar
@@ -180,10 +183,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(0);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/home.png',
-                        color: isSelected(0) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:15.0,
+                        right: 20.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/home.png',
+                            color: isSelected(0) ? const Color(0xFFB5E255) : null,
+                          ),
+                          Text(
+                            'Home',
+                            style:TextStyle(
+                              fontSize: 12,
+                              color: isSelected(0) ? const Color(0xFFB5E255) : null,
+                              )
+                              ),
+                        ],
                       ),
                     )),
                 FutureBuilder(
@@ -220,20 +238,35 @@ class HomePageState extends State<HomePage> {
                             : unans.isEmpty
                                 ? false
                                 : true,
-                        position: BadgePosition.topEnd(top: 10, end: 10),
+                        position: BadgePosition.topEnd(top: 2, end: 10),
                         child: InkWell(
                             onTap: () {
                               _onItemTapped(1);
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.only(
+                                left:20.0,
+                                right: 22.0,
+                                top: 12.0
+                                ),
                               // child: Image.asset('assets/imgs/cart.png',color: isSelected(1)? Colors.green:null,),
-                              child: Icon(
-                                CupertinoIcons.chat_bubble_2_fill,
-                                color: isSelected(1)
-                                    ? Colors.green
-                                    : const Color.fromRGBO(186, 185, 208, 1),
-                                size: 34,
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.chat_bubble_2_fill,
+                                    color: isSelected(1)
+                                        ? const Color(0xFFB5E255)
+                                        : const Color.fromRGBO(186, 185, 208, 1),
+                                    size: 27,
+                                  ),
+                                  Text(
+                                    "chats",
+                                  style:TextStyle(
+                                    fontSize: 12,
+                                    color: isSelected(1) ? const Color(0xFFB5E255) : null,
+                                  )
+                                  )
+                                ],
                               ),
                             )),
                       );
@@ -243,10 +276,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(2);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/chart.png',
-                        color: isSelected(2) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:20.0,
+                        right: 15.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/Chart1.png',
+                            color: isSelected(2) ? const Color(0xFFB5E255) : null,
+                          ),
+                          Text(
+                            'Pharmacy',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: isSelected(2) ? const Color(0xFFB5E255) : null,
+                            ),
+                            )
+                        ],
                       ),
                     )),
                 InkWell(
@@ -254,10 +302,25 @@ class HomePageState extends State<HomePage> {
                       _onItemTapped(3);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Image.asset(
-                        'assets/imgs/person.png',
-                        color: isSelected(3) ? Colors.green : null,
+                      padding: const EdgeInsets.only(
+                        left:8.0,
+                        right: 8.0,
+                        top: 15.0
+                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/person.png',
+                            color: isSelected(3) ? const Color(0xFFB5E255) : null,
+                          ),
+                          Text(
+                            "My Account",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: isSelected(3) ? const Color(0xFFB5E255) : null,
+                            ),
+                            )
+                        ],
                       ),
                     )),
               ],
@@ -272,14 +335,19 @@ class HomePageState extends State<HomePage> {
           //   shapeBorder: CircleBorder(),
           //   child:
           FloatingActionButton(
-        backgroundColor: Platform.isIOS?Colors.transparent:Colors.white,
+        backgroundColor: Platform.isIOS?Colors.transparent:Color(0xFFB5E255),
         child: Container(
           height: 50,
           decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
-              image: DecorationImage(
-                  image: AssetImage('assets/imgs/add_icon.png'))),
+              color: Color(0xFFB5E255),
+              // image: DecorationImage(
+              //     image: AssetImage('assets/imgs/add_icon.png'))
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    ),
         ),
         onPressed: () {
           Navigator.push(

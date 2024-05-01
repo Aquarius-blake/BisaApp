@@ -1,9 +1,11 @@
 
 
 import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/services/local_notifications.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Set_water_goals.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WaterDash extends StatefulWidget {
   const WaterDash({super.key});
@@ -13,6 +15,29 @@ class WaterDash extends StatefulWidget {
 }
 
 class _WaterDashState extends State<WaterDash> {
+ late  SharedPreferences prefrences;
+ String? goal;
+
+
+
+  @override
+  void initState() {
+    initPrefs();  
+    super.initState();
+   
+  }
+
+ Future initPrefs() async{
+    prefrences = await SharedPreferences.getInstance();
+    goal = prefrences.getString('Watergoal') ?? "Nil";
+    goal = goal! + "ml/day";
+    if(mounted){
+      setState(() {
+        
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,14 +135,40 @@ class _WaterDashState extends State<WaterDash> {
                                 height: 10,
                                 ),
                                 Text(
-                                  "1500ml/day",
+                            goal ??  "1500ml/day",
                                   style: TextStyle(
                                     fontSize: 38
                                   ),
                                   )
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          LocalNotifications.cancelNotification(1).then(
+                            (value){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text("Reminders disabled successfully!"),
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Colors.lightBlueAccent,
+                                      )
+                                    );
+                            }
+                            );
+                        },
+                        child: const Text(
+                          "Disable reminders",
+                          style: TextStyle(
+                            color: Colors.lightBlueAccent,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                            ),
+                          ),
+                      ),
                     ],
                   ),
                 ),
