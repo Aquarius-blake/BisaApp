@@ -139,14 +139,15 @@ class _BookSpecialistState extends State<BookSpecialist> {
             },
             child: Container(
                         height: 50,
-                        width: 250,
+                        // width: 250,
                         margin: const EdgeInsets.only(
                           top: 10,
                           bottom: 10,
                           left:30
                           ),
                           padding: EdgeInsets.symmetric(
-                            horizontal: 20
+                            horizontal: 25,
+                            vertical: 5
                           ),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -165,7 +166,7 @@ class _BookSpecialistState extends State<BookSpecialist> {
                             "Book Appointment",
                             style: TextStyle(
                               fontFamily: 'Poppins',
-                              fontSize: 20.sp,
+                              fontSize: 16.sp,
                               color:  Colors.black,
                             ),
                           ),
