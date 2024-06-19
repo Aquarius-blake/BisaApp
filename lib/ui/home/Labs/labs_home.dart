@@ -3,6 +3,7 @@ import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/ui/home/Labs/lab_tests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
 
 class LabsHome extends StatefulWidget {
@@ -50,6 +51,15 @@ List labs = [
           ),
           ),
           centerTitle: true,
+          actions: [
+            IconButton(
+            onPressed: (){}, 
+            icon: const FaIcon(
+              FontAwesomeIcons.list,
+              color: Colors.white,
+              )
+              )
+          ],
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(
