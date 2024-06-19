@@ -49,7 +49,7 @@ initialize()async{
 
   @override
   Widget build(BuildContext context) {
-    //prefs.remove('gender');
+    prefs.remove('gender');
     return gender!=null? FitnessHome() : Scaffold(
       body: Center(
         child: Container(
