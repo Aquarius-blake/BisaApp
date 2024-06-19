@@ -27,7 +27,7 @@ class _Lab_historyState extends State<Lab_history> {
             )
           ),
         title: Text(
-          'History',
+          'Request History',
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',

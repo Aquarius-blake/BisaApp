@@ -1,5 +1,6 @@
 
 import 'package:bisa_app/animation/PageTransition.dart';
+import 'package:bisa_app/ui/home/Labs/Lab_history.dart';
 import 'package:bisa_app/ui/home/Labs/lab_tests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,7 +54,7 @@ List labs = [
           centerTitle: true,
           actions: [
             IconButton(
-            onPressed: (){}, 
+            onPressed: () => PageAnimateNoRep(context, PageTransitionType.rightToLeft, const Lab_history()), 
             icon: const FaIcon(
               FontAwesomeIcons.list,
               color: Colors.white,
