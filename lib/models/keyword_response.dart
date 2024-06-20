@@ -108,6 +108,7 @@
   "smoking risks",
   "alcohol consumption",
   "drug interactions",
+  "help",
 ];
 
  List<String> responses = [
@@ -220,4 +221,5 @@
   "Smoking poses serious risks to your health! Let's discuss quitting strategies. 🚭",
   "Monitor your alcohol consumption for a healthier lifestyle! Let's chat about moderation. 🍷",
   "Be cautious of drug interactions! Let's review your medications. ⚠️",
+  'I can tell a joke, refer you to a doctor if necessary and I\'m also available for a quick chat',
 ];
