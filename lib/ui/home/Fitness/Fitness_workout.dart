@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
@@ -25,6 +26,9 @@ class _WorkoutPageState extends State<WorkoutPage> {
   final CountdownController _controller = CountdownController();
   int currentset = 1;
   late int timer;
+  late SharedPreferences prefs;
+  late int currentKcal;
+  late int workouts;
 
 
   @override
@@ -35,6 +39,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
     super.initState();
   }
 
+
+  initialize()async{
+    prefs = await SharedPreferences.getInstance();
+    currentKcal = prefs.getInt('Kcal') ?? 0;
+    workouts = prefs.getInt('Workouts') ?? 0;
+  }
 
   Future<void> _setupAudioPlayers()async{
     _player1.playbackEventStream.listen((event) { },
@@ -136,6 +146,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
                 seconds: timer, 
                 controller: _controller,
                 onFinished: (){
+                  workouts++;
+                  currentKcal = currentKcal + widget.workoutdata['Kcal'] as int;
+                  print(currentKcal);
+                  prefs.setInt('Kcal',  currentKcal);
+                  prefs.setInt('Workouts', workouts);
                 if(currentset == 0){
                     if(widget.index == widget.workoutdatalist.length-1){
                      

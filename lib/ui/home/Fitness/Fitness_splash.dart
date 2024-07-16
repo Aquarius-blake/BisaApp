@@ -32,7 +32,7 @@ class _FitnessSplashState extends State<FitnessSplash> {
 
 initialize()async{
   prefs = await SharedPreferences.getInstance();
-  gender = await prefs.getString('gender');
+  gender =  prefs.getString('gender');
   if(mounted){
     setState(() {
       
@@ -49,7 +49,7 @@ initialize()async{
 
   @override
   Widget build(BuildContext context) {
-    prefs.remove('gender');
+   // prefs.remove('gender');
     return gender!=null? FitnessHome() : Scaffold(
       body: Center(
         child: Container(
