@@ -33,6 +33,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
 
   @override
   void initState() {
+    initialize();
     _setupAudioPlayers();
     timer = widget.workoutdata['reptimer'];
     _controller.start();
