@@ -18,6 +18,9 @@ import 'package:provider/provider.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:showcaseview/showcaseview.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 
 final CurrentUserProvider _currentUserProvider = CurrentUserProvider();
 final BottomNavProvider _bottomNavProvider = BottomNavProvider();
@@ -42,6 +45,9 @@ Future<void> main() async {
   // _settingsProvider.getSettings();
   WidgetsFlutterBinding.ensureInitialized();
   await LocalNotifications.init();
+  await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+);
   // await Firebase.initializeApp();
 
   // // Set the background messaging handler early on, as a named top-level function

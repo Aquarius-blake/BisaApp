@@ -29,6 +29,13 @@
             {
               "client_id": "1008119938691-kcl7upe0o86rnauj2q4jv0979dc3dbio.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1008119938691-gkt3gktld1109ao5fcfri57p5167gsdp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "gh.com.bisa.app"
+              }
             }
           ]
         }

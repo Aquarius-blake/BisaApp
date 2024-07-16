@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
 import 'package:bisa_app/providers/settings_provider.dart';
+import 'package:bisa_app/services/FirebaseMethods.dart';
 import 'package:bisa_app/services/api_service.dart';
 import 'package:bisa_app/ui/home/home_page.dart';
 import 'package:bisa_app/ui/widgets/popup.dart';
@@ -61,10 +62,15 @@ class SplashState extends State<Splash> with TickerProviderStateMixin {
   void initState() {
     // _controller.forward();
     // ignore: avoid_print
+    initialize();
     _getSharedPref().then((value) => print('pref initialized'));
     _loadSettings();
     _checkLoggedIn();
     super.initState();
+  }
+
+initialize()async{
+     await FirebaseApi().initfirebaseNotifs();
   }
 
   @override
