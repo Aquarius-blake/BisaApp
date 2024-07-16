@@ -206,10 +206,10 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "450139df38815ba6c1ba1ac116619e8428f3101f"
+      resolved-ref: "9cd145db3de840428cf50b59417cbb8adc406909"
       url: "https://github.com/Aquarius-blake/chatbotB"
     source: git
-    version: "1.0.5"
+    version: "1.0.6"
   checked_yaml:
     dependency: transitive
     description:
@@ -821,10 +821,10 @@ packages:
     dependency: transitive
     description:
       name: mailer
-      sha256: d25d89555c1031abacb448f07b801d7c01b4c21d4558e944b12b64394c84a3cb
+      sha256: "0ba85aba6e1a3021e6d5b1f8035573a2240973b58c2158be26a3978681d1b6c6"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "6.1.1"
   matcher:
     dependency: transitive
     description:
