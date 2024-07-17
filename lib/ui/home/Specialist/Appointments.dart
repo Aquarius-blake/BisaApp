@@ -34,6 +34,56 @@ class _AppointmentListState extends State<AppointmentList> {
           ),
           centerTitle: true,
       ),
+      body: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 10,
+        ),
+        child: FutureBuilder(
+          future: null, 
+          builder: (context, future) {
+            if(future.connectionState == ConnectionState.waiting){
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }else if(!future.hasData){
+              return const Center(
+                child: Text(
+                  "No Appointments",
+                  style: TextStyle(
+                    fontSize: 26,
+                    color:  Color.fromRGBO(23, 30, 60, 1),
+                  ),
+                  ),
+              );
+            }else if(future.hasData){
+              if(future.data == []){
+                return const Center(
+                child: Text(
+                  "No Appointments",
+                  style: TextStyle(
+                    fontSize: 26,
+                    color:  Color.fromRGBO(23, 30, 60, 1),
+                  ),
+                  ),
+              );
+              }else{
+                return Container();
+              }
+            }else{
+                return const Center(
+                child: Text(
+                  "Oops! Something went wrong",
+                  style: TextStyle(
+                    fontSize: 21,
+                    color:  Color.fromRGBO(23, 30, 60, 1),
+                  ),
+                  ),
+              );
+            }
+          }
+          ),
+      ),
     );
   }
 }
