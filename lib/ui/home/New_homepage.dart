@@ -14,6 +14,7 @@ import 'package:bisa_app/ui/home/Home_routes/Nutri_guide.dart';
 import 'package:bisa_app/ui/home/Home_routes/Physic.dart';
 import 'package:bisa_app/ui/home/Labs/labs_home.dart';
 import 'package:bisa_app/ui/home/Search_screen.dart';
+import 'package:bisa_app/ui/home/Specialist/Appointments.dart';
 import 'package:bisa_app/ui/home/Specialist/Specialist_home.dart';
 import 'package:bisa_app/ui/home/Water_drinking/Water_home.dart';
 import 'package:bisa_app/ui/home/babycare/babycare_home.dart';
@@ -93,6 +94,7 @@ void _getlist(){
   if(gender=='Male'){
      routes = [
     StartQuestion(),
+    AppointmentList(),
     TipsPage(),
    // CycleHome(),
     WaterHome(),
@@ -102,6 +104,7 @@ void _getlist(){
     ];
    routename = [
     'Ask a doctor',
+    'Appointments',
     ' Emergencies',
    // ' Cycle\nTracker',
     ' Hydration',
@@ -111,6 +114,7 @@ void _getlist(){
   ];
    routeimage = [
     'assets/imgs/doc.png',
+    'assets/imgs/appoint.png',
     'assets/imgs/bandaid.png',
   //  'assets/imgs/femcycle.png',
     'assets/imgs/hydration.png',
@@ -123,6 +127,7 @@ void _getlist(){
       routes = [
     StartQuestion(),
     CycleHome(),
+    AppointmentList(),
     TipsPage(),
     WaterHome(),
     LabsHome(),
@@ -132,6 +137,7 @@ void _getlist(){
    routename = [
     'Ask a doctor',
     ' Cycle\nTracker',
+    'Appointments',
     ' Emergencies',
     ' Hydration',
     ' Labs',
@@ -141,6 +147,7 @@ void _getlist(){
    routeimage = [
     'assets/imgs/doc.png',
     'assets/imgs/cyclefem.png',
+    'assets/imgs/appoint.png',
     'assets/imgs/bandaid.png',
     'assets/imgs/hydration.png',
     'assets/imgs/labo.png',
