@@ -574,7 +574,8 @@ void _getlist(){
                       const SizedBox(height: 10,),
                       InkWell(
                         onTap: (){
-                          PageAnimateNoRep(context, PageTransitionType.fade, NutritionGuide());
+                         // PageAnimateNoRep(context, PageTransitionType.fade, NutritionGuide());
+                         PageAnimateNoRep(context, PageTransitionType.fade, DietHome());
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width*0.95,
