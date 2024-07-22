@@ -63,38 +63,67 @@ class _PharmahomeState extends State<Pharmahome> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height *0.85,
-              child: ListView.builder(
-                itemCount: pharmacies.length,
-                itemBuilder: (context,index) => InkWell(
-                  onTap: (){
-                    PageAnimateNoRep(context, PageTransitionType.rightToLeft, PharmacyDrugs(pharmacyname:pharmacies[index],));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(20),
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 10
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow:const <BoxShadow>[
-                        BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 2,
-                          offset:  Offset(2, 1), 
-                        )
-                      ]
-                    ),
-                    child: Row(
-                      children: [
-                        Text(pharmacies[index]),
-                      ],
-                    ),
-                  ),
-                )
+              child: FutureBuilder(
+                future: null, 
+                builder: (context, future) {
+                  if(future.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                      );
+                  }else if(!future.hasData){
+                    return const Center(
+                      child: Text("No Data Available"),
+                      );
+                  }else if(future.hasData){
+                      if(future.data == []){
+                      return  const Center(
+                      child: Text("No Data Available"),
+                      );
+                      }else{
+                        return Container();
+                      }
+                  }else{
+                    return const Center(
+                      child: Text("Oops! Something Went Wrong"),
+                      );
+                  }
+                }
                 ),
             )
+            // Container(
+            //   height: MediaQuery.of(context).size.height *0.85,
+            //   child: ListView.builder(
+            //     itemCount: pharmacies.length,
+            //     itemBuilder: (context,index) => InkWell(
+            //       onTap: (){
+            //         PageAnimateNoRep(context, PageTransitionType.rightToLeft, PharmacyDrugs(pharmacyname:pharmacies[index],));
+            //       },
+            //       child: Container(
+            //         padding: const EdgeInsets.all(20),
+            //         margin: const EdgeInsets.symmetric(
+            //           vertical: 10
+            //         ),
+            //         decoration: BoxDecoration(
+            //           color: Colors.white,
+            //           borderRadius: BorderRadius.circular(10),
+            //           boxShadow:const <BoxShadow>[
+            //             BoxShadow(
+            //               color: Colors.grey,
+            //               spreadRadius: 1,
+            //               blurRadius: 2,
+            //               offset:  Offset(2, 1), 
+            //             )
+            //           ]
+            //         ),
+            //         child: Row(
+            //           children: [
+            //             Text(pharmacies[index]),
+            //           ],
+            //         ),
+            //       ),
+            //     )
+            //     ),
+            // )
           ],
         ),
       ),
