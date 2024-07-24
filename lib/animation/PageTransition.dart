@@ -23,7 +23,7 @@ void PageAnimateNoRep(BuildContext context,PageTransitionType pageTransitionType
     PageTransition(
       type: pageTransitionType,
       child: child,
-      duration: Duration(milliseconds: 1500),
+      duration: Duration(milliseconds: 300),
       isIos: Platform.isIOS,
     ),
   );

@@ -10,8 +10,30 @@ class CallScreen extends StatefulWidget {
 }
 
 class _CallScreenState extends State<CallScreen> {
+ 
+ 
+ 
+ @override
+  void initState() {
+    initialize();
+    super.initState();
+  }
+
+
+  initialize()async{}
+ 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: (){
+            Navigator.of(context).pop();
+          }, 
+          icon: Icon(Icons.arrow_back_ios_new_outlined)
+          ),
+      ),
+      body: Container(),
+    );
   }
 }

@@ -12,6 +12,8 @@ class SpecialistChat extends StatefulWidget {
 class _SpecialistChatState extends State<SpecialistChat> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(),
+    );
   }
 }

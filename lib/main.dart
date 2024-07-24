@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:pusher_beams/pusher_beams.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -48,6 +49,21 @@ Future<void> main() async {
   await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
 );
+// const instanceID = '89da4b7a-ff42-49b8-84ae-7f13e94948f0';
+
+//   await PusherBeams.instance.start(instanceID);
+  
+//   await PusherBeams.instance.setDeviceInterests(['hello']);
+
+//    PusherBeams.instance.onMessageReceivedInTheForeground((value){
+//     print(value);
+//     if(value!=null){
+//       LocalNotifications.showSimpleNotification(
+//           title: value['title'].toString() ?? "", body: value['body'].toString() ?? "", payload: "", id: 1
+//           );
+//     }
+//    });
+
   // await Firebase.initializeApp();
 
   // // Set the background messaging handler early on, as a named top-level function
