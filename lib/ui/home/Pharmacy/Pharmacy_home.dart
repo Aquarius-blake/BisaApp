@@ -77,7 +77,7 @@ class _PharmahomeState extends State<Pharmahome> {
                   }else if(future.hasData){
                       if(future.data == []){
                       return  const Center(
-                      child: Text("No Data Available"),
+                      child: Text("No Pharmacy Available Yet"),
                       );
                       }else{
                         return Container();
