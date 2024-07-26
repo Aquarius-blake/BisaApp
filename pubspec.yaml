@@ -97,6 +97,7 @@ dependencies:
   firebase_core: ^2.27.0
   pusher_beams: ^1.1.1
   agora_rtc_engine: ^6.3.2
+  jitsi_meet_wrapper: ^0.2.0+1
   # textfield_tags: ^3.0.0
   # flutter_inappwebview: ^5.7.2+3
 
