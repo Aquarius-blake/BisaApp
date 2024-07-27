@@ -1,6 +1,8 @@
 
 
+import 'package:chat_bubbles/message_bars/message_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:jitsi_meet_wrapper/jitsi_meet_wrapper.dart';
 
 class SpecialistChat extends StatefulWidget {
   const SpecialistChat({super.key});
@@ -50,7 +52,52 @@ class _SpecialistChatState extends State<SpecialistChat> {
                 )
             ],
         ),
-        body: Container(),
+        body: Container(
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 225, 250, 234),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              topRight: Radius.circular(50),
+            )
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height-152,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 5,
+                    vertical: 5
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: MessageBar(
+                    sendButtonColor:const Color.fromARGB(255, 155, 186, 166),
+                    onSend: (value){
+                      
+                    },
+                    actions: [
+                      IconButton.outlined(
+                        onPressed: ()async{
+                          // PageAnimateNoRep(context, PageTransitionType.fade, VideoCall());
+                          var options = JitsiMeetingOptions(
+                            roomNameOrUrl: "Test_call",
+                           // token: "asdjbakdjnkafbibsfaindisbdjfsf"
+                            );
+                                await JitsiMeetWrapper.joinMeeting(options:options);
+                        }, 
+                        icon: const Icon(
+                          Icons.video_call_outlined
+                          )
+                        )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
