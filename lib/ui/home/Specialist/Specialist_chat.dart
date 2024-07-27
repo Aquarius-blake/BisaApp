@@ -29,6 +29,27 @@ class _SpecialistChatState extends State<SpecialistChat> {
           )
       ),
       child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          surfaceTintColor: Colors.transparent,
+          scrolledUnderElevation: 0,
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context), 
+            icon: const Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.black,
+              )
+            ),
+            title: Text('Dr.Specialist'),
+            actions: [
+              IconButton(
+                onPressed: (){}, 
+                icon: Icon(
+                  Icons.more_vert_outlined
+                  )
+                )
+            ],
+        ),
         body: Container(),
       ),
     );
