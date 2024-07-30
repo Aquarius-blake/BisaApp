@@ -276,7 +276,7 @@ void _getlist(){
                       child: Form(
                         child: TextFormField(
                           onTap: (){
-                            PageAnimateNoRep(context, PageTransitionType.bottomToTop, SearchScreen());
+                            PageAnimateNoRep(context, PageTransitionType.bottomToTop, SearchScreen(currentuser: currentUser,));
                           },
                           style: TextStyle(
                             fontSize: 12,

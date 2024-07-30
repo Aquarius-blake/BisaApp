@@ -854,10 +854,39 @@ Future getdrugs(data)async{
 }
 
 Future getSearchresult(data)async{
-  try {
-    
+   try {
+    // print('$newBisa/v1/patient/article/${data['id']}');
+    // print('${data['token']}');
+    final http.Response response = await http.post(
+      Uri.parse(("$newBisa/v1/search")),
+      
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': 'Bearer ${data['token']}',
+      },
+      body: jsonEncode(data)
+    );
+
+    var requestBody = jsonDecode(response.body);
+
+    switch (requestBody['code']) {
+      case 200:
+        return requestBody['data'];
+      // break;
+
+      case 403:
+        return requestBody;
+      // break;
+      default:
+        return requestBody;
+    }
+  } on SocketException {
+    // print('No Internet connection');
+    throw 'No Internet connection';
   } catch (e) {
-    print(e.toString()); 
+    if (kDebugMode) {
+      print(e);
+    }
   }
 }
 
