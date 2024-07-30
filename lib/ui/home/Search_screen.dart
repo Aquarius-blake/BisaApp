@@ -84,10 +84,6 @@ class _SearchScreenState extends State<SearchScreen> {
         onChanged: (value) {
           onSearch(value, currentUser.token);
         },
-        // style: TextStyle(
-        //   fontSize: 12,
-        //   height: 0.1
-        // ),
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
