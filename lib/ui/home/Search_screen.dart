@@ -134,7 +134,24 @@ class _SearchScreenState extends State<SearchScreen> {
               child: Text("No results found"),
             );
             }else{
-              return Container();
+              print("here is ${future.data}");
+              return Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5
+                ),
+                child: ListView.builder(
+                  itemCount: future.data.length,
+                  itemBuilder: ( context , index ) => Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 5,
+
+                    ),
+                    decoration: BoxDecoration(),
+                    child: Text(future.data[index]['title']),
+                  )
+                  ),
+              );
             }
           }else{
             return const Center(
