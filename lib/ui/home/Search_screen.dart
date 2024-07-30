@@ -62,6 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
     return Scaffold(
      // body: SearchBar(),
+     backgroundColor: const Color.fromARGB(255, 228, 228, 228),
      appBar: AppBar(
       backgroundColor: const Color.fromRGBO(23, 30, 60, 1),
       centerTitle: true,
@@ -142,13 +143,40 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
                 child: ListView.builder(
                   itemCount: future.data.length,
-                  itemBuilder: ( context , index ) => Container(
-                    margin: EdgeInsets.symmetric(
-                      vertical: 5,
-
+                  itemBuilder: ( context , index ) => InkWell(
+                    onTap: (){
+                      switch (future.data[index]['from']) {
+                        case 'Articles':
+                          print("Goto Article");
+                          break;
+                        case 'Specialists':
+                        print("Goto Specialist");
+                        break;
+                        case 'FAQs':
+                          print("Goto FAQs");
+                          break;
+                        default:
+                      }
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(
+                        vertical: 5,
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 5
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Text(
+                        future.data[index]['title'],
+                        style: TextStyle(
+                          fontSize: 20
+                        ),
+                        ),
                     ),
-                    decoration: BoxDecoration(),
-                    child: Text(future.data[index]['title']),
                   )
                   ),
               );
