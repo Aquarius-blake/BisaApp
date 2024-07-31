@@ -197,7 +197,7 @@ class HomePageState extends State<HomePage> {
                           Text(
                             'Home',
                             style:TextStyle(
-                              fontSize: 12,
+                              fontSize: 11,
                               color: isSelected(0) ? const Color(0xFFB5E255) : null,
                               )
                               ),
@@ -262,7 +262,7 @@ class HomePageState extends State<HomePage> {
                                   Text(
                                     "chats",
                                   style:TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 11,
                                     color: isSelected(1) ? const Color(0xFFB5E255) : null,
                                   )
                                   )
@@ -290,7 +290,7 @@ class HomePageState extends State<HomePage> {
                           Text(
                             'Pharmacy',
                             style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 12,
                               color: isSelected(2) ? const Color(0xFFB5E255) : null,
                             ),
                             )
@@ -316,7 +316,7 @@ class HomePageState extends State<HomePage> {
                           Text(
                             "My Account",
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 11,
                               color: isSelected(3) ? const Color(0xFFB5E255) : null,
                             ),
                             )

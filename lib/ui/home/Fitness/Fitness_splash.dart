@@ -16,16 +16,23 @@ class FitnessSplash extends StatefulWidget {
   State<FitnessSplash> createState() => _FitnessSplashState();
 }
 
-class _FitnessSplashState extends State<FitnessSplash> {
+class _FitnessSplashState extends State<FitnessSplash> with SingleTickerProviderStateMixin{
 
  late SharedPreferences prefs;
   String? gender;
   dynamic selectedindex = 0;
+  late AnimationController _controller;
+  late Animation<double> _animation;
 
 
 @override
   void initState() {
     initialize();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 3),
+      vsync: this,
+    )..repeat();
+    _animation = Tween(begin: 0.0, end: 2 * 3.141592653589793).animate(_controller);
     super.initState();
   }
 
@@ -42,7 +49,7 @@ initialize()async{
 
 @override
   void dispose() {
-
+    _controller.dispose();
     super.dispose();
   }
 
@@ -113,16 +120,21 @@ initialize()async{
                           clipBehavior: Clip.none,
                           children: [
                             Center(
-                              child: Transform.rotate(
-                                angle: 0.8,
-                                child: Container(
-                                  height: 170,
-                                  width: 170,
-                                  decoration: BoxDecoration(
-                                    color: selectedindex == 0 ? Colors.amber:Colors.transparent,
-                                    borderRadius: BorderRadius.circular(20)
-                                  ),
-                                ),
+                              child: AnimatedBuilder(
+                                animation: _animation,
+                                builder: (context,child) {
+                                  return Transform.rotate(
+                                    angle: _animation.value,
+                                    child: Container(
+                                      height: 200,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        color: selectedindex == 0 ? Colors.amber:Colors.transparent,
+                                        borderRadius: BorderRadius.circular(20)
+                                      ),
+                                    ),
+                                  );
+                                }
                               ),
                             ),
                             Container(
@@ -151,16 +163,21 @@ initialize()async{
                           clipBehavior: Clip.none,
                           children: [
                             Center(
-                              child: Transform.rotate(
-                                angle: 0.8,
-                                child: Container(
-                                  height: 200,
-                                  width: 200,
-                                  decoration: BoxDecoration(
-                                    color: selectedindex == 1 ? Colors.pink:Colors.transparent,
-                                    borderRadius: BorderRadius.circular(20)
-                                  ),
-                                ),
+                              child: AnimatedBuilder(
+                                animation: _animation,
+                                builder: (context, child) {
+                                  return Transform.rotate(
+                                    angle: _animation.value,
+                                    child: Container(
+                                      height: 200,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        color: selectedindex == 1 ? Colors.pink:Colors.transparent,
+                                        borderRadius: BorderRadius.circular(20)
+                                      ),
+                                    ),
+                                  );
+                                }
                               ),
                             ),
                             Container(

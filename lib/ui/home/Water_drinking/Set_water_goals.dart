@@ -83,7 +83,7 @@ Future <void> _initPrefs() async{
       backgroundColor: Colors.lightBlueAccent,
       body: Container(
         padding: const EdgeInsets.symmetric(
-          vertical: 10
+          vertical: 0
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -175,7 +175,7 @@ Future <void> _initPrefs() async{
                               keyboardType: TextInputType.number,
                                 decoration:  InputDecoration(
                                   filled: true,
-                                  fillColor: Color.fromRGBO(255, 255, 255, 1),
+                                  fillColor: const Color.fromRGBO(255, 255, 255, 1),
                                   labelText: 'Set your daily goal',
                                   hintText: 'Enter your goal in ml',
                                    border: OutlineInputBorder(

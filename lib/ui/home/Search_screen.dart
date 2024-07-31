@@ -133,7 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
             }else{
               print("here is ${future.data}");
               return Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 10,
                   vertical: 5
                 ),
@@ -155,10 +155,10 @@ class _SearchScreenState extends State<SearchScreen> {
                       }
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         vertical: 5,
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 10,
                         vertical: 5
                       ),
@@ -168,7 +168,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       child: Text(
                         future.data[index]['title'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20
                         ),
                         ),

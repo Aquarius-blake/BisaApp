@@ -137,6 +137,7 @@ class MyAppState extends State<MyApp> {
           title: 'Bisa App',
           theme: ThemeData(
             scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 0.98),
+            fontFamily: 'Poppins',
             // primarySwatch: Colors.blue,
             primaryColor: const Color(0xFFB5E255),
             datePickerTheme: DatePickerThemeData(

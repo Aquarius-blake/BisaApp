@@ -29,8 +29,8 @@ class _WaterDashState extends State<WaterDash> {
 
  Future initPrefs() async{
     prefrences = await SharedPreferences.getInstance();
-    goal = prefrences.getString('Watergoal') ?? "Nil";
-    goal = goal! + "ml/day";
+    goal = prefrences.getString('Watergoal') ?? "0";
+    goal = "${goal!} ml/day";
     if(mounted){
       setState(() {
         
@@ -44,19 +44,19 @@ class _WaterDashState extends State<WaterDash> {
       //backgroundColor: Colors.lightBlueAccent,
       body: Container(
         color: Colors.lightBlueAccent,
-        padding: EdgeInsets.symmetric(
-          vertical: 10
+        padding: const EdgeInsets.symmetric(
+          vertical: 0
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 10
                 ),
                 width: MediaQuery.of(context).size.width,
                 height: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.lightBlueAccent,
                   // borderRadius: BorderRadius.only(
                   //   bottomLeft: Radius.circular(30),
@@ -87,7 +87,7 @@ class _WaterDashState extends State<WaterDash> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height - 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
@@ -95,14 +95,14 @@ class _WaterDashState extends State<WaterDash> {
                   )
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 10,
                     vertical: 20
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                     const SizedBox(
                         height: 40,
                       ),
                       TextButton(
@@ -118,13 +118,13 @@ class _WaterDashState extends State<WaterDash> {
                             ),
                           ),
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 30,
                         ),
                       Center(
                         child: Column(
                           children: [
-                            Text(
+                           const Text(
                               "Current Daily Goal",
                               style: TextStyle(
                                 color: Colors.grey,
@@ -143,7 +143,7 @@ class _WaterDashState extends State<WaterDash> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 30,
                       ),
                       TextButton(
@@ -151,7 +151,7 @@ class _WaterDashState extends State<WaterDash> {
                           LocalNotifications.cancelNotification(1).then(
                             (value){
                               ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                         content: Text("Reminders disabled successfully!"),
                                         duration: Duration(seconds: 3),
                                         backgroundColor: Colors.lightBlueAccent,
@@ -185,7 +185,7 @@ class _WaterDashState extends State<WaterDash> {
         child: Container(
           height: 200,
           width: 200,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/imgs/waterdrop.png'),
               fit: BoxFit.cover
