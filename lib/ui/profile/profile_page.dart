@@ -6,7 +6,7 @@ import 'package:bisa_app/animation/loop_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/bottom_nav_provider.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
-import 'package:bisa_app/ui/GoogleMaps/map.dart';
+import 'package:bisa_app/ui/GoogleMaps/maptest.dart';
 // import 'package:bisa_app/ui/login/login_page.dart';
 import 'package:bisa_app/ui/splash.dart';
 import 'package:flutter/cupertino.dart';
