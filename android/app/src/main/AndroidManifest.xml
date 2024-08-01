@@ -68,8 +68,7 @@ xmlns:tools="http://schemas.android.com/tools">
             android:name="flutterEmbedding"
             android:value="2" />
 <!-- This is just for testing/development purpose, remember to change API Key-->
-            <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyBqTw3akjU0-dv6aOowMc84yWprUhJepWY"/>
+         
             
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
