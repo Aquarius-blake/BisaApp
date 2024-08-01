@@ -21,8 +21,8 @@ late StreamSubscription<Position> positionStream;
 List<Marker> _markers=[];
   bool _showmaps=false;
   final LocationSettings locationSettings = LocationSettings(
-  accuracy: LocationAccuracy.high,
-  distanceFilter: 100,
+  accuracy: LocationAccuracy.bestForNavigation,
+  distanceFilter: 0,
 );
 
 
@@ -34,16 +34,38 @@ List<Marker> _markers=[];
 
 initialize()async{
   LocationPermission permission = await Geolocator.checkPermission();
+    if(permission == LocationPermission.denied){
+      permission = await Geolocator.requestPermission();
+    }else{
+      print("Here 2");
+     positionStream = Geolocator.getPositionStream(locationSettings: locationSettings).listen(
+    (Position? position) {
+      print("Here");
+       _markers.add(
+      Marker(
+        markerId: const MarkerId('mylocaton'),
+        position: LatLng(position!.latitude, position.longitude),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan)
+        )
+        );
+        print(position == null ? 'Unknown' : '${position.latitude.toString()}, ${position.longitude.toString()}');
+    },
+    onError: (error){
+      print("err "+error.toString());
+    },
+    onDone: (){
+      print("Done ");
+    }
+    );
+
+    }
 }
 
 
 @override
   void initState() {
-    initialize();
-     positionStream = Geolocator.getPositionStream(locationSettings: locationSettings).listen(
-    (Position? position) {
-        print(position == null ? 'Unknown' : '${position.latitude.toString()}, ${position.longitude.toString()}');
-    });
+    //initialize();
+    
      _markers.add(
       Marker(
         markerId: const MarkerId('mylocaton'),
@@ -62,6 +84,7 @@ initialize()async{
 
   @override
   Widget build(BuildContext context) {
+    initialize();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
