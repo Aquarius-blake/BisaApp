@@ -93,4 +93,6 @@ xmlns:tools="http://schemas.android.com/tools">
             <uses-permission android:name="android.permission.BLUETOOTH" />
             <!-- For Android 12 and above devices, the following permission is also required. -->
             <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 </manifest>

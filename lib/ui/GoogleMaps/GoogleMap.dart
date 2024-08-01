@@ -1,5 +1,8 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapScreen extends StatefulWidget {
@@ -12,9 +15,16 @@ class GoogleMapScreen extends StatefulWidget {
 class _GoogleMapScreenState extends State<GoogleMapScreen> {
 
 late GoogleMapController mapController;
+
 LatLng pos = LatLng(0.2, 5.2);
+late StreamSubscription<Position> positionStream;
 List<Marker> _markers=[];
   bool _showmaps=false;
+  final LocationSettings locationSettings = LocationSettings(
+  accuracy: LocationAccuracy.high,
+  distanceFilter: 100,
+);
+
 
 
    void _onMapCreated(GoogleMapController controller) {
@@ -22,9 +32,18 @@ List<Marker> _markers=[];
   
 }
 
+initialize()async{
+  LocationPermission permission = await Geolocator.checkPermission();
+}
+
 
 @override
   void initState() {
+    initialize();
+     positionStream = Geolocator.getPositionStream(locationSettings: locationSettings).listen(
+    (Position? position) {
+        print(position == null ? 'Unknown' : '${position.latitude.toString()}, ${position.longitude.toString()}');
+    });
      _markers.add(
       Marker(
         markerId: const MarkerId('mylocaton'),
