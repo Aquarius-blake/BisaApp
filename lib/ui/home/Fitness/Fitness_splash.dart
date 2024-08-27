@@ -126,8 +126,8 @@ initialize()async{
                                   return Transform.rotate(
                                     angle: _animation.value,
                                     child: Container(
-                                      height: 200,
-                                      width: 200,
+                                      height: 130,
+                                      width: 130,
                                       decoration: BoxDecoration(
                                         color: selectedindex == 0 ? Colors.amber:Colors.transparent,
                                         borderRadius: BorderRadius.circular(20)
@@ -169,8 +169,8 @@ initialize()async{
                                   return Transform.rotate(
                                     angle: _animation.value,
                                     child: Container(
-                                      height: 200,
-                                      width: 200,
+                                      height: 130,
+                                      width: 130,
                                       decoration: BoxDecoration(
                                         color: selectedindex == 1 ? Colors.pink:Colors.transparent,
                                         borderRadius: BorderRadius.circular(20)

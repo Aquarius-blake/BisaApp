@@ -109,6 +109,7 @@
   "alcohol consumption",
   "drug interactions",
   "help",
+  "doctor",
 ];
 
  List<String> responses = [
@@ -222,4 +223,5 @@
   "Monitor your alcohol consumption for a healthier lifestyle! Let's chat about moderation. 🍷",
   "Be cautious of drug interactions! Let's review your medications. ⚠️",
   'I can tell a joke, refer you to a doctor if necessary and I\'m also available for a quick chat',
+  'You can tap the top chat icon to speak to a doctor.',
 ];
