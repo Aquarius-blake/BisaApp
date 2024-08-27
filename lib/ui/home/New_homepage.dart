@@ -399,7 +399,7 @@ void _getlist(){
                                     );
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(
+                      margin:const EdgeInsets.symmetric(
                         horizontal: 15
                       ),
                       child: Column(
@@ -429,7 +429,7 @@ void _getlist(){
                   width: MediaQuery.of(context).size.width*0.99,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
+                    image:const DecorationImage(
                       image: AssetImage('assets/imgs/diet3.png'),
                       fit: BoxFit.cover
                     ),
@@ -452,7 +452,7 @@ void _getlist(){
                           height: 1.9
                         ),
                         ),
-                       Text(
+                       const Text(
                         "Eat to heal, muscle gain\nweight loss, weight gain etc...",
                         style: TextStyle(
                           fontFamily: 'Poppins',
@@ -462,7 +462,7 @@ void _getlist(){
                         ),
                        Expanded(child: SizedBox()),
                         Container(
-                          margin: EdgeInsets.only(
+                          margin:const EdgeInsets.only(
                             left: 10,
                             bottom: 10
                           ),
@@ -521,12 +521,12 @@ void _getlist(){
                           decoration:  BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
-                            boxShadow: const [
+                            boxShadow:  [
                                BoxShadow(
-                                  color: Colors.grey,
+                                  color: Colors.grey.withOpacity(0.4),
                                   spreadRadius: 0,
                                   blurRadius: 0.2,
-                                  offset:  Offset(1, 2), 
+                                  offset: const Offset(1, 2), 
                               )
                             ]
                           ),
@@ -537,7 +537,7 @@ void _getlist(){
                                 Container(
                                   height: 90,
                                   width: 90,
-                                  decoration: BoxDecoration(
+                                  decoration:const BoxDecoration(
                                     image: DecorationImage(
                                       image: AssetImage('assets/imgs/spec.png')
                                       )
@@ -569,7 +569,7 @@ void _getlist(){
                                               right: 10
                                             ),
                                             padding: const EdgeInsets.all(5),
-                                            decoration: BoxDecoration(
+                                            decoration:const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xFFB5E255),
                                             ),
@@ -600,17 +600,17 @@ void _getlist(){
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width*0.95,
-                            padding: EdgeInsets.all(10),
+                            padding:const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: const [
                                  BoxShadow(
-                                             color: Colors.grey,
-                                              spreadRadius: 1,
-                                              blurRadius: 2,
-                                              offset:  Offset(1, 2), 
-                                          )
+                                    color: Colors.grey,
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset:  Offset(1, 2), 
+                                )
                               ]
                             ),
                             child: Row(
