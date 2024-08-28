@@ -85,6 +85,18 @@ Future<void> initialize()async{
           icon: Icon(Icons.arrow_back_ios_new_outlined
          ),
          ),
+         actions: [
+          TextButton(
+            onPressed: (){
+                PageAnimateNoRep(context, PageTransitionType.rightToLeft, Babyinput());
+            }, 
+          child:const Text(
+            "Update Info",
+            style: TextStyle(
+              color: Color(0xFFB5E255)
+            ),
+            ))
+         ],
       ),
       body: Container(
         child: SingleChildScrollView(
@@ -267,8 +279,8 @@ Future<void> initialize()async{
                       boxShadow: const [
                         BoxShadow(
                               color: Color(0xFFB5E255),
-                              spreadRadius: 1,
-                              blurRadius: 2,
+                              spreadRadius: 0.2,
+                              blurRadius: 1,
                               offset:  Offset(1, 2), // changes position of shadow
                             ),
                       ]
@@ -332,7 +344,7 @@ Future<void> initialize()async{
                             ],
                           ),
                         ),
-
+               
                       ],
                     ),
                   )
@@ -345,48 +357,48 @@ Future<void> initialize()async{
           )
           ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          InkWell(
-            onTap: (){
-              PageAnimateNoRep(context, PageTransitionType.rightToLeft, Babyinput());
+      // floatingActionButton: Row(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     InkWell(
+      //       onTap: (){
+      //         PageAnimateNoRep(context, PageTransitionType.rightToLeft, Babyinput());
 
-            },
-            child: Container(
-                        height: 50,
-                        width: 200,
-                        margin: const EdgeInsets.only(
-                          top: 10,
-                          bottom: 10,
-                          left:30
-                          ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Color(0xFFB5E255),
-                              spreadRadius: 1,
-                              blurRadius: 2,
-                              offset:  Offset(0, 2), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Update info",
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 20.sp,
-                              color:  Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-          ),
-        ],
-      ),
+      //       },
+      //       child: Container(
+      //                   height: 50,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.only(
+      //                     top: 10,
+      //                     bottom: 10,
+      //                     left:30
+      //                     ),
+      //                   decoration: BoxDecoration(
+      //                     color: Colors.white,
+      //                     borderRadius: BorderRadius.circular(30),
+      //                     boxShadow: const [
+      //                       BoxShadow(
+      //                         color: Color(0xFFB5E255),
+      //                         spreadRadius: 0,
+      //                         blurRadius: 0.5,
+      //                         offset:  Offset(0, 2), // changes position of shadow
+      //                       ),
+      //                     ],
+      //                   ),
+      //                   child: Center(
+      //                     child: Text(
+      //                       "Update info",
+      //                       style: TextStyle(
+      //                         fontFamily: 'Poppins',
+      //                         fontSize: 20.sp,
+      //                         color:  Colors.black,
+      //                       ),
+      //                     ),
+      //                   ),
+      //                 ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

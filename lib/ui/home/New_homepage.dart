@@ -179,7 +179,7 @@ void _getlist(){
         //   )
       ),
       child: Scaffold(
-      //  backgroundColor: Color.fromARGB(255, 253, 253, 253),
+       backgroundColor: Color.fromRGBO(245, 245, 245, 1),
       // backgroundColor: Colors.transparent,
         extendBody: true,
         body: Container(
@@ -383,7 +383,10 @@ void _getlist(){
                    margin: const EdgeInsets.symmetric(
                   vertical: 10
                 ),
-                height: 120,
+                padding: EdgeInsets.symmetric(
+                  vertical: 5
+                ),
+                height: 150,
                 child: ListView.builder(
                   itemCount: routename.length,
                   scrollDirection: Axis.horizontal,
@@ -399,8 +402,33 @@ void _getlist(){
                                     );
                     },
                     child: Container(
+                      width: 140,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 0,
+                          blurRadius: 8,
+                          offset:const Offset(0, 4) 
+                         // offset:  Offset(2, 1), 
+                        )
+                          // BoxShadow(
+                          //         color: Colors.grey.withOpacity(0.4),
+                          //         spreadRadius: 0,
+                          //         blurRadius: 0.2,
+                          //         offset: const Offset(1, 2), 
+                          //     )
+                        ]
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20
+                      ),
                       margin:const EdgeInsets.symmetric(
-                        horizontal: 15
+                        horizontal: 10,
+                        vertical: 5
                       ),
                       child: Column(
                         children: [
@@ -429,6 +457,14 @@ void _getlist(){
                   width: MediaQuery.of(context).size.width*0.99,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                                  color: Colors.grey.withOpacity(0.4),
+                                  spreadRadius: 0,
+                                  blurRadius: 0.2,
+                                  offset: const Offset(1, 2), 
+                              )
+                    ],
                     image:const DecorationImage(
                       image: AssetImage('assets/imgs/diet3.png'),
                       fit: BoxFit.cover
@@ -604,13 +640,13 @@ void _getlist(){
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: const [
+                              boxShadow:  [
                                  BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 1,
-                                    blurRadius: 2,
-                                    offset:  Offset(1, 2), 
-                                )
+                                  color: Colors.grey.withOpacity(0.4),
+                                  spreadRadius: 0,
+                                  blurRadius: 0.2,
+                                  offset: const Offset(1, 2), 
+                              )
                               ]
                             ),
                             child: Row(
@@ -670,13 +706,13 @@ void _getlist(){
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: const [
+                              boxShadow:  [
                                  BoxShadow(
-                                             color: Colors.grey,
-                                              spreadRadius: 1,
-                                              blurRadius: 2,
-                                              offset:  Offset(1, 2), 
-                                          )
+                                  color: Colors.grey.withOpacity(0.4),
+                                  spreadRadius: 0,
+                                  blurRadius: 0.2,
+                                  offset: const Offset(1, 2), 
+                              )
                               ]
                             ),
                             child: Row(
@@ -736,13 +772,13 @@ void _getlist(){
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: const [
+                              boxShadow:  [
                                  BoxShadow(
-                                             color: Colors.grey,
-                                              spreadRadius: 1,
-                                              blurRadius: 2,
-                                              offset:  Offset(1, 2), 
-                                          )
+                                  color: Colors.grey.withOpacity(0.4),
+                                  spreadRadius: 0,
+                                  blurRadius: 0.2,
+                                  offset: const Offset(1, 2), 
+                              )
                               ]
                             ),
                             child: Row(

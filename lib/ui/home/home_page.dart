@@ -336,6 +336,7 @@ class HomePageState extends State<HomePage> {
           //   child:
           FloatingActionButton(
         backgroundColor: Platform.isIOS?Colors.transparent:Color(0xFFB5E255),
+        
         child: Container(
           height: 50,
           decoration: const BoxDecoration(
