@@ -383,7 +383,7 @@ void _getlist(){
                    margin: const EdgeInsets.symmetric(
                   vertical: 10
                 ),
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 5
                 ),
                 height: 150,
