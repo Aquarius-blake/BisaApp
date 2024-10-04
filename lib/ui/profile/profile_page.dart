@@ -78,7 +78,7 @@ class ProfilePageState extends State<ProfilePage> {
                         height: 10.h,
                       ),
                       InkWell(
-                        onTap: () => PageAnimateNoRep(context, PageTransitionType.leftToRight, GoogleMapScreen()),
+                       // onTap: () => PageAnimateNoRep(context, PageTransitionType.leftToRight, GoogleMapScreen()),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
