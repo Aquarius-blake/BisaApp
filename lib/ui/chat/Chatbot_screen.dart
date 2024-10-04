@@ -106,7 +106,12 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
     initialize();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chatbot'),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: ()=>Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios_new),
+        ),
+        title: const Text('BisaBot'),
         actions: [
           IconButton(
             onPressed: (){

@@ -187,22 +187,22 @@ class ProfilePageState extends State<ProfilePage> {
                       SizedBox(
                         height: 80.h,
                       ),
-                      InkWell(
-                        onTap: () {
-                          // _showLogOutDialog(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Update Your Details',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16.sp,
-                                color: const Color.fromRGBO(191, 193, 186, 1)),
-                          ),
-                        ),
-                      ),
+                      // InkWell(
+                      //   onTap: () {
+                      //     // _showLogOutDialog(context);
+                      //   },
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(8.0),
+                      //     child: Text(
+                      //       'Update Your Details',
+                      //       style: TextStyle(
+                      //           fontFamily: 'Poppins',
+                      //           fontWeight: FontWeight.w600,
+                      //           fontSize: 16.sp,
+                      //           color: const Color.fromRGBO(191, 193, 186, 1)),
+                      //     ),
+                      //   ),
+                      // ),
                       SizedBox(
                         height: 40.h,
                       ),

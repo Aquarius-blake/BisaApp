@@ -67,7 +67,7 @@ class _SpecialistHomeState extends State<SpecialistHome> {
                         );
                     }else if(!future.hasData){
                       return const Center(
-                        child: Text("No Data Available"),
+                        child: Text("No Specialist Available at the moment"),
                         );
                     }else if(future.hasData){
                         if(future.data == []){

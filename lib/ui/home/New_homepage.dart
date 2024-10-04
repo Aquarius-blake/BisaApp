@@ -104,7 +104,7 @@ void _getlist(){
     ];
    routename = [
     'Ask a doctor',
-    'Appointments',
+    'Appointment',
     ' Emergencies',
    // ' Cycle\nTracker',
     ' Hydration',
@@ -137,7 +137,7 @@ void _getlist(){
    routename = [
     'Ask a doctor',
     ' Cycle\nTracker',
-    'Appointments',
+    'Appointment',
     ' Emergencies',
     ' Hydration',
     ' Labs',

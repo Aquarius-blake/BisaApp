@@ -81,7 +81,7 @@ List labs = [
                         );
                     }else if(!future.hasData){
                       return const Center(
-                        child: Text("No Data Available"),
+                        child: Text("No Labs Available in your area at the moment."),
                         );
                     }else if(future.hasData){
                         if(future.data == []){

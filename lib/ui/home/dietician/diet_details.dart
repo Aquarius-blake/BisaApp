@@ -104,6 +104,13 @@ class _DietDetailPageState extends State<DietDetailPage> {
                           )
                       ],
                     ),
+                  ),
+                  SizedBox(height: 20,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      child: Text("No Recommendations at the moment")
+                      ),
                   )
             ],
           ),
