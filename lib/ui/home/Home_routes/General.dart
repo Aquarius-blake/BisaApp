@@ -116,10 +116,10 @@ class _GeneralWellnesState extends State<GeneralWellnes> {
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                          BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 2,
-                          offset: index % 2 == 0? const Offset(2, 3):const Offset(-2, 3), 
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 0,
+                          blurRadius: 0.2,
+                          offset: index % 2 == 0? const Offset(1, 2):const Offset(-1, 2), 
                          // offset:  Offset(2, 1), 
                         )
                       ]

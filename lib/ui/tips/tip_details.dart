@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
 //import 'package:flutter_html/flutter_html.dart';
- import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class TipDetails extends StatelessWidget {
   const TipDetails({Key? key, required this.article}) : super(key: key);

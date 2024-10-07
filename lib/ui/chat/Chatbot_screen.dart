@@ -1,14 +1,17 @@
 
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:bisa_app/models/chatbotmessage.dart';
 import 'package:bisa_app/models/keyword_response.dart';
-import 'package:bisa_app/ui/widgets/Alert.dart';
-import 'package:bisa_app/utils/validator.dart';
-import 'package:chat_bubbles/bubbles/bubble_normal.dart';
+import 'package:bisa_app/ui/chat/start_question.dart';
+// import 'package:bisa_app/ui/widgets/Alert.dart';
+// import 'package:bisa_app/utils/validator.dart';
+// import 'package:chat_bubbles/bubbles/bubble_normal.dart';
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:chatingbot/ikchatbot.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
+import 'package:page_transition/page_transition.dart';
 
 
 
@@ -103,9 +106,17 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
     initialize();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chatbot'),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: ()=>Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios_new),
+        ),
+        title: const Text('BisaBot'),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(
+          IconButton(
+            onPressed: (){
+              PageAnimateNoRep(context, PageTransitionType.fade, StartQuestion());
+            }, icon: Icon(
             Icons.chat_bubble_outline_outlined,
             color: Colors.greenAccent,
             )

@@ -28,6 +28,15 @@ class TipsPageState extends State<TipsPage> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           leadingWidth: 0,
+          //  leading: IconButton(
+          //       onPressed: (){
+          //         Navigator.pop(context);
+          //       },
+          //       icon: const Icon(
+          //         Icons.arrow_back_ios_new_outlined,
+          //         color: Color.fromRGBO(23, 30, 60, 1),
+          //         ),
+          //       ),
           bottom: TabBar(
             isScrollable: true,
             labelStyle: TextStyle(
@@ -59,13 +68,26 @@ class TipsPageState extends State<TipsPage> {
               Tab(child: Text('Our Doctors Say')),
             ],
           ),
-          title: Text(
-            'Health Tips',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Lato',
-                fontSize: 27.sp,
-                color: const Color.fromRGBO(85, 80, 80, 0.98)),
+          title: Row(
+            children: [
+               IconButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios_new_outlined,
+                  color: Color.fromRGBO(23, 30, 60, 1),
+                  ),
+                ),
+              Text(
+                'Health Tips',
+                style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Lato',
+                    fontSize: 27.sp,
+                    color: const Color.fromRGBO(85, 80, 80, 0.98)),
+              ),
+            ],
           ),
           automaticallyImplyLeading: false,
         ),

@@ -23,6 +23,9 @@ class _FitnessProfileState extends State<FitnessProfile> {
   late SharedPreferences prefs;
   late CurrentUser currentUser;
   String? gender;
+  late int Kcal;
+  late int workouts;
+  late int wieght;
 
 
 @override
@@ -33,7 +36,10 @@ class _FitnessProfileState extends State<FitnessProfile> {
 
 initialize()async{
   prefs = await SharedPreferences.getInstance();
-  gender = await prefs.getString("gender") ?? "Male";
+  gender =  prefs.getString("gender") ?? "Male";
+  Kcal = prefs.getInt('Kcal') ?? 0;
+  workouts = prefs.getInt('Workouts') ?? 0;
+  wieght = prefs.getInt('Wieght') ?? 0;
   if(mounted){
     setState(() {
       
@@ -60,6 +66,20 @@ initialize()async{
         child: Scaffold(
           backgroundColor: Colors.transparent,
           extendBody: true,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+                ),
+              onPressed: (){
+                Navigator.pop(context);
+              },
+            ),
+            centerTitle: true,
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -106,7 +126,7 @@ initialize()async{
                             Column(
                               children: [
                                 Text(
-                                  "0",
+                                  "$workouts",
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 20.sp,
@@ -126,7 +146,7 @@ initialize()async{
                             Column(
                               children: [
                                  Text(
-                                  "0",
+                                  "$Kcal",
                                    style: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 20.sp,
@@ -146,7 +166,7 @@ initialize()async{
                             Column(
                               children: [
                                  Text(
-                                  "0",
+                                  "$wieght",
                                    style: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 20.sp,

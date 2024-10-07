@@ -142,7 +142,7 @@ class ChatDetailsState extends State<ChatDetails> {
                   'Chat',
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
-                      fontFamily: 'Lato',
+                      fontFamily: 'Poppins',
                       fontSize: 30.sp,
                       color: const Color.fromRGBO(85, 80, 80, 0.98)),
                 ),
@@ -159,7 +159,7 @@ class ChatDetailsState extends State<ChatDetails> {
                     Text(
                       "Sorry we encountered an error",
                       style: TextStyle(
-                          fontFamily: 'Lato',
+                          fontFamily: 'Poppins',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w400),
                       textAlign: TextAlign.center,
@@ -192,8 +192,8 @@ class ChatDetailsState extends State<ChatDetails> {
                   title: Text(
                     'Chat',
                     style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Lato',
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
                         fontSize: 30.sp,
                         color: const Color.fromRGBO(85, 80, 80, 0.98)),
                   ),
@@ -367,7 +367,7 @@ class ChatDetailsState extends State<ChatDetails> {
                                             '${chatthreadItems[pos]!.response}',
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontFamily: 'Lato',
+                                                fontFamily: 'Poppins',
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 17.sp),
                                           ),
@@ -531,7 +531,7 @@ class ChatDetailsState extends State<ChatDetails> {
                                               '${chatthreadItems[pos]!.response}',
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontFamily: 'Lato',
+                                                  fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 17.sp),
                                             ),
@@ -634,7 +634,7 @@ class ChatDetailsState extends State<ChatDetails> {
                                               '${chatthreadItems[pos]!.response}',
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontFamily: 'Lato',
+                                                  fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 17.sp),
                                             ),
@@ -701,7 +701,7 @@ class ChatDetailsState extends State<ChatDetails> {
                                             const Text(
                                               'Recording...',
                                               style: TextStyle(
-                                                  fontFamily: 'Lato',
+                                                  fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 18),
                                             )
@@ -717,7 +717,7 @@ class ChatDetailsState extends State<ChatDetails> {
                                             hintText: "Write message...",
                                             hintStyle: TextStyle(
                                                 color: Colors.black54,
-                                                fontFamily: 'Lato',
+                                                fontFamily: 'Poppins',
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 18),
                                             border: InputBorder.none,
@@ -850,7 +850,7 @@ class ChatDetailsState extends State<ChatDetails> {
                     'Chat',
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontFamily: 'Lato',
+                        fontFamily: 'Poppins',
                         fontSize: 30.sp,
                         color: const Color.fromRGBO(85, 80, 80, 0.98)),
                   ),
@@ -867,7 +867,7 @@ class ChatDetailsState extends State<ChatDetails> {
                       Text(
                         "Sorry we encountered an error",
                         style: TextStyle(
-                            fontFamily: 'Lato',
+                            fontFamily: 'Poppins',
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w400),
                         textAlign: TextAlign.center,
@@ -889,7 +889,7 @@ class ChatDetailsState extends State<ChatDetails> {
                     'Chat',
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontFamily: 'Lato',
+                        fontFamily: 'Poppins',
                         fontSize: 30.sp,
                         color: const Color.fromRGBO(85, 80, 80, 0.98)),
                   ),

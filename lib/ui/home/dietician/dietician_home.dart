@@ -92,6 +92,7 @@ class _DietHomeState extends State<DietHome> {
                                   child: const Text(
                                     "Explore our delicious array of satisfying low-calorie options designed to support your health goals without sacrificing taste or enjoyment.",
                                     style: TextStyle(
+                                      fontSize: 13,
                                       height: 1.0
                                     ),
                                     ),

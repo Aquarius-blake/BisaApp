@@ -45,7 +45,7 @@ class ChatListItemState extends State<ChatListItem> {
                   fontSize: 14.sp),
             ),
             child: Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              padding: const EdgeInsets.only(left: 8.0, right: 1.5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -60,9 +60,9 @@ class ChatListItemState extends State<ChatListItem> {
                           Text(
                             widget.category,
                             style: TextStyle(
-                                fontFamily: 'Lato',
+                                fontFamily: 'Poppins',
                                 fontSize: 19.sp,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w600,
                                 color: const Color.fromRGBO(66, 61, 61, 1)),
                           ),
                           SizedBox(
@@ -89,7 +89,7 @@ class ChatListItemState extends State<ChatListItem> {
                                     Text(
                                       '${widget.media}',
                                       style: TextStyle(
-                                          fontFamily: 'Lato',
+                                          fontFamily: 'Poppins',
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.w400,
                                           color:
@@ -101,7 +101,7 @@ class ChatListItemState extends State<ChatListItem> {
                               : Text(
                                   widget.lastmsg,
                                   style: TextStyle(
-                                      fontFamily: 'Lato',
+                                      fontFamily: 'Poppins',
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.w400,
                                       color: const Color.fromRGBO(151, 147, 147, 1)),

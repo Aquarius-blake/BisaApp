@@ -1,15 +1,19 @@
 import 'dart:io';
 
+import 'package:bisa_app/animation/PageTransition.dart';
 import 'package:bisa_app/animation/fade_animation.dart';
 import 'package:bisa_app/animation/loop_animation.dart';
 import 'package:bisa_app/models/current_user.dart';
 import 'package:bisa_app/providers/bottom_nav_provider.dart';
 import 'package:bisa_app/providers/current_user_provider.dart';
+import 'package:bisa_app/ui/GoogleMaps/GoogleMap.dart';
+import 'package:bisa_app/ui/GoogleMaps/maptest.dart';
 // import 'package:bisa_app/ui/login/login_page.dart';
 import 'package:bisa_app/ui/splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -73,22 +77,25 @@ class ProfilePageState extends State<ProfilePage> {
                       SizedBox(
                         height: 10.h,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(CupertinoIcons.location_fill,
-                              color: Color.fromRGBO(123, 128, 133, 1)),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          Text(
-                            currentUser.city!.replaceAll('\n', ''),
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18.sp),
-                          )
-                        ],
+                      InkWell(
+                       // onTap: () => PageAnimateNoRep(context, PageTransitionType.leftToRight, GoogleMapScreen()),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(CupertinoIcons.location_fill,
+                                color: Color.fromRGBO(123, 128, 133, 1)),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            Text(
+                              currentUser.city!.replaceAll('\n', ''),
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18.sp),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 16.h,
@@ -179,6 +186,25 @@ class ProfilePageState extends State<ProfilePage> {
                       ),
                       SizedBox(
                         height: 80.h,
+                      ),
+                      // InkWell(
+                      //   onTap: () {
+                      //     // _showLogOutDialog(context);
+                      //   },
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(8.0),
+                      //     child: Text(
+                      //       'Update Your Details',
+                      //       style: TextStyle(
+                      //           fontFamily: 'Poppins',
+                      //           fontWeight: FontWeight.w600,
+                      //           fontSize: 16.sp,
+                      //           color: const Color.fromRGBO(191, 193, 186, 1)),
+                      //     ),
+                      //   ),
+                      // ),
+                      SizedBox(
+                        height: 40.h,
                       ),
                       InkWell(
                         onTap: () {

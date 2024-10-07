@@ -18,6 +18,9 @@ import 'package:provider/provider.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:showcaseview/showcaseview.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 
 final CurrentUserProvider _currentUserProvider = CurrentUserProvider();
 final BottomNavProvider _bottomNavProvider = BottomNavProvider();
@@ -42,6 +45,24 @@ Future<void> main() async {
   // _settingsProvider.getSettings();
   WidgetsFlutterBinding.ensureInitialized();
   await LocalNotifications.init();
+  await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+);
+// const instanceID = '89da4b7a-ff42-49b8-84ae-7f13e94948f0';
+
+//   await PusherBeams.instance.start(instanceID);
+  
+//   await PusherBeams.instance.setDeviceInterests(['hello']);
+
+//    PusherBeams.instance.onMessageReceivedInTheForeground((value){
+//     print(value);
+//     if(value!=null){
+//       LocalNotifications.showSimpleNotification(
+//           title: value['title'].toString() ?? "", body: value['body'].toString() ?? "", payload: "", id: 1
+//           );
+//     }
+//    });
+
   // await Firebase.initializeApp();
 
   // // Set the background messaging handler early on, as a named top-level function
@@ -115,6 +136,7 @@ class MyAppState extends State<MyApp> {
           title: 'Bisa App',
           theme: ThemeData(
             scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 0.98),
+            fontFamily: 'Poppins',
             // primarySwatch: Colors.blue,
             primaryColor: const Color(0xFFB5E255),
             datePickerTheme: DatePickerThemeData(
