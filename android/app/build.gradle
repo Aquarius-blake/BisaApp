@@ -68,7 +68,7 @@ android {
         minSdkVersion 26
         // minSdkVersion flutter.minSdkVersion
         // targetSdkVersion flutter.targetSdkVersion
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -111,7 +111,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
-    implementation 'com.pusher:push-notifications-android:1.9.0'
+    implementation 'com.pusher:push-notifications-android:1.10.0'
     // implementation "com.facebook.soloader:soloader:0.10.5"
     // implementation("com.facebook.react:react-native-video:6.13.0-jitsi-21361575") {
     //     exclude group: "androidx.media3", module: "media3-exoplayer-rtsp"
