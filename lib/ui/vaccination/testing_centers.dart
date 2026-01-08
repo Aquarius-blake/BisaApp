@@ -133,7 +133,7 @@ class _TestingCentersState extends State<TestingCenters> {
                   // });
                 }
               ),
-              FadeAnimation(1.2,-30,0,Column(
+              FadeAnimation(delay:1.2,offsetX: -30,offset: 0,child: Column(
                 children: widget.centers.map((e){
                   return
                     Padding(

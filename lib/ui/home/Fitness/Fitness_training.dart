@@ -113,10 +113,10 @@ Random random =  Random();
               SizedBox(height: 10.h,),
               Center(
                 child: FadeAnimation(
-                    1.2,
-                    0,
-                    30, 
-                    Column(
+                    delay:1.2,
+                    offsetX: 0,
+                    offset: 30, 
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
@@ -144,12 +144,12 @@ Random random =  Random();
               ),
               SizedBox(height: 40.h,),
               FadeAnimation(  
-                1.2,
-                    0,
-                    30,
-                    Text(
-                      "Let\'s get you started",
-                      style: TextStyle(
+                delay: 1.2,
+                offsetX: 0,
+                offset: 30,
+                child: Text(
+                  "Let\'s get you started",
+                  style: TextStyle(
                          fontFamily: 'Poppins',
                          fontSize: 16.sp,
                          color:  Colors.black,

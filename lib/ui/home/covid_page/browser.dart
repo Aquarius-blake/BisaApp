@@ -101,7 +101,7 @@ class Covid19BrowserViewState extends State<Covid19BrowserView> {
               InAppWebView(
                 key: webViewKey,
                 initialUrlRequest:
-                    URLRequest(url: Uri.parse(widget.covidPageUrl)),
+                    URLRequest(url: WebUri.uri(Uri.parse(widget.covidPageUrl))),
                 initialUserScripts: UnmodifiableListView<UserScript>([]),
                 contextMenu: contextMenu,
                 pullToRefreshController: pullToRefreshController,

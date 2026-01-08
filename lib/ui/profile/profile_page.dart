@@ -240,10 +240,10 @@ class ProfilePageState extends State<ProfilePage> {
                   top: -50.w,
                   right: -50.w,
                   child: FadeAnimation(
-                      2.2,
-                      -30,
-                      0,
-                      LoopWidget(
+                     delay:  2.2,
+                     offsetX: -30,
+                     offset: 0,
+                      child:LoopWidget(
                           30,
                           Opacity(
                             opacity: 0.25,
@@ -262,10 +262,10 @@ class ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 height: 210.h,
                 child: FadeAnimation(
-                  1.2,
-                  -30,
-                  0,
-                  Column(
+                  delay: 1.2,
+                  offsetX: -30,
+                  offset: 0,
+                 child: Column(
                     children: [
                       SizedBox(height: 70.h),
                       Padding(

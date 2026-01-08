@@ -65,12 +65,13 @@ initialize()async{
           children: [
             SizedBox(),
             Center(
-              child: FadeAnimation(1.2,
-                      0,
-                      30,  
-                      Text(
-                        "${widget.workout} Workout",
-                        style: TextStyle(
+              child: FadeAnimation(
+                delay: 1.2,
+                offsetX: 0,
+                offset: 30,  
+                child: Text(
+                  "${widget.workout} Workout",
+                  style: TextStyle(
                          fontFamily: 'Poppins',
                          fontSize: 26.sp,
                          color:  Colors.black,

@@ -31,10 +31,10 @@ class GetCare extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               FadeAnimation(
-                  1.2,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.2,
+                  offsetX: -30,
+                  offset: 0,
+                  child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,
@@ -109,10 +109,10 @@ class GetCare extends StatelessWidget {
                     ),
                   )),
               FadeAnimation(
-                  1.4,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.4,
+                  offsetX: -30,
+                  offset: 0,
+                  child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,
@@ -187,10 +187,10 @@ class GetCare extends StatelessWidget {
                     ),
                   )),
               FadeAnimation(
-                  1.6,
-                  -30,
-                  0,
-                  Padding(
+                 delay:  1.6,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,

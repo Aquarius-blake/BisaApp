@@ -145,10 +145,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                     top: ScreenUtil().setHeight(80),
                     left: ScreenUtil().setWidth(5),
                     child: FadeAnimation(
-                        1.1,
-                        -30,
-                        0,
-                        Image.asset(
+                        delay:1.1,
+                        offsetX:-30,
+                        offset: 0,
+                        child: Image.asset(
                           'assets/imgs/docBg.png',
                           height: 440.h,
                           fit: BoxFit.cover,
@@ -156,10 +156,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: FadeAnimation(
-                      1.3,
-                      30,
-                      0,
-                      Container(
+                     delay: 1.3,
+                      offsetX: 30,
+                      offset: 0,
+                      child: Container(
                         height: 350.h,
                         decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
@@ -180,10 +180,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                           child: Column(
                             children: [
                               FadeAnimation(
-                                1.5,
-                                -30,
-                                0,
-                                Text(
+                               delay: 1.5,
+                                offset:-30,
+                                offsetX:0,
+                                child:Text(
                                   'With us, you always have a doctor',
                                   style: TextStyle(
                                       fontSize: ScreenUtil().setSp(28),
@@ -196,10 +196,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                                 height: ScreenUtil().setHeight(20),
                               ),
                               FadeAnimation(
-                                1.7,
-                                -30,
-                                0,
-                                Text(
+                                delay: 1.7,
+                                offsetX: -30,
+                                offset: 0,
+                                child: Text(
                                   'Get in touch with a doctor from the comfort of your home. No queues, safe & secure.',
                                   style: TextStyle(
                                       fontSize: ScreenUtil().setSp(19),
@@ -212,10 +212,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                                 height: ScreenUtil().setHeight(20),
                               ),
                               FadeAnimation(
-                                1.9,
-                                -30,
-                                0,
-                                Row(
+                                delay:1.9,
+                                offsetX:-30,
+                                offset: 0,
+                                child:Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Icon(
@@ -231,10 +231,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                                 height: ScreenUtil().setHeight(20),
                               ),
                               FadeAnimation(
-                                  2.1,
-                                  -30,
-                                  0,
-                                  InkWell(
+                                  delay:2.1,
+                                 offsetX: -30,
+                                  offset: 0,
+                                  child: InkWell(
                                     onTap: () {
                                       _pageController.animateToPage(1,
                                           duration: const Duration(milliseconds: 500),
@@ -297,18 +297,18 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                     top: 20.h,
                     left: 8.w,
                     child: FadeAnimation(
-                        1.1,
-                        -30,
-                        0,
-                        Image.asset('assets/imgs/pharmBg.png',
+                        delay: 1.1,
+                        offsetX: -30,
+                        offset: 0,
+                        child: Image.asset('assets/imgs/pharmBg.png',
                             height: 580.h, fit: BoxFit.cover))),
                 Align(
                     alignment: Alignment.bottomCenter,
                     child: FadeAnimation(
-                      1.3,
-                      30,
-                      0,
-                      Container(
+                      delay: 1.3,
+                      offsetX: 30,
+                      offset: 0,
+                      child: Container(
                         height: 350.h,
                         decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
@@ -327,10 +327,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                           child: Column(
                             children: [
                               FadeAnimation(
-                                1.5,
-                                -30,
-                                0,
-                                Text(
+                                delay:1.5,
+                               offsetX: -30,
+                                offset:0,
+                                child:Text(
                                   'Order your\n prescriptions on Bisa.',
                                   style: TextStyle(
                                       fontSize: 28.sp,
@@ -343,10 +343,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                                 height: 20.h,
                               ),
                               FadeAnimation(
-                                1.7,
-                                -30,
-                                0,
-                                Text(
+                               delay: 1.7,
+                                offsetX:-30,
+                                offset:0,
+                                child:Text(
                                   'Order medications from pharmacies around you.',
                                   style: TextStyle(
                                       fontSize: 19.sp,
@@ -359,10 +359,10 @@ class OnBoardingState extends State<OnBoarding> with TickerProviderStateMixin {
                                 height: 20.h,
                               ),
                               FadeAnimation(
-                                1.9,
-                                -30,
-                                0,
-                                Row(
+                                delay:1.9,
+                                offsetX:-30,
+                                offset:0,
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Icon(Icons.radio_button_unchecked_outlined),

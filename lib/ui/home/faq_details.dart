@@ -49,10 +49,10 @@ class FaqDetailsState extends State<FaqDetails> {
               height: 25.h,
             ),
             FadeAnimation(
-                1.3,
-                -30,
-                0,
-                Padding(
+               delay: 1.3,
+                offsetX: -30,
+                offset: 0,
+               child: Padding(
                   padding: const EdgeInsets.all(28.0),
                   child: Text(
                     '${widget.content['answer']}',

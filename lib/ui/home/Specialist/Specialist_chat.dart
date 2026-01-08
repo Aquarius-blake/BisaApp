@@ -2,7 +2,6 @@
 
 import 'package:chat_bubbles/message_bars/message_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:jitsi_meet_wrapper/jitsi_meet_wrapper.dart';
 
 class SpecialistChat extends StatefulWidget {
   const SpecialistChat({super.key});
@@ -81,11 +80,12 @@ class _SpecialistChatState extends State<SpecialistChat> {
                       IconButton.outlined(
                         onPressed: ()async{
                           // PageAnimateNoRep(context, PageTransitionType.fade, VideoCall());
-                          var options = JitsiMeetingOptions(
-                            roomNameOrUrl: "Test_call",
-                           // token: "asdjbakdjnkafbibsfaindisbdjfsf"
-                            );
-                                await JitsiMeetWrapper.joinMeeting(options:options);
+                          // var options = JitsiMeetingOptions(
+                          //   roomNameOrUrl: "Test_call",
+                          //  // token: "asdjbakdjnkafbibsfaindisbdjfsf"
+                          //   );
+                          //       await JitsiMeetWrapper.joinMeeting(options:options);
+                          
                         }, 
                         icon: const Icon(
                           Icons.video_call_outlined

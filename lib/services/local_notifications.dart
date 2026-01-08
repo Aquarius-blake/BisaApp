@@ -23,8 +23,7 @@ static void onNotificationTap(NotificationResponse notificationResponse){
     const AndroidInitializationSettings initializationSettingsAndroid =
     AndroidInitializationSettings('@mipmap/ic_launcher');
 final DarwinInitializationSettings initializationSettingsDarwin =
-    DarwinInitializationSettings(
-        onDidReceiveLocalNotification: ( id , title , body , payload ) => null );
+    DarwinInitializationSettings();
 final LinuxInitializationSettings initializationSettingsLinux =
     LinuxInitializationSettings(
         defaultActionName: 'Open notification');
@@ -81,7 +80,7 @@ static Future showPeriodicNotifications(
         ticker: 'ticker');
 const NotificationDetails notificationDetails =
     NotificationDetails(android: androidNotificationDetails);
-  await _flutterLocalNotificationsPlugin.periodicallyShow(id, title, body, interval, notificationDetails);
+  await _flutterLocalNotificationsPlugin.periodicallyShow(id, title, body, interval, notificationDetails, androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle);
  }catch(e){
   print(e.toString());
  }
@@ -113,7 +112,7 @@ static Future showScheduledNotification(
             channelDescription: 'your channel description')
             ),
     androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-       uiLocalNotificationDateInterpretation:  UILocalNotificationDateInterpretation.absoluteTime);
+       );
 
 }
 

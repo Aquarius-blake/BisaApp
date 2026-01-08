@@ -1,3 +1,13 @@
+
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -8,7 +18,7 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new Exception("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -26,18 +36,15 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
-apply plugin: 'com.android.application'
-// START: FlutterFire Configuration
-apply plugin: 'com.google.gms.google-services'
-// END: FlutterFire Configuration
-apply plugin: 'kotlin-android'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+// apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 // apply from: 'src/main/res/raw/flutter_local_notifications_overrides.xml'
 
 android {
     namespace "com.example.bisa_app"
-    compileSdkVersion 34
-    ndkVersion flutter.ndkVersion
+    compileSdkVersion 36
+    // ndkVersion flutter.ndkVersion
+    ndkVersion = "29.0.14206865"
 
     compileOptions {
         coreLibraryDesugaringEnabled true
@@ -58,7 +65,7 @@ android {
         applicationId "gh.com.bisa.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 24
+        minSdkVersion 26
         // minSdkVersion flutter.minSdkVersion
         // targetSdkVersion flutter.targetSdkVersion
         targetSdkVersion 34
@@ -83,6 +90,15 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                        'proguard-rules.pro'
+        }
+        debug {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
         }
     }
 }
@@ -93,14 +109,19 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
     implementation 'com.pusher:push-notifications-android:1.9.0'
+    // implementation "com.facebook.soloader:soloader:0.10.5"
+    // implementation("com.facebook.react:react-native-video:6.13.0-jitsi-21361575") {
+    //     exclude group: "androidx.media3", module: "media3-exoplayer-rtsp"
+    // }
 }
 
 configurations.all {
+    // exclude group: "androidx.media3", module: "media3-exoplayer-rtsp"
     resolutionStrategy {
-        force 'com.facebook.soloader:soloader:0.10.4'
+        force 'com.facebook.soloader:soloader:0.10.5'
     }
 }
 

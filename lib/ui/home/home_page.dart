@@ -165,10 +165,10 @@ class HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(bottomNavVM.currentIndex),
       ),
       bottomNavigationBar: FadeAnimation(
-          1.5,
-          30,
-          0,
-          BottomAppBar(
+         delay: 1.5,
+          offsetX: 30,
+          offset: 0,
+          child: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             surfaceTintColor: Colors.transparent,
             color: Colors.white,

@@ -106,10 +106,10 @@ initprefs()async{
                 ),
                 const SizedBox(height: 20,),
                 FadeAnimation(
-                1.2,
-                0,
-                30,
-                Text(
+               delay:  1.2,
+               offsetX: 0,
+                offset: 30,
+                child: Text(
                   "Estimated Next Period Range",
                   style: TextStyle(
                      fontFamily: 'Poppins',
@@ -120,10 +120,10 @@ initprefs()async{
                    ),
                    const SizedBox(height: 40,),
                    FadeAnimation(
-                        1.2,
-                    0,
-                    30,
-                     Row(
+                      delay:  1.2,
+                      offsetX: 0,
+                      offset: 30,
+                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                          children: [ Container(
                              height: 100,
@@ -216,12 +216,12 @@ initprefs()async{
                    ),
                      const SizedBox(height: 40,),
                      FadeAnimation(
-                1.2,
-                0,
-                30,
-                Text(
-                  "Estimated Possible Safe Days Range",
-                  style: TextStyle(
+                        delay: 1.2,
+                        offsetX: 0,
+                        offset: 30,
+                        child: Text(
+                          "Estimated Possible Safe Days Range",
+                          style: TextStyle(
                      fontFamily: 'Poppins',
                      fontSize: 20.sp,
                      color:  Colors.pink,
@@ -231,10 +231,10 @@ initprefs()async{
                    ),
                    const SizedBox(height: 40,),
                    FadeAnimation(
-                        1.2,
-                    0,
-                    30,
-                     Row(
+                        delay: 1.2,
+                        offsetX: 0,
+                        offset: 30,
+                        child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                          children: [ Container(
                              height: 100,

@@ -21,7 +21,7 @@ import 'package:page_animation_transition/animations/top_to_bottom_transition.da
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:record/record.dart';
+import 'package:record/record.dart' as rc;
 
 class StartQuestion extends StatefulWidget {
   const StartQuestion({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class StartQuestionState extends State<StartQuestion>
 
   final cloudinary = CloudinaryPublic('dzh1cgxjd', 'ooc0zhbu', cache: false);
 
-  final _audioRecorder = Record();
+  final _audioRecorder = rc.AudioRecorder();
 
   FutureOr onGoBack(dynamic value) {
     if (kDebugMode) {
@@ -140,10 +140,10 @@ class StartQuestionState extends State<StartQuestion>
                 height: 20.h,
               ),
               FadeAnimation(
-                  1.2,
-                  0,
-                  30,
-                  Text(
+                 delay: 1.2,
+                 offsetX: 0,
+                 offset: 30,
+                 child: Text(
                     'Select a Category',
                     style: TextStyle(
                         fontFamily: 'Lato',
@@ -152,10 +152,10 @@ class StartQuestionState extends State<StartQuestion>
                         color: const Color.fromRGBO(85, 80, 80, 0.98)),
                   )),
               FadeAnimation(
-                  1.4,
-                  0,
-                  30,
-                  Padding(
+                delay:  1.4,
+                offsetX:  0,
+                offset: 30,
+                child: Padding(
                     padding: const EdgeInsets.only(top: 12.0),
                     child: Container(
                       height: 120.h,
@@ -526,10 +526,10 @@ class StartQuestionState extends State<StartQuestion>
                 height: 50.h,
               ),
               FadeAnimation(
-                1.5,
-                0,
-                30,
-                Text(
+                delay:1.5,
+                offsetX:0,
+                offset:30,
+                child:Text(
                   'Record or type your question in the field below.',
                   style: TextStyle(
                       fontFamily: 'Lato',
@@ -543,10 +543,10 @@ class StartQuestionState extends State<StartQuestion>
                 height: 20.h,
               ),
               FadeAnimation(
-                1.6,
-                0,
-                30,
-                isRecording
+                delay:1.6,
+               offsetX: 0,
+               offset: 30,
+                child: isRecording
                     ? Row(
                         children: [
                           const CircularProgressIndicator.adaptive(
@@ -628,10 +628,10 @@ class StartQuestionState extends State<StartQuestion>
                 height: 20.h,
               ),
               FadeAnimation(
-                  1.7,
-                  0,
-                  30,
-                  Row(
+                 delay: 1.7,
+                 offsetX: 0,
+                 offset: 30,
+                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _saving
@@ -910,6 +910,7 @@ class StartQuestionState extends State<StartQuestion>
     try {
       if (await _audioRecorder.hasPermission()) {
         await _audioRecorder.start(
+            rc.RecordConfig(),
             path:
                 '${pathV!}${Platform.pathSeparator}recording_${DateTime.now()}.$platformExtension');
 

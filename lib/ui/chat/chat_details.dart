@@ -24,7 +24,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
-import 'package:record/record.dart';
+import 'package:record/record.dart' as rc;
 // import 'package:transparent_image/transparent_image.dart';
 
 class ChatDetails extends StatefulWidget {
@@ -38,7 +38,7 @@ class ChatDetails extends StatefulWidget {
 
 class ChatDetailsState extends State<ChatDetails> {
   final cloudinary = CloudinaryPublic('dzh1cgxjd', 'ooc0zhbu', cache: false);
-  final _audioRecorder = Record();
+  final _audioRecorder = rc.AudioRecorder();
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _editingController = TextEditingController();
   bool _saving = false;
@@ -960,6 +960,7 @@ class ChatDetailsState extends State<ChatDetails> {
     try {
       if (await _audioRecorder.hasPermission()) {
         await _audioRecorder.start(
+            rc.RecordConfig(),
             path:
                 '${pathV!}${Platform.pathSeparator}recording_${DateTime.now()}.$platformExtension');
 

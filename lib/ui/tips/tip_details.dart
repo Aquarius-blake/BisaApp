@@ -101,10 +101,10 @@ class TipDetails extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FadeAnimation(
-                            1,
-                            -30,
-                            0,
-                            Text(
+                           delay: 1,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Text(
                               '${article['title']}',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
@@ -126,10 +126,10 @@ class TipDetails extends StatelessWidget {
                           height: 12.sp,
                         ),
                         FadeAnimation(
-                            1.2,
-                            -30,
-                            0,
-                            Text(
+                           delay: 1.2,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Text(
                               date,
                               style: TextStyle(
                                   fontFamily: 'Poppins',

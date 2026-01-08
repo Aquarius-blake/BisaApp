@@ -31,10 +31,10 @@ class SelectActionInsurance extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               FadeAnimation(
-                  1.2,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.2,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,
@@ -76,10 +76,10 @@ class SelectActionInsurance extends StatelessWidget {
                     ),
                   )),
               FadeAnimation(
-                  1.4,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.4,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,
@@ -121,10 +121,10 @@ class SelectActionInsurance extends StatelessWidget {
                     ),
                   )),
               FadeAnimation(
-                  1.6,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.6,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,
@@ -169,10 +169,10 @@ class SelectActionInsurance extends StatelessWidget {
                 height: 80,
               ),
               FadeAnimation(
-                  1.8,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.8,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 25,
@@ -187,10 +187,10 @@ class SelectActionInsurance extends StatelessWidget {
                     ),
                   )),
               FadeAnimation(
-                  1.6,
-                  -30,
-                  0,
-                  Padding(
+                 delay: 1.6,
+                 offsetX: -30,
+                 offset: 0,
+                 child: Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 25,

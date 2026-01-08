@@ -2,34 +2,49 @@ import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class FadeAnimation extends StatelessWidget {
-  final double delay;
+   double delay;
   final Widget child;
   final double offset;
   final double offsetX;
 
-  const FadeAnimation(this.delay, this.offset, this.offsetX, this.child, {super.key});
+   FadeAnimation({
+     this.delay = 0.5,
+    required this.offset,
+    required this.offsetX,
+    required this.child,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final tween = MultiTween<AniProps>()
-      ..add(AniProps.opacity, Tween(begin: 0.0, end: 1.0),
-          const Duration(milliseconds: 500))
-      ..add(
-          AniProps.height,
-          Tween(begin: Offset(offsetX, offset), end: (Offset.zero)),
-          const Duration(milliseconds: 500),
-          Curves.easeOut);
+    // Updated MovieTween API replaces MultiTween
+    final tween = MovieTween()
+      ..scene(
+        begin: Duration.zero,
+        duration: const Duration(milliseconds: 500),
+      )
+          .tween(
+            AniProps.opacity,
+            Tween(begin: 0.0, end: 1.0),
+          )
+          .tween(
+            AniProps.height,
+            Tween(begin: Offset(offsetX, offset), end: Offset.zero),
+            curve: Curves.easeOut,
+          );
 
-    return PlayAnimation<MultiTweenValues<AniProps>>(
-      delay: Duration(milliseconds: (500 * delay).round()),
+    return PlayAnimationBuilder<Movie>(
       tween: tween,
       duration: tween.duration,
-      child: child,
-      builder: (context, child, value) {
+      delay: Duration(milliseconds: (500 * delay).round()),
+      builder: (context, value, _) {
+        final opacity = value.get(AniProps.opacity);
+        final translation = value.get(AniProps.height);
+
         return Opacity(
-          opacity: value.get(AniProps.opacity),
+          opacity: opacity,
           child: Transform.translate(
-            offset: value.get(AniProps.height),
+            offset: translation,
             child: child,
           ),
         );

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
+enum AnimProps { scale }
+
 class ScaleWidget extends StatelessWidget {
-  const ScaleWidget(
-      {Key? key,
-      required this.child,
-      required this.offsetX,
-      required this.offsetY,
-      required this.time})
-      : super(key: key);
+  const ScaleWidget({
+    Key? key,
+    required this.child,
+    required this.offsetX,
+    required this.offsetY,
+    required this.time,
+  }) : super(key: key);
 
   final Widget child;
   final double offsetX, offsetY;
@@ -16,24 +18,34 @@ class ScaleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tween = MultiTween<AnimProps>()
-      ..add(AnimProps.offset, Tween(begin: 0.2, end: 0.5),
-          const Duration(milliseconds: 500), Curves.easeOut)
-      ..add(AnimProps.offset, Tween(begin: 0.5, end: 0.2),
-          const Duration(milliseconds: 500), Curves.easeOut);
+    final tween = MovieTween()
+      ..scene(
+        begin: Duration.zero,
+        duration: const Duration(milliseconds: 500),
+      ).tween(
+        AnimProps.scale,
+        Tween(begin: 0.2, end: 0.5),
+        curve: Curves.easeOut,
+      )
+      ..scene(
+        begin: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
+      ).tween(
+        AnimProps.scale,
+        Tween(begin: 0.5, end: 0.2),
+        curve: Curves.easeOut,
+      );
 
-    return LoopAnimation<MultiTweenValues<AnimProps>>(
-      builder: (context, child, value) {
+    return LoopAnimationBuilder<Movie>(
+      tween: tween,
+      duration: tween.duration * time,
+      builder: (context, value, child) {
         return Transform.scale(
-          scale: value.get(AnimProps.offset),
+          scale: value.get(AnimProps.scale),
           child: child,
         );
       },
-      tween: tween,
-      duration: tween.duration * 5,
       child: child,
     );
   }
 }
-
-enum AnimProps { offset, color, opacity }

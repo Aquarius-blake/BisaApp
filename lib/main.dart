@@ -211,7 +211,7 @@ class MyAppState extends State<MyApp> {
                 autoPlay: false,
                 autoPlayDelay: const Duration(seconds: 3),
                 // autoPlayLockEnable: false,
-                builder: Builder(
+                builder:(context) => Builder(
                   builder: (context) {
                     return MediaQuery(
                         data: MediaQuery.of(context)

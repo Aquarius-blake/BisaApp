@@ -129,11 +129,11 @@ class SignUpState extends State<SignUp> {
                   bottom: -160.w,
                   right: 10.w,
                   child: FadeAnimation(
-                      1.2,
-                      30,
-                      0,
+                     delay: 1.2,
+                      offsetX: 30,
+                      offset: 0,
                       // Image.asset('assets/imgs/sign22.png',fit: BoxFit.cover)
-                      LoopWidget(
+                      child:LoopWidget(
                           20,
                           Container(
                             width: 199.w,
@@ -150,11 +150,11 @@ class SignUpState extends State<SignUp> {
                   bottom: -90.w,
                   left: -90.w,
                   child: FadeAnimation(
-                      1,
-                      30,
-                      0,
+                     delay: 1,
+                      offsetX: 30,
+                      offset: 0,
                       // Image.asset('assets/imgs/sign23.png')
-                      LoopWidget(
+                      child: LoopWidget(
                           -20,
                           Container(
                             width: 190.w,
@@ -171,11 +171,11 @@ class SignUpState extends State<SignUp> {
                   bottom: -150.w,
                   left: 50.w,
                   child: FadeAnimation(
-                      1.4,
-                      30,
-                      0,
+                    delay: 1.4,
+                      offsetX: 30,
+                      offset: 0,
                       // Image.asset('assets/imgs/sign24.png')
-                      LoopWidget(
+                      child: LoopWidget(
                           -20,
                           Container(
                             width: 190.w,
@@ -192,11 +192,11 @@ class SignUpState extends State<SignUp> {
                   bottom: -180.w,
                   right: -185.w,
                   child: FadeAnimation(
-                      1.6,
-                      30,
-                      0,
+                     delay: 1.6,
+                      offsetX: 30,
+                      offset: 0,
                       // Image.asset('assets/imgs/sign21.png')
-                      LoopWidget(
+                      child: LoopWidget(
                           -20,
                           Container(
                             width: 280.w,
@@ -218,10 +218,10 @@ class SignUpState extends State<SignUp> {
                   Padding(
                     padding: EdgeInsets.only(left: 0.04.sw, bottom: 8),
                     child: FadeAnimation(
-                      1.6,
-                      -30,
-                      0,
-                      Image.asset(
+                      delay: 1.6,
+                      offsetX: -30,
+                      offset: 0,
+                      child: Image.asset(
                         'assets/imgs/bisa_icon.png',
                         height: 100.h,
                         fit: BoxFit.cover,
@@ -234,10 +234,10 @@ class SignUpState extends State<SignUp> {
                   Padding(
                     padding: EdgeInsets.only(left: 0.04.sw, bottom: 8),
                     child: FadeAnimation(
-                      1.8,
-                      -30,
-                      0,
-                      Text(
+                      delay: 1.8,
+                      offsetX: -30,
+                      offset: 0,
+                      child: Text(
                         'Sign Up',
                         style: TextStyle(
                             fontSize: 28.sp,
@@ -258,10 +258,10 @@ class SignUpState extends State<SignUp> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -287,10 +287,10 @@ class SignUpState extends State<SignUp> {
                             height: 14.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -316,10 +316,10 @@ class SignUpState extends State<SignUp> {
                             height: 14.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -389,10 +389,10 @@ class SignUpState extends State<SignUp> {
                             height: 10.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -419,10 +419,10 @@ class SignUpState extends State<SignUp> {
                             height: 10.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -451,10 +451,10 @@ class SignUpState extends State<SignUp> {
                           ),
 
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -513,10 +513,10 @@ class SignUpState extends State<SignUp> {
                             height: 10.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -569,10 +569,10 @@ class SignUpState extends State<SignUp> {
                             height: 10.h,
                           ),
                           FadeAnimation(
-                            2.0,
-                            -30,
-                            0,
-                            Container(
+                            delay: 2.0,
+                            offsetX: -30,
+                            offset: 0,
+                            child: Container(
                               width: 0.88.sw,
                               height: 50.h,
                               decoration: BoxDecoration(
@@ -622,10 +622,10 @@ class SignUpState extends State<SignUp> {
                             height: 20.h,
                           ),
                           FadeAnimation(
-                            2.6,
-                            -30,
-                            0,
-                            SizedBox(
+                            delay: 2.6,
+                            offsetX: -30,
+                            offset: 0,
+                            child: SizedBox(
                               width: MediaQuery.of(context).size.width - 40,
                               child: Center(
                                 child: InkWell(
@@ -772,12 +772,12 @@ class SignUpState extends State<SignUp> {
                             height: 20,
                           ),
                           FadeAnimation(
-                              2.8,
-                              -30,
-                              0,
-                              SizedBox(
-                                width: 1.sw - 40.w,
-                                child: Row(
+                            delay: 2.8,
+                            offsetX: -30,
+                            offset: 0,
+                            child: SizedBox(
+                              width: 1.sw - 40.w,
+                              child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(

@@ -70,10 +70,10 @@ initialize()async{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                  FadeAnimation(
-                1.2,
-                0,
-                30, 
-                Column(
+               delay:  1.2,
+               offsetX: 0,
+                offset: 30, 
+                child: Column(
                   children: [
                     Text(
                       "Welcome to Bisa Fitness",

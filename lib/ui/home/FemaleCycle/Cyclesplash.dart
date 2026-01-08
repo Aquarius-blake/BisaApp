@@ -32,10 +32,10 @@ class _CycleSplashState extends State<CycleSplash> {
             children: [
               Center(
                 child: FadeAnimation(
-                1.2,
-                0,
-                30,
-                Text(
+               delay:  1.2,
+               offsetX: 0,
+                offset: 30,
+                child: Text(
                   "Stay in sync with your body",
                   style: TextStyle(
                      fontFamily: 'Poppins',

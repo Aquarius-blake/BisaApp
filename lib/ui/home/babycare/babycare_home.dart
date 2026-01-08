@@ -104,10 +104,10 @@ Future<void> initialize()async{
             children: [
               Center(
                  child: FadeAnimation(
-                        1.2,
-                        0,
-                        30,
-                        Column(
+                        delay:1.2,
+                        offset:0,
+                        offsetX:30,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
@@ -234,10 +234,10 @@ Future<void> initialize()async{
                 ),
                 Center(
                  child: FadeAnimation(
-                        1.2,
-                        0,
-                        30,
-                        Column(
+                       delay: 1.2,
+                      offsetX:0,
+                       offset: 30,
+                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
+enum AniProps { offset }
+
 class LoopWidget extends StatelessWidget {
-  // final double delay;
   final Widget child;
   final double offset;
   final int time;
@@ -11,32 +12,34 @@ class LoopWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tween = MultiTween<AniProps>()
-      // ..add(AniProps.opacity, Tween(begin: 0.5, end: 1.0),Duration(milliseconds: 800))
-      ..add(
-          AniProps.height,
-          Tween(begin: Offset(0, offset), end: (Offset.zero)),
-          Duration(milliseconds: time))
-      ..add(
-          AniProps.height,
-          Tween(begin: (Offset.zero), end: Offset(0, offset)),
-          Duration(milliseconds: time));
+    final tween = MovieTween()
+      ..scene(
+        begin: Duration.zero,
+        duration: Duration(milliseconds: time),
+      ).tween(
+        AniProps.offset,
+        Tween(begin: Offset(0, offset), end: Offset.zero),
+        curve: Curves.easeInOut,
+      )
+      ..scene(
+        begin: Duration(milliseconds: time),
+        duration: Duration(milliseconds: time),
+      ).tween(
+        AniProps.offset,
+        Tween(begin: Offset.zero, end: Offset(0, offset)),
+        curve: Curves.easeInOut,
+      );
 
-    return LoopAnimation<MultiTweenValues<AniProps>>(
-      builder: (context, child, value) {
-        // return Opacity(
-        //   opacity: value.get(AniProps.opacity),
-        return Transform.translate(
-          offset: value.get(AniProps.height),
-          child: child,
-        );
-        // );
-      },
+    return LoopAnimationBuilder<Movie>(
       tween: tween,
       duration: tween.duration * 5,
+      builder: (context, value, child) {
+        return Transform.translate(
+          offset: value.get(AniProps.offset),
+          child: child,
+        );
+      },
       child: child,
     );
   }
 }
-
-enum AniProps { width, height, color, opacity }

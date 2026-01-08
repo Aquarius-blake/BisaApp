@@ -61,10 +61,10 @@ class _GeneralWellnesState extends State<GeneralWellnes> {
           children: [
              Center(
                  child: FadeAnimation(
-                        1.2,
-                        0,
-                        30,
-                        Column(
+                       delay:  1.2,
+                       offsetX: 0,
+                       offset: 30,
+                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
@@ -85,10 +85,10 @@ class _GeneralWellnesState extends State<GeneralWellnes> {
               //   height: MediaQuery.of(context).size.height*0.8,
               // )
              FadeAnimation(
-                        1.2,
-                        0,
-                        30,
-                         WaterfallFlow.builder(
+                      delay:   1.2,
+                      offsetX:   0,
+                      offset: 30,
+                      child: WaterfallFlow.builder(
                       shrinkWrap: true,
                     //  physics: const NeverScrollableScrollPhysics(),
                       padding: const EdgeInsets.symmetric(

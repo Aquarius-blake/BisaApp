@@ -45,14 +45,9 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
   var unselectedColor = [Colors.white, Colors.white];
 
   var controller = YoutubePlayerController(
-                                initialVideoId: 'fmImgyDhdEM',
                                 params: const YoutubePlayerParams(
                                   showControls: true,
                                   showFullscreenButton: true,
-                                  desktopMode: false,
-                                  privacyEnhanced: true,
-                                  useHybridComposition: true,
-                                  autoPlay: false,
                                 )
                               );
 
@@ -61,6 +56,9 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
+    controller.loadVideoById(videoId:'fmImgyDhdEM').then((value){
+      controller.playVideo();
+    });
     super.initState();
 
 
@@ -100,10 +98,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       height: 0.18.sh,
                     ),
                     FadeAnimation(
-                      1.2,
-                      0,
-                      30,
-                      Row(
+                      delay:1.2,
+                      offsetX:0,
+                      offset: 30,
+                      child:Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
@@ -123,10 +121,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     ),
                     //help list
                     FadeAnimation(
-                      1.4,
-                      0,
-                      30,
-                      Padding(
+                      delay:1.4,
+                      offsetX: 0,
+                      offset: 30,
+                      child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: Container(
                           height: 120.h,
@@ -535,10 +533,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       height: 20.h,
                     ),
                     FadeAnimation(
-                      1.6,
-                      -30,
-                      0,
-                      Row(
+                      delay:1.6,
+                      offsetX: -30,
+                      offset: 0,
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
@@ -557,10 +555,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       ),
                     ),
                     FadeAnimation(
-                      1.8,
-                      0,
-                      -30,
-                      Padding(
+                     delay:  1.8,
+                     offsetX:  0,
+                      offset: 0,
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           height: 40.h,
@@ -941,11 +939,11 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   top: -50.w,
                   right: -60.w,
                   child: FadeAnimation(
-                    2.2,
-                    -30,
-                    0,
+                   delay:  2.2,
+                   offsetX: -30,
+                    offset:0,
                     // Image.asset('assets/imgs/Ellipse_home.png',)
-                    LoopWidget(
+                    child:LoopWidget(
                         30,
                         Opacity(
                           opacity: 0.25,
@@ -978,10 +976,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             width: 15.w,
                           ),
                           FadeAnimation(
-                            1.2,
-                            -30,
-                            0,
-                            Image.asset(
+                           delay:  1.2,
+                           offsetX: -30,
+                            offset: 0,
+                            child: Image.asset(
                               'assets/imgs/bisa_icon.png',
                               height: 65.h,
                               fit: BoxFit.cover,
@@ -994,10 +992,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               FadeAnimation(
-                                1.2,
-                                -30,
-                                0,
-                                Text(
+                               delay: 1.2,
+                                offsetX: -30,
+                                offset: 0,
+                                child: Text(
                                   'Hi ${currentUser.fname},',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w600,
@@ -1009,10 +1007,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                 height: 2.h,
                               ),
                               FadeAnimation(
-                                1.2,
-                                -30,
-                                0,
-                                Text(
+                                delay: 1.2,
+                                offsetX: -30,
+                                offset: 0,
+                                child: Text(
                                   'Welcome back',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
@@ -1074,10 +1072,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   FadeAnimation buildArticleList(int index) {
     return FadeAnimation(
-      1.2,
-      -30,
-      0,
-      FutureBuilder(
+      delay: 1.2,
+      offsetX: -30,
+      offset: 0,
+      child:FutureBuilder(
           future: getArticles({'id': index, 'token': currentUser.token}),
           builder: (context, AsyncSnapshot snapshot) {
             if (!snapshot.hasData) {

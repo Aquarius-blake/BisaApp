@@ -29,13 +29,13 @@ class PlansScreenState extends State<PlansScreen> {
               color: Color.fromRGBO(30, 29, 29, 0.98)),
         ),
       ),
-      body: const Column(
+      body:  Column(
         children: [
           FadeAnimation(
-              1.2,
-              0,
-              30,
-              PlanCard(
+             delay:  1.2,
+             offsetX:  0,
+             offset:  30,
+             child: PlanCard(
                 image: 'Rectangle8.png',
                 title: 'Unicare Plan',
                 desc:
@@ -43,10 +43,10 @@ class PlansScreenState extends State<PlansScreen> {
                 color: Color.fromRGBO(0, 132, 137, 1),
               )),
           FadeAnimation(
-              1.4,
-              0,
-              30,
-              PlanCard(
+             delay:  1.4,
+             offsetX:  0,
+             offset:  30,
+             child: PlanCard(
                 image: 'Rectangle8_1.png',
                 title: 'Premier Care Plan',
                 desc:
@@ -54,10 +54,10 @@ class PlansScreenState extends State<PlansScreen> {
                 color: Color.fromRGBO(42, 189, 101, 1),
               )),
           FadeAnimation(
-              1.6,
-              0,
-              30,
-              PlanCard(
+              delay:  1.6,
+              offsetX:  0,
+              offset:  30,
+              child: PlanCard(
                 image: 'Rectangle8_2.png',
                 title: 'Supercare Plan',
                 desc:
@@ -65,10 +65,10 @@ class PlansScreenState extends State<PlansScreen> {
                 color: Color.fromRGBO(0, 116, 161, 1),
               )),
           FadeAnimation(
-              1.8,
-              0,
-              30,
-              PlanCard(
+              delay:  1.8,
+              offsetX:  0,
+              offset:  30,
+              child: PlanCard(
                 image: 'Rectangle8_3.png',
                 title: 'Supercare Plus Plan',
                 desc:

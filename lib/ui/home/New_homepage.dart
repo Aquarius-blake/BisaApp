@@ -907,10 +907,10 @@ void _getlist(){
  FadeAnimation buildRandomArticle(int index,currentUser) {
   Random rand = Random();
     return FadeAnimation(
-      1.2,
-      -30,
-      0,
-      FutureBuilder(
+     delay: 1.2,
+      offsetX: -30,
+      offset: 0,
+      child: FutureBuilder(
           future: getArticles({'id': index, 'token': currentUser.token}),
           builder: (context, AsyncSnapshot snapshot) {
             if (!snapshot.hasData) {

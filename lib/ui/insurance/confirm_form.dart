@@ -58,10 +58,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 20,
               ),
               FadeAnimation(
-                1.0,
-                -30,
-                0,
-                Container(
+                delay:1.0,
+               offsetX: -30,
+                offset:0,
+                child:Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -86,10 +86,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                1.2,
-                -30,
-                0,
-                Container(
+                delay: 1.2,
+                offsetX: -30,
+                offset: 0,
+                child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -114,10 +114,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                1.4,
-                -30,
-                0,
-                Container(
+               delay: 1.4,
+                offsetX: -30,
+                offset: 0,
+                child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -142,10 +142,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                1.6,
-                -30,
-                0,
-                Container(
+               delay:  1.6,
+               offsetX: -30,
+               offset: 0,
+               child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -170,10 +170,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                1.8,
-                -30,
-                0,
-                Container(
+               delay: 1.8,
+                offsetX: -30,
+                offset: 0,
+                child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -198,10 +198,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                2.0,
-                -30,
-                0,
-                Container(
+               delay: 2.0,
+                offsetX: -30,
+                offset: 0,
+                child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -226,10 +226,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 10,
               ),
               FadeAnimation(
-                2.1,
-                -30,
-                0,
-                Container(
+               delay: 2.1,
+                offsetX: -30,
+                offset: 0,
+                child: Container(
                   width: fieldWidth,
                   height: 50,
                   decoration: BoxDecoration(
@@ -253,11 +253,11 @@ class ConfirmFormState extends State<ConfirmForm> {
               const SizedBox(
                 height: 20,
               ),
-              const FadeAnimation(
-                  2.2,
-                  -30,
-                  0,
-                  Text(
+               FadeAnimation(
+                 delay: 2.2,
+                  offsetX: -30,
+                  offset: 0,
+                 child:  Text(
                     'You have chosen to subscribe to Hybasic Premium.',
                     style: TextStyle(
                         fontFamily: 'Lato',
@@ -269,10 +269,10 @@ class ConfirmFormState extends State<ConfirmForm> {
                 height: 20,
               ),
               FadeAnimation(
-                2.3,
-                -30,
-                0,
-                SizedBox(
+               delay: 2.3,
+               offsetX: -30,
+               offset: 0,
+               child: SizedBox(
                   width: MediaQuery.of(context).size.width - 20,
                   child: Center(
                     child: InkWell(

@@ -391,10 +391,10 @@ Future <void> _initPrefs() async{
               top: 6,
               left: -20,
               child: _goalController.text.isNotEmpty && Selectedindex < 6 ? FadeAnimation(
-                      1.2,
-                        0,
-                        30,
-                 ChatBubble(
+                     delay:  1.2,
+                      offsetX:   0,
+                      offset: 30,
+                 child:ChatBubble(
                   backGroundColor: Colors.lightBlueAccent,
                   clipper: ChatBubbleClipper9(type: BubbleType.sendBubble),
                   child: Text(

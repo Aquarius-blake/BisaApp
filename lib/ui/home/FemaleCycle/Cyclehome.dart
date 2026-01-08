@@ -246,10 +246,10 @@ class _CycleHomeState extends State<CycleHome> {
                 child: Column(
                   children: [
                     FadeAnimation(
-                1.2,
-                0,
-                30,
-                Text(
+               delay: 1.2,
+                offsetX: 0,
+                offset: 30,
+                child: Text(
                   "Track your cycle",
                   style: TextStyle(
                      fontFamily: 'Poppins',

@@ -323,10 +323,10 @@ class LoginState extends State<Login> {
                     Padding(
                       padding: EdgeInsets.only(left: 0.07.sw, bottom: 8),
                       child: FadeAnimation(
-                        1.6,
-                        -30,
-                        0,
-                        Image.asset(
+                       delay: 1.6,
+                        offsetX: -30,
+                        offset: 0,
+                        child:Image.asset(
                           'assets/imgs/bisa_icon.png',
                           height: 100.h,
                           fit: BoxFit.cover,
@@ -339,10 +339,10 @@ class LoginState extends State<Login> {
                     Padding(
                       padding: EdgeInsets.only(left: 0.07.sw, bottom: 8),
                       child: FadeAnimation(
-                        1.8,
-                        -30,
-                        0,
-                        Text(
+                       delay: 1.8,
+                        offsetX: -30,
+                        offset: 0,
+                        child: Text(
                           'Sign In',
                           style: TextStyle(
                               fontSize: 34.sp,
@@ -362,10 +362,10 @@ class LoginState extends State<Login> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             FadeAnimation(
-                              1.9,
-                              -30,
-                              0,
-                              Container(
+                             delay:  1.9,
+                             offsetX: -30,
+                             offset:  0,
+                              child:Container(
                                 width: 0.84.sw,
                                 height: 50.h,
                                 decoration: BoxDecoration(
@@ -392,10 +392,10 @@ class LoginState extends State<Login> {
                               height: 18.h,
                             ),
                             FadeAnimation(
-                              2.0,
-                              -30,
-                              0,
-                              Container(
+                              delay: 2.0,
+                              offsetX: -30,
+                              offset: 0,
+                              child: Container(
                                 width: 0.84.sw,
                                 height: 50.h,
                                 decoration: BoxDecoration(
@@ -426,10 +426,10 @@ class LoginState extends State<Login> {
                       height: 25.h,
                     ),
                     FadeAnimation(
-                      2.4,
-                      -30,
-                      0,
-                      SizedBox(
+                     delay: 2.4,
+                      offsetX: -30,
+                      offset: 0,
+                      child: SizedBox(
                         width: 1.sw - 40.w,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -462,10 +462,10 @@ class LoginState extends State<Login> {
                       height: 25.h,
                     ),
                     FadeAnimation(
-                      2.6,
-                      -30,
-                      0,
-                      SizedBox(
+                     delay: 2.6,
+                     offsetX: -30,
+                     offset: 0,
+                      child:SizedBox(
                         width: 1.sw,
                         child: Center(
                           child: InkWell(
@@ -573,10 +573,10 @@ class LoginState extends State<Login> {
                       height: 40.h,
                     ),
                     FadeAnimation(
-                        2.8,
-                        -30,
-                        0,
-                        SizedBox(
+                       delay:  2.8,
+                       offsetX: -30,
+                       offset:  0,
+                       child: SizedBox(
                           width: 1.sw,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -884,10 +884,10 @@ class ResetPasswordState extends State<ResetPassword> {
                               padding:
                                   EdgeInsets.only(left: 0.07.sw, bottom: 8),
                               child: FadeAnimation(
-                                1.8,
-                                -30,
-                                0,
-                                Text(
+                                delay: 1.8,
+                                offsetX: -30,
+                                offset: 0,
+                                child: Text(
                                   'Reset Password',
                                   style: TextStyle(
                                       fontSize: 34.sp,
@@ -910,10 +910,10 @@ class ResetPasswordState extends State<ResetPassword> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               FadeAnimation(
-                                1.9,
-                                -30,
-                                0,
-                                Container(
+                               delay: 1.9,
+                                offsetX: -30,
+                                offset: 0,
+                                child: Container(
                                   width: 0.84.sw,
                                   height: 50.h,
                                   decoration: BoxDecoration(
@@ -949,10 +949,10 @@ class ResetPasswordState extends State<ResetPassword> {
                         height: 10.h,
                       ),
                       FadeAnimation(
-                        2.6,
-                        -30,
-                        0,
-                        SizedBox(
+                       delay:  2.6,
+                       offsetX:-30,
+                        offset: 0,
+                        child: SizedBox(
                           width: 1.sw,
                           child: Center(
                             child: InkWell(
@@ -1060,10 +1060,10 @@ class ResetPasswordState extends State<ResetPassword> {
                         height: 40.h,
                       ),
                       FadeAnimation(
-                          2.8,
-                          -30,
-                          0,
-                          SizedBox(
+                         delay:  2.8,
+                         offsetX: -30,
+                         offset: 0,
+                         child: SizedBox(
                             width: 1.sw,
                             child: Center(
                               child: InkWell(

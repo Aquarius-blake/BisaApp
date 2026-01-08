@@ -84,7 +84,7 @@ class VideoPageState extends State<VideoPage> {
 
   @override
   void deactivate() {
-    youtubeControllers.map((e) => e.pause());
+    youtubeControllers.map((e) => e.pauseVideo());
     super.deactivate();
   }
 
@@ -147,15 +147,13 @@ class VideoPageState extends State<VideoPage> {
                             itemBuilder: (context, index){
                               Video? video = e.videos?.elementAt(index);
                               var controller = YoutubePlayerController(
-                                initialVideoId: '${video!.mLink}',
                                 params: const YoutubePlayerParams(
                                   showControls: true,
                                   showFullscreenButton: true,
-                                  desktopMode: false,
-                                  privacyEnhanced: true,
-                                  useHybridComposition: true,
+                                  
                                 )
                               );
+                              controller.loadVideoById(videoId: '${video!.mLink}');
 
                               youtubeControllers.add(controller);
 
@@ -183,7 +181,7 @@ class VideoPageState extends State<VideoPage> {
                                       ),
                                     ),
                                      const SizedBox(height: 6,),
-                                    YoutubePlayerIFrame(
+                                    YoutubePlayer(
                                       controller: controller
                                     ),
                                   ],

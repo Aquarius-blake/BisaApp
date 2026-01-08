@@ -65,10 +65,10 @@ class _MeditationHomeState extends State<MeditationHome> {
             children: [
                Center(
                  child: FadeAnimation(
-                        1.2,
-                        0,
-                        30,
-                        Column(
+                       delay:  1.2,
+                       offsetX:  0,
+                       offset: 30,
+                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
@@ -99,10 +99,10 @@ class _MeditationHomeState extends State<MeditationHome> {
                ),
                const SizedBox(height: 20,),
                FadeAnimation(
-                1.2,
-                0,
-                30, 
-                Text(
+               delay:  1.2,
+               offsetX:  0,
+                offset: 30, 
+                child: Text(
                   "Choose an atmosphere",
                   style: TextStyle(
                  fontFamily: 'Poppins',
